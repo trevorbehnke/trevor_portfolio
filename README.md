@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a Next.js 15 + TypeScript + Tailwind v4 portfolio.
 
-## Getting Started
+## Setup & Development
+- Install deps: `npm install`
+- Dev server: `npm run dev` (http://localhost:3000)
+- Build: `npm run build` → Start: `npm start`
+- Lint: `npm run lint`
 
-First, run the development server:
+Deploy on Vercel. Canonical is non‑www (`trevorab.com`); `src/middleware.ts` redirects `www → non‑www`.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Content & Pages
+- Projects live in `src/data/projects.ts` (seeded with 3 examples). Images under `public/images/projects/<slug>/`.
+- Site meta in `src/data/site.ts` (name, title, description, socials, domain).
+- Routes: `/`, `/work`, `/work/[slug]`, `/about`, `/contact`, custom `not-found.tsx`, OG image at `/og`.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Styling & Accent Color
+- Tailwind config defines `brand` colors (teal scale) and `shadow-card`.
+- CSS variables in `src/app/globals.css` map brand → theme tokens.
+- To change accent: update `tailwind.config.ts` `colors.brand.*` and matching CSS vars (`--primary`/`--ring` and optional `--brand-*`).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Add a New Project
+1. Add an entry to `src/data/projects.ts` (see type and examples).
+2. Add images to `public/images/projects/<slug>/` (cover + any screens).
+3. Mark `featured: true` to surface on the home grid.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Analytics
+- Vercel Analytics is included via `<Analytics />` in `src/app/layout.tsx`. Remove or comment out if not needed.
 
-## Learn More
+## Sitemap & SEO
+- Configured via `next-sitemap.config.js`. Generate in CI or locally as desired. Metadata and canonical are set in `layout.tsx`.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## v2 Ideas
+- Switch projects to MDX (Contentlayer), add contact API (Resend), dynamic OG per project, add sitemap to CI, testimonials section.
