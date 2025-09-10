@@ -14,17 +14,17 @@ export function Header() {
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link href="/work">Work</Link>
+                  <Link href="/#work">Work</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link href="/about">About</Link>
+                  <Link href="/#about">About</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
-                  <Link href="/contact">Contact</Link>
+                  <Link href="/#contact">Contact</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>

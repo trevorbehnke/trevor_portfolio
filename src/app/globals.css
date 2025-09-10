@@ -131,6 +131,7 @@
 }
 
 @layer base {
+  html { scroll-behavior: smooth; }
   * {
     @apply border-border outline-ring/50;
   }
@@ -138,3 +139,18 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Footer social icon hover colors using brand scale */
+.footer-icon { color: var(--muted-foreground); transition: color 150ms ease; }
+a:hover > .footer-icon { color: var(--brand-600); }
+.dark a:hover > .footer-icon { color: var(--brand-400); }
+
+/* Email button hover override for footer */
+.email-button:hover { background-color: var(--brand-600) !important; color: white !important; }
+.dark .email-button:hover { background-color: var(--brand-400) !important; color: black !important; }
+
+/* Resume button hover override */
+.resume-button:hover { background-color: var(--brand-600) !important; color: white !important; }
+.dark .resume-button:hover { background-color: var(--brand-400) !important; color: black !important; }
+
+/* (Reverted) general footer hover link styles were removed per request */
