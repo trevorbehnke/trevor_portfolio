@@ -6,10 +6,11 @@ export const site = {
   email: "trevor@trevorab.com",
   location: "City, State (TZ)",
   primaryDomain: "https://trevorab.com",
+  heroImage: "/images/hero/preview.svg",
+  heroImageAlt: "Selected work preview",
   socials: {
     github: "https://github.com/trevorbehnke",
     linkedin: "https://www.linkedin.com/in/trevorbehnke",
     twitter: "https://twitter.com/yourhandle",
   },
 }
-

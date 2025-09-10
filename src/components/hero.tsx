@@ -1,4 +1,6 @@
 import Link from "next/link"
+import Image from "next/image"
+import { site } from "@/data/site"
 import { Button } from "@/components/ui/button"
 
 export function Hero() {
@@ -16,7 +18,16 @@ export function Hero() {
           <Button asChild variant="outline"><Link href="/resume/resume.pdf">Download Resume</Link></Button>
         </div>
       </div>
-      <div className="aspect-[16/9] rounded-lg border shadow-card bg-muted/20" aria-label="Project preview placeholder" />
+      <div className="relative aspect-[16/9] rounded-lg border shadow-card overflow-hidden">
+        <Image
+          src={site.heroImage}
+          alt={site.heroImageAlt}
+          fill
+          className="object-cover"
+          priority
+          sizes="(min-width: 768px) 50vw, 100vw"
+        />
+      </div>
     </section>
   )
 }

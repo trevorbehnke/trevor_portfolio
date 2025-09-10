@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export default function AboutPage() {
   return (
     <div className="max-w-[1100px] mx-auto px-4 md:px-6 py-6 space-y-4">
@@ -11,8 +13,16 @@ export default function AboutPage() {
         Tools I reach for: React/Next.js, TypeScript, Tailwind, Node, Postgres,
         Vercel, and modern observability.
       </p>
-      <div className="mt-4 h-40 w-40 rounded-full bg-muted/30 border" aria-label="Headshot placeholder" />
+      <div className="mt-4 h-40 w-40 rounded-full border overflow-hidden relative">
+        <Image
+          src="/images/about/me.jpg"
+          alt="Headshot"
+          fill
+          className="object-cover"
+          sizes="160px"
+          priority
+        />
+      </div>
     </div>
   )
 }
-
