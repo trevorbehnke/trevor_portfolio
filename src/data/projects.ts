@@ -30,10 +30,10 @@ export const projects: Project[] = [
       "Vercel",
     ],
     links: {
-      live: "https://example.com",
+      live: "https://BlogSocializer.com",
       repo: "https://github.com/yourhandle/saas-mvp",
     },
-    cover: "/images/projects/saas-mvp/cover.svg",
+    cover: "/images/projects/saas-mvp/bsr_cover.png",
     images: [
       "/images/projects/saas-mvp/screen-1.svg",
       "/images/projects/saas-mvp/screen-2.svg",
@@ -65,6 +65,18 @@ export const projects: Project[] = [
     timeframe: "2023",
     stack: ["Next.js", "React", "Vercel", "Lighthouse"],
     links: { repo: "https://github.com/yourhandle/perf-initiative" },
+    cover: "/images/projects/perf-initiative/cover.svg",
+    images: ["/images/projects/perf-initiative/screen-1.svg"],
+  },
+  {
+    title: "Pixel Comparison Bot",
+    slug: "pixel-bot",
+    summary:
+      "Automated visual regression testing using Puppeteer and image diffing to catch UI bugs before release.",
+    role: "Frontend‑leaning Full Stack",
+    timeframe: "2022",
+    stack: ["Playwright", "Puppeter", "Node.js", "Heroku"],
+    links: { repo: "https://github.com/yourhandle/pixel-bot" },
     cover: "/images/projects/perf-initiative/cover.svg",
     images: ["/images/projects/perf-initiative/screen-1.svg"],
   },

@@ -1,5 +1,5 @@
 export const site = {
-  name: "Trevor AB",
+  name: "Trevor Behnke",
   title: "Frontend‑leaning Full Stack Engineer",
   description:
     "I design and build performant web apps with React/Next.js, and ship production-ready APIs when needed.",

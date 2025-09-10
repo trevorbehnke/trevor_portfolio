@@ -6,7 +6,7 @@ export function Hero() {
     <section className="max-w-[1100px] mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-8 items-center mt-8 md:mt-16">
       <div>
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-          Trevor AB — Frontend‑leaning Full Stack Engineer
+          Trevor Behnke — Frontend‑leaning Full Stack Engineer
         </h1>
         <p className="mt-4 text-lg text-muted-foreground">
           I design and build performant web apps with React/Next.js, and ship production-ready APIs when needed.

@@ -142,7 +142,7 @@ Also expose brand shades as CSS vars (optional):
 
 - Home:
 
-  - H1 “Trevor AB — Frontend‑leaning Full Stack Engineer”
+  - H1 “Trevor Behnke — Frontend‑leaning Full Stack Engineer”
 
   - Subhead: “I design and build performant web apps with React/Next.js, and ship production-ready APIs when needed.”
 
@@ -188,7 +188,7 @@ Also expose brand shades as CSS vars (optional):
 
 export const site = {
 
-name: "Trevor AB",
+name: "Trevor Behnke",
 
 title: "Frontend‑leaning Full Stack Engineer",
 
@@ -420,7 +420,7 @@ images: \["/images/projects/perf-initiative/screen-1.png"]
 
 **Hero copy and CTA (seed)**
 
-- H1: Trevor AB — Frontend‑leaning Full Stack Engineer
+- H1: Trevor Behnke — Frontend‑leaning Full Stack Engineer
 
 - Subhead: I design and build performant web apps with React/Next.js, and ship production-ready APIs when needed.
 

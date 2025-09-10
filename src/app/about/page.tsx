@@ -3,7 +3,7 @@ export default function AboutPage() {
     <div className="max-w-[1100px] mx-auto px-4 md:px-6 py-6 space-y-4">
       <h1 className="text-3xl font-bold tracking-tight">About</h1>
       <p>
-        I’m Trevor AB, a frontend‑leaning full stack engineer focused on building
+        I’m Trevor Behnke, a frontend‑leaning full stack engineer focused on building
         fast, accessible web apps. I enjoy shaping product UX, performance, and
         developer experience.
       </p>
