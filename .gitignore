@@ -24,6 +24,7 @@
 .DS_Store
 *.pem
 me.jpg
+hero.png
 
 # debug
 npm-debug.log*

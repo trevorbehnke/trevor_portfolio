@@ -15,7 +15,7 @@ export function Hero() {
         </p>
         <div className="mt-6 flex gap-3">
           <Button asChild><Link href="/work">View Work</Link></Button>
-          <Button asChild variant="outline"><Link href="/resume/resume.pdf">Download Resume</Link></Button>
+          <Button asChild variant="outline"><Link href="/resume/Trevor_Behnke_Resume.pdf">Download Resume</Link></Button>
         </div>
       </div>
       <div className="relative aspect-[16/9] rounded-lg border shadow-card overflow-hidden">
