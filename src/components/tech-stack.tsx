@@ -1,6 +1,7 @@
 "use client"
 import { useEffect, useRef, useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core"
 import {
   faReact,
   faNodeJs,
@@ -9,14 +10,14 @@ import {
   faCss3Alt,
   faHtml5,
 } from "@fortawesome/free-brands-svg-icons"
-import { faDatabase, faFlaskVial, faCode } from "@fortawesome/free-solid-svg-icons"
+import { faDatabase, faFlaskVial } from "@fortawesome/free-solid-svg-icons"
 
 type Tech = {
   id: string
   label: string
   level: "Advanced" | "Intermediate" | "Beginner"
   brand: string
-  icon?: any
+  icon?: IconDefinition
   textIcon?: string
 }
 
@@ -119,10 +120,13 @@ export function TechStackShowcase({ techs = DEFAULT_TECHS }: { techs?: Tech[] })
                 }}
                 className="tech-hex group cursor-pointer outline-none focus-ring"
                 style={{
-                  // @ts-ignore custom properties
-                  "--hex-accent": t.brand,
-                  "--stagger": `${i * 60}ms`,
-                  "--float-delay": `${(i % 5) * 300}ms`,
+                  ["--hex-accent"]: t.brand,
+                  ["--stagger"]: `${i * 60}ms`,
+                  ["--float-delay"]: `${(i % 5) * 300}ms`,
+                } as React.CSSProperties & {
+                  "--hex-accent"?: string
+                  "--stagger"?: string
+                  "--float-delay"?: string
                 }}
                 data-active={activeIdx === i}
               >
