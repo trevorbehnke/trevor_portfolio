@@ -13,7 +13,9 @@ export default function Home() {
   const grid = [...featured, ...others].slice(0, 4)
   return (
     <div className="space-y-12">
+      {/* Hero */}
       <Hero />
+      {/* Work */}
       <section id="work" className="space-y-4">
         <div className="max-w-[1100px] mx-auto px-4 md:px-6">
           <SectionHeader title="Featured Work" subtitle="Selected projects across frontend, full stack, and performance" />
@@ -24,10 +26,12 @@ export default function Home() {
           ))}
         </div>
       </section>
-      {/* Tech stack showcase */}
+      {/* Tech stack section */}
       <section className="max-w-[1100px] mx-auto px-4 md:px-6">
+        <SectionHeader title="Tech I Work With" subtitle="A snapshot of tools I use regularly across the stack" />
         <TechStackShowcase />
       </section>
+      {/* What I do section*/}
       <section className="max-w-[1100px] mx-auto px-4 md:px-6">
         <SectionHeader title="What I do" />
         <div className="grid gap-6 md:grid-cols-3 mt-4">
@@ -46,7 +50,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About section (moved from /about) */}
+      {/* About section */}
       <section id="about" className="max-w-[1100px] mx-auto px-4 md:px-6 py-8 space-y-4">
         <SectionHeader title="About" />
         <div className="grid gap-6 md:grid-cols-[auto,1fr] md:items-start">

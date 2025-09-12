@@ -22,18 +22,30 @@ type Tech = {
 }
 
 const DEFAULT_TECHS: Tech[] = [
-  { id: "react", label: "React", level: "Advanced", brand: "#61DAFB", icon: faReact },
-  { id: "typescript", label: "TypeScript", level: "Advanced", brand: "#3178C6", textIcon: "TS" },
-  { id: "node", label: "Node.js", level: "Advanced", brand: "#339933", icon: faNodeJs },
   { id: "javascript", label: "JavaScript", level: "Advanced", brand: "#F7DF1E", icon: faJs },
-  { id: "jest", label: "Jest", level: "Advanced", brand: "#C21325", icon: faFlaskVial },
-  { id: "sql", label: "SQL", level: "Intermediate", brand: "#0064A5", icon: faDatabase },
-  { id: "css", label: "CSS3", level: "Advanced", brand: "#1572B6", icon: faCss3Alt },
-  { id: "html", label: "HTML5", level: "Advanced", brand: "#E34F26", icon: faHtml5 },
-  { id: "git", label: "Git", level: "Advanced", brand: "#F05032", icon: faGitAlt },
-  { id: "testing", label: "Testing", level: "Advanced", brand: "#8E8E93", icon: faFlaskVial },
+  { id: "typescript", label: "TypeScript", level: "Advanced", brand: "#3178C6", textIcon: "TS" },
+  { id: "python", label: "Python", level: "Advanced", brand: "#3776AB", textIcon: "Py" },
+  { id: "sql", label: "SQL", level: "Advanced", brand: "#0064A5", icon: faDatabase },
+  { id: "react", label: "React", level: "Advanced", brand: "#61DAFB", icon: faReact },
   { id: "next", label: "Next.js", level: "Advanced", brand: "#000000", textIcon: "NEXT" },
+  { id: "node", label: "Node.js", level: "Advanced", brand: "#339933", icon: faNodeJs },
+  { id: "express", label: "Express", level: "Advanced", brand: "#000000", textIcon: "Ex" },
+  { id: "postgresql", label: "PostgreSQL", level: "Advanced", brand: "#336791", textIcon: "PG" },
+  { id: "html", label: "HTML5", level: "Advanced", brand: "#E34F26", icon: faHtml5 },
+  { id: "css", label: "CSS3", level: "Advanced", brand: "#1572B6", icon: faCss3Alt },
   { id: "tailwind", label: "Tailwind", level: "Advanced", brand: "#38BDF8", textIcon: "TW" },
+  { id: "figma", label: "Figma", level: "Advanced", brand: "#F24E1E", textIcon: "Fg" },
+  { id: "git", label: "Git", level: "Advanced", brand: "#F05032", icon: faGitAlt },
+  { id: "github", label: "GitHub", level: "Advanced", brand: "#181717", textIcon: "GH" },
+  { id: "vscode", label: "VS Code", level: "Advanced", brand: "#007ACC", textIcon: "VS" },
+  { id: "jest", label: "Jest", level: "Advanced", brand: "#C21325", icon: faFlaskVial },
+  { id: "postman", label: "Postman", level: "Advanced", brand: "#FF6C37", textIcon: "PM" },
+  { id: "gcp", label: "Google Cloud Platform", level: "Advanced", brand: "#4285F4", textIcon: "GCP" },
+  { id: "vercel", label: "Vercel", level: "Advanced", brand: "#000000", textIcon: "V" },
+  { id: "heroku", label: "Heroku", level: "Advanced", brand: "#430098", textIcon: "Hk" },
+  { id: "firebase", label: "Firebase", level: "Advanced", brand: "#FFCA28", textIcon: "FB" },
+  { id: "stripe", label: "Stripe", level: "Advanced", brand: "#635BFF", textIcon: "S" },
+  { id: "openai", label: "OpenAI", level: "Advanced", brand: "#10A37F", textIcon: "AI" },
 ]
 
 export function TechStackShowcase({ techs = DEFAULT_TECHS }: { techs?: Tech[] }) {
@@ -94,10 +106,6 @@ export function TechStackShowcase({ techs = DEFAULT_TECHS }: { techs?: Tech[] })
       className="space-y-4"
       aria-labelledby="tech-stack-heading"
     >
-      <div className="max-w-[1100px] mx-auto px-4 md:px-6">
-        <h2 id="tech-stack-heading" className="text-xl font-semibold">Tech I work with</h2>
-        <p className="text-sm text-muted-foreground">A snapshot of tools I use regularly across the stack.</p>
-      </div>
       <div className="max-w-[1100px] mx-auto px-4 md:px-6">
         <div className="afif-hex-main">
           <ul className="afif-hex-container" role="list">
