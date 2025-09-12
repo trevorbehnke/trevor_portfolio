@@ -2,7 +2,8 @@
 
 import { useTheme } from "next-themes"
 import { useEffect, useState } from "react"
-import { Sun, Moon } from "lucide-react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons"
 import { Button } from "@/components/ui/button"
 
 export function ThemeToggle() {
@@ -22,8 +23,11 @@ export function ThemeToggle() {
       onClick={() => setTheme(isDark ? "light" : "dark")}
       className="focus-ring"
     >
-      {isDark ? <Sun className="size-5" /> : <Moon className="size-5" />}
+      {isDark ? (
+        <FontAwesomeIcon icon={faSun} className="size-5" />
+      ) : (
+        <FontAwesomeIcon icon={faMoon} className="size-5" />
+      )}
     </Button>
   )
 }
-

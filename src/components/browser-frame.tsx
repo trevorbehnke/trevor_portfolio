@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { cn } from "@/lib/utils"
-import { ChevronLeft, ChevronRight, RefreshCcw } from "lucide-react"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faChevronLeft, faChevronRight, faArrowsRotate } from "@fortawesome/free-solid-svg-icons"
 
 type BrowserFrameProps = {
   src: string
@@ -47,13 +48,13 @@ export function BrowserFrame({
         {/* Nav controls */}
         <div className="flex items-center gap-1 text-muted-foreground">
           <span aria-hidden className="inline-flex items-center justify-center rounded-md hover:bg-muted/60 size-6">
-            <ChevronLeft className="size-4" />
+            <FontAwesomeIcon icon={faChevronLeft} className="size-4" />
           </span>
           <span aria-hidden className="inline-flex items-center justify-center rounded-md hover:bg-muted/60 size-6">
-            <ChevronRight className="size-4" />
+            <FontAwesomeIcon icon={faChevronRight} className="size-4" />
           </span>
           <span aria-hidden className="inline-flex items-center justify-center rounded-md hover:bg-muted/60 size-6">
-            <RefreshCcw className="size-4" />
+            <FontAwesomeIcon icon={faArrowsRotate} className="size-4" />
           </span>
         </div>
 
