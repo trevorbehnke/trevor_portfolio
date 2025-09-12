@@ -38,6 +38,7 @@ const DEFAULT_TECHS: Tech[] = [
 export function TechStackShowcase({ techs = DEFAULT_TECHS }: { techs?: Tech[] }) {
   const sectionRef = useRef<HTMLDivElement | null>(null)
   const [activeIdx, setActiveIdx] = useState<number | null>(null)
+  const tipIds = useRef<string[]>(techs.map((t) => `tip-${t.id}`))
 
   // Reveal on scroll with stagger
   useEffect(() => {
@@ -72,6 +73,20 @@ export function TechStackShowcase({ techs = DEFAULT_TECHS }: { techs?: Tech[] })
     return () => document.removeEventListener("pointerdown", onDocClick)
   }, [activeIdx])
 
+  // Helper: position tooltip to avoid viewport clipping
+  function setTooltipPos(idx: number) {
+    const root = sectionRef.current
+    if (!root) return
+    const el = root.querySelector<HTMLElement>(`[data-idx="${idx}"]`)
+    const tip = root.querySelector<HTMLElement>(`#${tipIds.current[idx]}`)
+    if (!el || !tip) return
+    // Reset
+    tip.dataset.pos = "center"
+    const rect = tip.getBoundingClientRect()
+    if (rect.left < 8) tip.dataset.pos = "left"
+    if (rect.right > window.innerWidth - 8) tip.dataset.pos = "right"
+  }
+
   return (
     <section
       ref={sectionRef}
@@ -83,26 +98,31 @@ export function TechStackShowcase({ techs = DEFAULT_TECHS }: { techs?: Tech[] })
         <p className="text-sm text-muted-foreground">A snapshot of tools I use regularly across the stack.</p>
       </div>
       <div className="max-w-[1100px] mx-auto px-4 md:px-6">
-        <ul
-          className="hex-grid grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
-          role="list"
-        >
+        <div className="afif-hex-main">
+          <ul className="afif-hex-container" role="list">
           {techs.map((t, i) => (
-            <li key={t.id} className="flex justify-center">
+            <li key={t.id} className="afif-hex-item">
               <button
                 type="button"
                 data-tech
                 data-idx={i}
                 aria-label={`${t.label} — ${t.level}`}
-                onClick={() => setActiveIdx(activeIdx === i ? null : i)}
+                aria-describedby={tipIds.current[i]}
+                aria-expanded={activeIdx === i}
+                onMouseEnter={() => { setActiveIdx(i); setTooltipPos(i) }}
+                onMouseLeave={() => setActiveIdx((curr) => (curr === i ? null : curr))}
+                onFocus={() => { setActiveIdx(i); setTooltipPos(i) }}
+                onBlur={() => setActiveIdx((curr) => (curr === i ? null : curr))}
+                onClick={() => { const next = activeIdx === i ? null : i; setActiveIdx(next); if (next != null) setTooltipPos(i) }}
                 onKeyDown={(e) => {
                   if (e.key === "Escape") setActiveIdx(null)
                 }}
-                className="tech-hex group relative grid place-items-center w-28 h-32 md:w-32 md:h-36 lg:w-36 lg:h-40 cursor-pointer outline-none focus-ring"
+                className="tech-hex group cursor-pointer outline-none focus-ring"
                 style={{
                   // @ts-ignore custom properties
                   "--hex-accent": t.brand,
                   "--stagger": `${i * 60}ms`,
+                  "--float-delay": `${(i % 5) * 300}ms`,
                 }}
                 data-active={activeIdx === i}
               >
@@ -121,6 +141,7 @@ export function TechStackShowcase({ techs = DEFAULT_TECHS }: { techs?: Tech[] })
                 <span
                   role="tooltip"
                   className="tooltip"
+                  id={tipIds.current[i]}
                   data-visible={activeIdx === i}
                 >
                   {t.label} — {t.level}
@@ -128,9 +149,9 @@ export function TechStackShowcase({ techs = DEFAULT_TECHS }: { techs?: Tech[] })
               </button>
             </li>
           ))}
-        </ul>
+          </ul>
+        </div>
       </div>
     </section>
   )
 }
-
