@@ -15,22 +15,22 @@ export function Hero() {
   }
   return (
     <section className="relative min-h-[calc(100vh-56px)] isolate flex items-center">
+      {/* Background brand blob */}
+      <div aria-hidden className="hero-blob" />
       <div className="max-w-[1100px] mx-auto px-4 md:px-6 w-full">
         <div className="max-w-2xl text-foreground">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-            Trevor Behnke — Frontend‑leaning Full Stack Engineer
+            Trevor Behnke — <span className="gradient-underline">Frontend‑leaning</span> Full Stack Engineer
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">
             I design and build performant web apps with React/Next.js, and ship production-ready APIs when needed.
           </p>
           <div className="mt-4 flex gap-3 text-[1.5rem]">
             <Link href={site.socials.github} target="_blank" aria-label="GitHub">
-              <FontAwesomeIcon icon={faGithub} className="footer-icon
-              " />
+              <FontAwesomeIcon icon={faGithub} className="footer-icon transition-transform hover:scale-110" />
             </Link>
             <Link href={site.socials.linkedin} target="_blank" aria-label="LinkedIn">
-              <FontAwesomeIcon icon={faLinkedin} className="footer-icon
-              " />
+              <FontAwesomeIcon icon={faLinkedin} className="footer-icon transition-transform hover:scale-110" />
             </Link>
             <button
               type="button"
@@ -38,12 +38,10 @@ export function Hero() {
               onClick={copyEmail}
               className="hover:cursor-pointer"
             >
-              <FontAwesomeIcon icon={faEnvelope} className="footer-icon
-              " />
+              <FontAwesomeIcon icon={faEnvelope} className="footer-icon transition-transform hover:scale-110" />
             </button>
             <Link href="/resume/Trevor_Behnke_Resume.pdf" aria-label="Resume">
-              <FontAwesomeIcon icon={faFileLines} className="footer-icon
-              " />
+              <FontAwesomeIcon icon={faFileLines} className="footer-icon transition-transform hover:scale-110" />
             </Link>
           </div>
         </div>

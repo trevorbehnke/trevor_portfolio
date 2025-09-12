@@ -8,6 +8,7 @@ import { Toaster } from "@/components/ui/sonner"
 import { Analytics } from "@vercel/analytics/react"
 import { site } from "@/data/site"
 import { SkipToContent } from "@/components/skip-link"
+import { SiteSpotlight } from "@/components/site-spotlight"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,6 +46,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <SiteSpotlight />
           <SkipToContent />
           <Header />
           <main id="content" className="min-h-[70vh]">
