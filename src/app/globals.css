@@ -144,3 +144,8 @@
 .footer-icon { color: var(--muted-foreground); transition: color 150ms ease; }
 a:hover > .footer-icon, button:hover > .footer-icon { color: var(--brand-600); }
 .dark a:hover > .footer-icon, .dark button:hover > .footer-icon { color: var(--brand-400); }
+
+/* Header theme toggle icon hover: change icon color only */
+.theme-toggle > .header-icon { color: currentColor; transition: color 150ms ease; }
+.theme-toggle:hover > .header-icon { color: var(--brand-600); }
+.dark .theme-toggle:hover > .header-icon { color: var(--brand-400); }

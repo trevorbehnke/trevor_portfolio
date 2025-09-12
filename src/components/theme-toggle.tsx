@@ -21,12 +21,12 @@ export function ThemeToggle() {
       size="icon"
       aria-label="Toggle theme"
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      className="focus-ring"
+      className="theme-toggle focus-ring cursor-pointer hover:bg-transparent dark:hover:bg-transparent hover:text-current dark:hover:text-current"
     >
       {isDark ? (
-        <FontAwesomeIcon icon={faSun} className="size-5" />
+        <FontAwesomeIcon icon={faSun} className="header-icon text-[20px]" />
       ) : (
-        <FontAwesomeIcon icon={faMoon} className="size-5" />
+        <FontAwesomeIcon icon={faMoon} className="header-icon text-[20px]" />
       )}
     </Button>
   )
