@@ -2,6 +2,7 @@ import { projects } from "@/data/projects"
 import { Hero } from "@/components/hero"
 import { ProjectCard } from "@/components/project-card"
 import { SectionHeader } from "@/components/section-header"
+import { TechStackShowcase } from "@/components/tech-stack"
 import Link from "next/link"
 import Image from "next/image"
 import { site } from "@/data/site"
@@ -22,6 +23,10 @@ export default function Home() {
             <ProjectCard key={p.slug} project={p} />
           ))}
         </div>
+      </section>
+      {/* Tech stack showcase */}
+      <section className="max-w-[1100px] mx-auto px-4 md:px-6">
+        <TechStackShowcase />
       </section>
       <section className="max-w-[1100px] mx-auto px-4 md:px-6">
         <SectionHeader title="What I do" />

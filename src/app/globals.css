@@ -215,3 +215,69 @@ html[data-spotlight="on"] .site-spotlight { opacity: 1; }
 @media (prefers-reduced-motion: reduce) {
   .site-spotlight { display: none; }
 }
+
+/* Hex grid + tech cards */
+.hex-grid { align-items: center; }
+.tech-hex {
+  clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);
+  background: color-mix(in srgb, var(--brand-600), transparent 94%);
+  border: 1px solid color-mix(in srgb, var(--brand-600), transparent 85%);
+  position: relative;
+  transform: translateY(8px);
+  opacity: 0;
+  transition:
+    transform 500ms cubic-bezier(.21,1,.21,1) var(--stagger, 0ms),
+    opacity 500ms ease var(--stagger, 0ms),
+    filter 200ms ease,
+    box-shadow 200ms ease;
+  will-change: transform, opacity;
+}
+.tech-hex[data-revealed="true"] {
+  transform: translateY(0);
+  opacity: 1;
+}
+.hex-inner { 
+  color: var(--muted-foreground);
+  transition: color 150ms ease, transform 200ms ease; 
+  animation: float 6s ease-in-out infinite;
+}
+.tech-hex:hover .hex-inner { transform: scale(1.06); }
+.tech-hex:focus-visible .hex-inner { transform: scale(1.06); }
+.tech-hex .icon { color: currentColor; filter: drop-shadow(0 0 0 rgba(0,0,0,0)); }
+.tech-hex:hover .icon, .tech-hex[data-active="true"] .icon, .tech-hex:focus-visible .icon {
+  color: var(--hex-accent);
+  filter: drop-shadow(0 6px 14px color-mix(in srgb, var(--hex-accent), transparent 70%));
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+  100% { transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hex-inner { animation: none; }
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  background: var(--popover);
+  color: var(--popover-foreground);
+  font-size: 12px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 150ms ease, transform 150ms ease;
+  white-space: nowrap;
+}
+.tech-hex:hover .tooltip, .tech-hex[data-active="true"] .tooltip, .tech-hex:focus-visible .tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-12px);
+}
