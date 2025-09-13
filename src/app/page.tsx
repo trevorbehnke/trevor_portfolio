@@ -2,10 +2,11 @@ import { projects } from "@/data/projects"
 import { Hero } from "@/components/hero"
 import { ProjectCard } from "@/components/project-card"
 import { SectionHeader } from "@/components/section-header"
-import { TechStackShowcase } from "@/components/tech-stack"
 import Link from "next/link"
 import Image from "next/image"
 import { site } from "@/data/site"
+import { TechStack } from "@/components/tech-stack"
+import { DEFAULT_TECHS } from "@/data/techs"
 
 export default function Home() {
   const featured = projects.filter((p) => p.featured)
@@ -29,7 +30,9 @@ export default function Home() {
       {/* Tech stack section */}
       <section className="max-w-[1100px] mx-auto px-4 md:px-6">
         <SectionHeader title="Tech I Work With" subtitle="A snapshot of tools I use regularly across the stack" />
-        <TechStackShowcase />
+        <div className="mt-4">
+          <TechStack techs={DEFAULT_TECHS} />
+        </div>
       </section>
       {/* What I do section*/}
       <section className="max-w-[1100px] mx-auto px-4 md:px-6">
