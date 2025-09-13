@@ -36,7 +36,7 @@ export function TechStack({ techs = DEFAULT_TECHS }: Props) {
         return (
           <li
             key={t.id}
-            className="group relative rounded-lg border bg-card shadow-card transition-transform hover:-translate-y-[2px] focus-within:-translate-y-[2px]"
+            className="group relative rounded-lg bg-card shadow-card transition-transform hover:-translate-y-[2px] focus-within:-translate-y-[2px]"
             style={{}}
           >
             {/* optional hover glow removed to keep site-theme neutrals */}
@@ -49,15 +49,15 @@ export function TechStack({ techs = DEFAULT_TECHS }: Props) {
               }}
             >
               <div
-                className="grid size-9 place-items-center rounded-md border bg-muted/40 overflow-hidden"
+                className="grid size-9 place-items-center rounded-md border bg-[#0D9488]/10 overflow-hidden"
                 style={{}}
                 aria-hidden
               >
                 {hasImage ? (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img src={t.image!} alt="" width={18} height={18} className="block" />
+                  <img src={t.image!} alt="" width={24} height={24} className="block" />
                 ) : t.icon ? (
-                  <FontAwesomeIcon icon={t.icon} className="text-[18px]" style={{ color: t.brand }} />
+                  <FontAwesomeIcon icon={t.icon} className="text-[24px]" style={{ color: t.brand }} />
                 ) : (
                   <span
                     className="text-[11px] font-semibold leading-none px-1 rounded"
@@ -69,27 +69,26 @@ export function TechStack({ techs = DEFAULT_TECHS }: Props) {
               </div>
               <div className="flex min-w-0 flex-col">
                 <span className="truncate text-sm font-medium">{t.label}</span>
-                <span className="mt-[2px] h-[3px] w-10 rounded-full bg-accent/60" />
+                {/* <span className="mt-[2px] h-[3px] w-10 rounded-full bg-accent/60" /> */}
               </div>
-              <span className="ml-auto size-2.5 shrink-0 rounded-full bg-accent" aria-hidden />
             </div>
 
             {/* brand ring on focus/hover using outline */}
             <span
               aria-hidden
               className="pointer-events-none absolute inset-0 rounded-lg"
-              style={{ outline: `2px solid transparent` }}
+              // style={{ outline: `1px solid transparent` }}
             />
-            <style jsx>{`
+            {/* <style jsx>{`
               .group:focus-within {
-                outline: 2px solid var(--ring);
+                outline: 1px solid var(--ring);
                 outline-offset: 2px;
               }
               .group:hover {
-                outline: 2px solid var(--ring);
+                outline: 1px solid var(--ring);
                 outline-offset: 0px;
               }
-            `}</style>
+            `}</style> */}
           </li>
         )
       })}
