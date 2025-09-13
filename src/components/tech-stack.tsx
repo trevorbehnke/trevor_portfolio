@@ -31,25 +31,15 @@ export function TechStack({ techs = DEFAULT_TECHS }: Props) {
   return (
     <ul className="grid gap-3 sm:gap-4" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))' }}>
       {techs.map((t) => {
-        const bgSubtle = rgba(t.brand, 0.08)
-        const ringSoft = rgba(t.brand, 0.35)
-        const glow = rgba(t.brand, 0.25)
         const textOnBrand = isLight(t.brand) ? '#000000' : '#ffffff'
         const hasImage = Boolean(t.image)
         return (
           <li
             key={t.id}
             className="group relative rounded-lg border bg-card shadow-card transition-transform hover:-translate-y-[2px] focus-within:-translate-y-[2px]"
-            style={{
-              backgroundImage: `linear-gradient(180deg, transparent, ${bgSubtle})`,
-            }}
+            style={{}}
           >
-            {/* glow on hover */}
-            <span
-              aria-hidden
-              className="pointer-events-none absolute inset-0 -z-10 rounded-[12px] opacity-0 blur-[14px] transition-opacity group-hover:opacity-100"
-              style={{ background: `radial-gradient(60% 70% at 10% 20%, ${glow}, transparent 60%)` }}
-            />
+            {/* optional hover glow removed to keep site-theme neutrals */}
 
             <div
               className="flex items-center gap-3 p-3 focus-ring"
@@ -59,8 +49,8 @@ export function TechStack({ techs = DEFAULT_TECHS }: Props) {
               }}
             >
               <div
-                className="grid size-9 place-items-center rounded-md border overflow-hidden"
-                style={{ backgroundColor: rgba(t.brand, 0.12), borderColor: rgba(t.brand, 0.2) }}
+                className="grid size-9 place-items-center rounded-md border bg-muted/40 overflow-hidden"
+                style={{}}
                 aria-hidden
               >
                 {hasImage ? (
@@ -79,13 +69,9 @@ export function TechStack({ techs = DEFAULT_TECHS }: Props) {
               </div>
               <div className="flex min-w-0 flex-col">
                 <span className="truncate text-sm font-medium">{t.label}</span>
-                <span className="mt-[2px] h-[3px] w-10 rounded-full" style={{ backgroundColor: rgba(t.brand, 0.5) }} />
+                <span className="mt-[2px] h-[3px] w-10 rounded-full bg-accent/60" />
               </div>
-              <span
-                className="ml-auto size-2.5 shrink-0 rounded-full"
-                aria-hidden
-                style={{ backgroundColor: t.brand }}
-              />
+              <span className="ml-auto size-2.5 shrink-0 rounded-full bg-accent" aria-hidden />
             </div>
 
             {/* brand ring on focus/hover using outline */}
@@ -96,11 +82,11 @@ export function TechStack({ techs = DEFAULT_TECHS }: Props) {
             />
             <style jsx>{`
               .group:focus-within {
-                outline: 2px solid ${ringSoft};
+                outline: 2px solid var(--ring);
                 outline-offset: 2px;
               }
               .group:hover {
-                outline: 2px solid ${ringSoft};
+                outline: 2px solid var(--ring);
                 outline-offset: 0px;
               }
             `}</style>
