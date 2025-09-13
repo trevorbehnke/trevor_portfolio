@@ -35,6 +35,7 @@ export function TechStack({ techs = DEFAULT_TECHS }: Props) {
         const ringSoft = rgba(t.brand, 0.35)
         const glow = rgba(t.brand, 0.25)
         const textOnBrand = isLight(t.brand) ? '#000000' : '#ffffff'
+        const hasImage = Boolean(t.image)
         return (
           <li
             key={t.id}
@@ -58,16 +59,15 @@ export function TechStack({ techs = DEFAULT_TECHS }: Props) {
               }}
             >
               <div
-                className="grid size-9 place-items-center rounded-md border"
+                className="grid size-9 place-items-center rounded-md border overflow-hidden"
                 style={{ backgroundColor: rgba(t.brand, 0.12), borderColor: rgba(t.brand, 0.2) }}
                 aria-hidden
               >
-                {t.icon ? (
-                  <FontAwesomeIcon
-                    icon={t.icon}
-                    className="text-[18px]"
-                    style={{ color: t.brand }}
-                  />
+                {hasImage ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={t.image!} alt="" width={18} height={18} className="block" />
+                ) : t.icon ? (
+                  <FontAwesomeIcon icon={t.icon} className="text-[18px]" style={{ color: t.brand }} />
                 ) : (
                   <span
                     className="text-[11px] font-semibold leading-none px-1 rounded"
