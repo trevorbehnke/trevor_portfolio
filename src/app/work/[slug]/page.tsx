@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { notFound } from "next/navigation"
 import { projects } from "@/data/projects"
 import { Badge } from "@/components/ui/badge"
@@ -7,6 +6,8 @@ import { Button } from "@/components/ui/button"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
+import { LightboxImage } from "@/components/lightbox-image"
+import { LightboxGallery } from "@/components/lightbox-gallery"
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -48,9 +49,13 @@ export default async function ProjectPage({ params }: Props) {
 
       <section>
         <figure className="space-y-1">
-          <div className="relative aspect-[16/9] rounded-lg overflow-hidden border shadow-card">
-            <Image src={project.cover} alt="" fill className="object-cover" />
-          </div>
+          <LightboxImage
+            src={project.cover}
+            alt={`${project.title} cover`}
+            caption={project.coverCaption}
+            aspectClassName="aspect-[16/9]"
+            thumbContainerClassName="rounded-lg overflow-hidden border shadow-card"
+          />
           <figcaption className="text-xs text-muted-foreground">{project.coverCaption}</figcaption>
         </figure>
       </section>
@@ -68,16 +73,12 @@ export default async function ProjectPage({ params }: Props) {
 
       <section>
         <h2 className="text-2xl font-semibold mb-2">Gallery</h2>
-        <div className="grid sm:grid-cols-2 gap-4">
-          {project.images.map((img) => (
-            <figure key={img.src} className="space-y-1">
-              <div className="relative aspect-[16/9] rounded-md overflow-hidden border">
-                <Image src={img.src} alt="Screenshot" fill className="object-cover" />
-              </div>
-              <figcaption className="text-xs text-muted-foreground">{img.caption}</figcaption>
-            </figure>
-          ))}
-        </div>
+        <LightboxGallery
+          items={project.images.map((img) => ({ ...img, alt: `${project.title} screenshot` }))}
+          aspectClassName="aspect-[16/9]"
+          thumbContainerClassName="rounded-md overflow-hidden border"
+          projectTitle={project.title}
+        />
       </section>
 
       <section>
