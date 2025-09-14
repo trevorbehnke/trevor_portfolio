@@ -7,6 +7,8 @@ import Image from "next/image"
 import { site } from "@/data/site"
 import { TechStack } from "@/components/tech-stack"
 import { DEFAULT_TECHS } from "@/data/techs"
+import { Approach } from "@/components/approach-card"
+import { faCode, faServer, faTruckFast } from "@fortawesome/free-solid-svg-icons"
 
 export default function Home() {
   const featured = projects.filter((p) => p.featured)
@@ -34,22 +36,41 @@ export default function Home() {
           <TechStack techs={DEFAULT_TECHS} />
         </div>
       </section>
-      {/* What I do section*/}
+
+      {/* My Approach section*/}
       <section className="max-w-[1100px] mx-auto px-4 md:px-6">
-        <SectionHeader title="What I do" />
+        <SectionHeader title="My Approach" />
         <div className="grid gap-6 md:grid-cols-3 mt-4">
-          <div className="rounded-lg border p-4">
-            <h3 className="font-semibold">Frontend</h3>
-            <p className="text-sm text-muted-foreground">React/Next.js, design systems, accessibility, performance.</p>
-          </div>
-          <div className="rounded-lg border p-4">
-            <h3 className="font-semibold">Backend</h3>
-            <p className="text-sm text-muted-foreground">APIs, data modeling, auth, queues, storage.</p>
-          </div>
-          <div className="rounded-lg border p-4">
-            <h3 className="font-semibold">Delivery & Infra</h3>
-            <p className="text-sm text-muted-foreground">Vercel, CI/CD, monitoring, metrics, DX.</p>
-          </div>
+          <Approach
+            title="Frontend"
+            blurb="Component‑driven, accessible, fast interfaces."
+            icon={faCode}
+            points={[
+              "Design systems (shadcn, tokens, theming)",
+              "A11y: keyboard, focus, semantics",
+              "Performance: image/asset budgets, CLS/INP",
+            ]}
+          />
+          <Approach
+            title="Backend"
+            blurb="Simple, robust APIs and data models."
+            icon={faServer}
+            points={[
+              "Type‑safe endpoints, auth/session",
+              "Postgres first, caching when needed",
+              "Queues, webhooks, background jobs",
+            ]}
+          />
+          <Approach
+            title="Delivery & Infra"
+            blurb="Ship confidently with modern tooling."
+            icon={faTruckFast}
+            points={[
+              "Vercel + edge where it fits",
+              "CI/CD, preview envs, feature flags",
+              "Observability: metrics, tracing, alerts",
+            ]}
+          />
         </div>
       </section>
 

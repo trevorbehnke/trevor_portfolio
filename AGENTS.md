@@ -21,7 +21,7 @@
 - Icons: always use the current font awesome icons package for icons.
 
 ## Pages & Content
-- IA: Home (hero, featured grid, “What I do”), Work/[slug] (case study skeleton), About, Contact (mailto + resume), 404, OG image route.
+- IA: Home (hero, featured grid, “Approach”), Work/[slug] (case study skeleton), About, Contact (mailto + resume), 404, OG image route.
 - Content lives in `src/data/site.ts` and `src/data/projects.ts` (seeded per spec). Images under `public/images/projects/<slug>/`.
 
 ## Accessibility & Performance

@@ -8,7 +8,7 @@ import { BrowserFrame } from "@/components/browser-frame"
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <Card className="overflow-hidden rounded-lg border shadow-none shadow-[0_2px_10px_rgba(0,0,0,0.08)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] pt-0 transition-shadow">
+    <Card className="overflow-hidden rounded-lg border shadow-none shadow-[0_2px_10px_rgba(0,0,0,0.08)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] pt-0 transition-shadow hover:-translate-y-0.5">
       <BrowserFrame
         src={project.cover}
         alt={`${project.title} preview`}
