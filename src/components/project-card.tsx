@@ -27,7 +27,7 @@ export function ProjectCard({ project }: { project: Project }) {
         <div className="mt-4 text-right">
           <Link
             href={`/work/${project.slug}`}
-            className="group inline-flex items-center pb-1 font-medium text-brand-700 hover:text-brand-600 dark:text-brand-400 dark:hover:text-brand-200 brand-underline focus-ring rounded-sm transition-colors"
+            className="group inline-flex items-center font-medium text-brand-700 hover:text-brand-600 dark:text-brand-400 dark:hover:text-brand-200 brand-underline focus-ring rounded-sm transition-colors"
           >
             Case Study
             <FontAwesomeIcon
