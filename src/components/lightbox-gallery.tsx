@@ -23,14 +23,25 @@ type LightboxGalleryProps = {
   projectTitle?: string
 }
 
+type ControlledProps = {
+  openIndex?: number | null
+  onOpenIndexChange?: (idx: number | null) => void
+  renderGrid?: boolean
+}
+
 export function LightboxGallery({
   items,
   aspectClassName = "aspect-[16/9]",
   thumbContainerClassName = "rounded-md overflow-hidden border",
   className,
   projectTitle,
-}: LightboxGalleryProps) {
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
+  openIndex: controlledOpenIndex,
+  onOpenIndexChange,
+  renderGrid = true,
+}: LightboxGalleryProps & ControlledProps) {
+  const [uncontrolledIndex, setUncontrolledIndex] = useState<number | null>(null)
+  const openIndex = controlledOpenIndex !== undefined ? controlledOpenIndex : uncontrolledIndex
+  const setOpenIndex = onOpenIndexChange ?? setUncontrolledIndex
 
   const hasOpen = openIndex !== null
   const current = typeof openIndex === "number" ? items[openIndex] : null
@@ -39,44 +50,50 @@ export function LightboxGallery({
     if (!hasOpen) return
     function onKeyDown(e: KeyboardEvent) {
       if (e.key === "ArrowRight") {
-        setOpenIndex((idx) => (idx === null ? 0 : (idx + 1) % items.length))
+        const nextIndex = openIndex === null ? 0 : (openIndex + 1) % items.length
+        setOpenIndex(nextIndex)
       } else if (e.key === "ArrowLeft") {
-        setOpenIndex((idx) => (idx === null ? 0 : (idx - 1 + items.length) % items.length))
+        const prevIndex = openIndex === null ? 0 : (openIndex - 1 + items.length) % items.length
+        setOpenIndex(prevIndex)
       } else if (e.key === "Escape") {
         setOpenIndex(null)
       }
     }
     window.addEventListener("keydown", onKeyDown)
     return () => window.removeEventListener("keydown", onKeyDown)
-  }, [hasOpen, items.length])
+  }, [hasOpen, items.length, openIndex, setOpenIndex])
 
   function openAt(i: number) {
     setOpenIndex(i)
   }
   function next() {
-    setOpenIndex((idx) => (idx === null ? 0 : (idx + 1) % items.length))
+    const nextIndex = openIndex === null ? 0 : (openIndex + 1) % items.length
+    setOpenIndex(nextIndex)
   }
   function prev() {
-    setOpenIndex((idx) => (idx === null ? 0 : (idx - 1 + items.length) % items.length))
+    const prevIndex = openIndex === null ? 0 : (openIndex - 1 + items.length) % items.length
+    setOpenIndex(prevIndex)
   }
 
   return (
     <>
-      <div className={`grid sm:grid-cols-2 gap-4 ${className ?? ""}`}>
-        {items.map((img, i) => (
-          <figure key={img.src} className="space-y-1">
-            <div
-              className={`relative ${aspectClassName} ${thumbContainerClassName} cursor-zoom-in`}
-              role="button"
-              aria-label={img.alt || `${projectTitle ?? "Image"} ${i + 1}`}
-              onClick={() => openAt(i)}
-            >
-              <Image src={img.src} alt={img.alt || "Screenshot"} fill className="object-cover" />
-            </div>
-            <figcaption className="text-xs text-muted-foreground">{img.caption}</figcaption>
-          </figure>
-        ))}
-      </div>
+      {renderGrid && (
+        <div className={`grid sm:grid-cols-2 gap-4 ${className ?? ""}`}>
+          {items.map((img, i) => (
+            <figure key={img.src} className="space-y-1">
+              <div
+                className={`relative ${aspectClassName} ${thumbContainerClassName} cursor-zoom-in`}
+                role="button"
+                aria-label={img.alt || `${projectTitle ?? "Image"} ${i + 1}`}
+                onClick={() => openAt(i)}
+              >
+                <Image src={img.src} alt={img.alt || "Screenshot"} fill className="object-cover" />
+              </div>
+              <figcaption className="text-xs text-muted-foreground">{img.caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+      )}
 
       <Dialog open={hasOpen} onOpenChange={(v) => setOpenIndex(v ? openIndex : null)}>
         {current && (
@@ -98,4 +115,3 @@ export function LightboxGallery({
     </>
   )
 }
-

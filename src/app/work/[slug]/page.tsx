@@ -6,8 +6,7 @@ import { Button } from "@/components/ui/button"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
-import { LightboxImage } from "@/components/lightbox-image"
-import { LightboxGallery } from "@/components/lightbox-gallery"
+import { ProjectMedia } from "@/components/project-media"
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -47,18 +46,12 @@ export default async function ProjectPage({ params }: Props) {
         )}
       </header>
 
-      <section>
-        <figure className="space-y-1">
-          <LightboxImage
-            src={project.cover}
-            alt={`${project.title} cover`}
-            caption={project.coverCaption}
-            aspectClassName="aspect-[16/9]"
-            thumbContainerClassName="rounded-lg overflow-hidden border shadow-card"
-          />
-          <figcaption className="text-xs text-muted-foreground">{project.coverCaption}</figcaption>
-        </figure>
-      </section>
+      <ProjectMedia
+        title={project.title}
+        cover={project.cover}
+        coverCaption={project.coverCaption}
+        images={project.images}
+      />
 
       {/* <section>
         <h2 className="text-2xl font-semibold mb-2">Architecture</h2>
@@ -71,15 +64,7 @@ export default async function ProjectPage({ params }: Props) {
         </div>
       </section> */}
 
-      <section>
-        <h2 className="text-2xl font-semibold mb-2">Gallery</h2>
-        <LightboxGallery
-          items={project.images.map((img) => ({ ...img, alt: `${project.title} screenshot` }))}
-          aspectClassName="aspect-[16/9]"
-          thumbContainerClassName="rounded-md overflow-hidden border"
-          projectTitle={project.title}
-        />
-      </section>
+      
 
       <section>
         <h2 className="text-2xl font-semibold mb-2">Decisions & tradeoffs</h2>
