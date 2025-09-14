@@ -101,7 +101,7 @@ export default async function ProjectPage({ params }: Props) {
             variant="default"
             className="inline-flex items-center gap-2 hover:ring-1 hover:ring-ring/40 hover:ring-offset-1 transition-transform hover:scale-103"
           >
-            <a href={project.links.live}>
+            <a href={project.links.live} target="_blank">
               <FontAwesomeIcon icon={faArrowUpRightFromSquare} aria-hidden />
               <span>Live</span>
             </a>
@@ -114,7 +114,7 @@ export default async function ProjectPage({ params }: Props) {
               disabled
               className="inline-flex items-center gap-2"
             >
-              <FontAwesomeIcon icon={faGithub} aria-hidden />
+              <FontAwesomeIcon icon={faGithub} target="_blank" aria-hidden />
               <span>Private</span>
             </Button>
           ) : (
@@ -123,7 +123,7 @@ export default async function ProjectPage({ params }: Props) {
               variant="default"
               className="inline-flex items-center gap-2 hover:ring-1 hover:ring-ring/40 hover:ring-offset-1 transition-transform hover:scale-103"
             >
-              <a href={project.links.repo!}>
+              <a href={project.links.repo!} target="_blank">
                 <FontAwesomeIcon icon={faGithub} aria-hidden />
                 <span>Repo</span>
               </a>

@@ -36,7 +36,7 @@ export const projects: Project[] = [
       live: "https://BlogSocializer.com",
       repo: "https://github.com/trevorbehnke/bsr",
     },
-    cover: "/images/projects/blogsocializer/bsr_cover.png",
+    cover: "/images/projects/blogsocializer/bsr-cover.png",
     coverCaption: "Landing Page",
     images: [
       { src: "/images/projects/blogsocializer/screen-1.png", caption: "User content dashboard" },
