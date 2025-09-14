@@ -11,6 +11,7 @@ export type Project = {
   images: { src: string; caption: string }[]
   metrics?: { label: string; value: string }[]
   featured?: boolean
+  private: boolean
 }
 
 export const projects: Project[] = [
@@ -33,7 +34,7 @@ export const projects: Project[] = [
     ],
     links: {
       live: "https://BlogSocializer.com",
-      repo: "https://github.com/trevorbehnke/blogsocializer",
+      repo: "https://github.com/trevorbehnke/bsr",
     },
     cover: "/images/projects/blogsocializer/bsr_cover.png",
     coverCaption: "Landing Page",
@@ -46,6 +47,7 @@ export const projects: Project[] = [
     //   { label: "Build time", value: "6 weeks" },
     // ],
     featured: true,
+    private: true,
   },
   // Project 2
   {
@@ -65,6 +67,7 @@ export const projects: Project[] = [
       { src: "/images/projects/nrsa/screen-1.svg", caption: "Indicators panel with filters applied" },
       { src: "/images/projects/nrsa/screen-1.svg", caption: "Map detail: station-level metrics" },
     ],
+    private: true,
   },
   // Project 3
   {
@@ -84,6 +87,7 @@ export const projects: Project[] = [
       { src: "/images/projects/image-bot/screen-1.svg", caption: "State diffs with thresholds" },
       { src: "/images/projects/image-bot/screen-1.svg", caption: "Run history and artifacts" },
     ],
+    private: true,
   },
   // Project 4
   {
@@ -103,5 +107,6 @@ export const projects: Project[] = [
       { src: "/images/projects/daychart/screen-1.svg", caption: "Daily plan vs. actuals" },
       { src: "/images/projects/daychart/screen-1.svg", caption: "Weekly trends and categories" },
     ],
+    private: true,
   },
 ]

@@ -3,6 +3,10 @@ import { notFound } from "next/navigation"
 import { projects } from "@/data/projects"
 import { Badge } from "@/components/ui/badge"
 import { Callout } from "@/components/callout"
+import { Button } from "@/components/ui/button"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
+import { faGithub } from "@fortawesome/free-brands-svg-icons"
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -90,12 +94,41 @@ export default async function ProjectPage({ params }: Props) {
         <p className="text-muted-foreground">What worked, what didn’t, and what to try next.</p>
       </section>
 
-      <section className="pt-2">
+      <section className="pt-2 flex gap-3">
         {project.links.live && (
-          <a href={project.links.live} className="underline underline-offset-4 mr-4">Live</a>
+          <Button
+            asChild
+            variant="default"
+            className="inline-flex items-center gap-2 hover:ring-1 hover:ring-ring/40 hover:ring-offset-1 transition-transform hover:scale-103"
+          >
+            <a href={project.links.live}>
+              <FontAwesomeIcon icon={faArrowUpRightFromSquare} aria-hidden />
+              <span>Live</span>
+            </a>
+          </Button>
         )}
-        {project.links.repo && (
-          <a href={project.links.repo} className="underline underline-offset-4">Repo</a>
+        {(project.private || project.links.repo) && (
+          project.private ? (
+            <Button
+              variant="default"
+              disabled
+              className="inline-flex items-center gap-2"
+            >
+              <FontAwesomeIcon icon={faGithub} aria-hidden />
+              <span>Private</span>
+            </Button>
+          ) : (
+            <Button
+              asChild
+              variant="default"
+              className="inline-flex items-center gap-2 hover:ring-1 hover:ring-ring/40 hover:ring-offset-1 transition-transform hover:scale-103"
+            >
+              <a href={project.links.repo!}>
+                <FontAwesomeIcon icon={faGithub} aria-hidden />
+                <span>Repo</span>
+              </a>
+            </Button>
+          )
         )}
       </section>
     </article>
