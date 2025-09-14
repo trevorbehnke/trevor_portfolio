@@ -48,7 +48,7 @@ export default async function ProjectPage({ params }: Props) {
         </div>
       </section>
 
-      <section>
+      {/* <section>
         <h2 className="text-2xl font-semibold mb-2">Architecture</h2>
         <ul className="list-disc pl-5 space-y-1 text-muted-foreground">
           <li>High-level overview of services and data flow.</li>
@@ -57,7 +57,7 @@ export default async function ProjectPage({ params }: Props) {
         <div className="mt-3 h-40 rounded-md border bg-muted/20 flex items-center justify-center text-sm text-muted-foreground">
           Diagram placeholder
         </div>
-      </section>
+      </section> */}
 
       <section>
         <h2 className="text-2xl font-semibold mb-2">Gallery</h2>

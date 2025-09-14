@@ -36,13 +36,13 @@ export const projects: Project[] = [
     },
     cover: "/images/projects/blogsocializer/bsr_cover.png",
     images: [
-      "/images/projects/blogsocializer/screen-1.svg",
-      "/images/projects/blogsocializer/screen-2.svg",
+      "/images/projects/blogsocializer/screen-1.png",
+      "/images/projects/blogsocializer/screen-2.png",
     ],
-    metrics: [
-      { label: "Signups", value: "300+" },
-      { label: "Build time", value: "6 weeks" },
-    ],
+    // metrics: [
+    //   { label: "Signups", value: "300+" },
+    //   { label: "Build time", value: "6 weeks" },
+    // ],
     featured: true,
   },
   // Project 2
