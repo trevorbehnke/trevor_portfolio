@@ -16,9 +16,10 @@ export default function Home() {
   const grid = [...featured, ...others].slice(0, 4)
   return (
     <div className="space-y-12">
-      {/* Hero */}
+      {/* Hero section */}
       <Hero />
-      {/* Work */}
+
+      {/* Work section*/}
       <section id="work" className="space-y-4">
         <div className="max-w-[1100px] mx-auto px-4 md:px-6">
           <SectionHeader title="Featured Work" subtitle="Selected projects across frontend, full stack, and performance" />
@@ -29,6 +30,7 @@ export default function Home() {
           ))}
         </div>
       </section>
+      
       {/* Tech stack section */}
       <section className="max-w-[1100px] mx-auto px-4 md:px-6">
         <SectionHeader title="Tech I Work With" subtitle="A snapshot of tools I use regularly across the stack" />
@@ -37,7 +39,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* My Approach section*/}
+      {/* Approach section*/}
       <section className="max-w-[1100px] mx-auto px-4 md:px-6">
         <SectionHeader title="My Approach" />
         <div className="grid gap-6 md:grid-cols-3 mt-4">
@@ -77,18 +79,8 @@ export default function Home() {
       {/* About section */}
       <section id="about" className="max-w-[1100px] mx-auto px-4 md:px-6 py-8 space-y-4">
         <SectionHeader title="About" />
-        <div className="grid gap-6 md:grid-cols-[auto,1fr] md:items-start">
-          <div className="h-40 w-40 rounded-full border overflow-hidden relative">
-            <Image
-              src="/images/me.jpg"
-              alt="Headshot"
-              fill
-              className="object-cover"
-              sizes="160px"
-              priority
-            />
-          </div>
-          <div className="space-y-3">
+        <div className="grid gap-6 md:grid-cols-3 md:items-start">
+          <div className="space-y-3 md:col-span-2">
             <p>
               I’m Trevor Behnke, a frontend‑leaning full stack engineer focused on
               building fast, accessible web apps. I enjoy shaping product UX,
@@ -98,6 +90,18 @@ export default function Home() {
               Tools I reach for: React/Next.js, TypeScript, Tailwind, Node,
               Postgres, Vercel, and modern observability.
             </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum laborum nemo assumenda minus adipisci molestiae. Culpa ab molestiae nesciunt architecto beatae necessitatibus, qui illo eos, animi aspernatur optio, explicabo sunt.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum laborum nemo assumenda minus adipisci molestiae. Culpa ab molestiae nesciunt architecto beatae necessitatibus, qui illo eos, animi aspernatur optio, explicabo sunt.</p>
+          </div>
+          <div className="relative rounded-full border overflow-hidden aspect-square md:col-span-1 w-full max-w-[200px] md:max-w-[200] place-self-center">
+            <Image
+              src="/images/me.jpg"
+              alt="Headshot"
+              fill
+              className="object-cover object-center"
+              sizes="(min-width: 768px) 200, 200px"
+              priority
+            />
           </div>
         </div>
       </section>
