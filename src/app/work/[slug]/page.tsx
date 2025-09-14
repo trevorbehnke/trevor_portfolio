@@ -4,14 +4,14 @@ import { projects } from "@/data/projects"
 import { Badge } from "@/components/ui/badge"
 import { Callout } from "@/components/callout"
 
-type Props = { params: { slug: string } }
+type Props = { params: Promise<{ slug: string }> }
 
 export async function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }))
 }
 
-export default function ProjectPage({ params }: Props) {
-  const { slug } = params
+export default async function ProjectPage({ params }: Props) {
+  const { slug } = await params
   const project = projects.find((p) => p.slug === slug)
   if (!project) return notFound()
 
