@@ -13,13 +13,14 @@ export type Project = {
 }
 
 export const projects: Project[] = [
+  // Project 1
   {
-    title: "SaaS MVP — Multi-tenant microservices",
-    slug: "saas-mvp",
+    title: "BlogSocializer — Multi-tenant microservices",
+    slug: "blogsocializer",
     summary:
       "Launched in 6 weeks with Stripe billing and CI/CD. Next.js app with Node services, Postgres, and background jobs.",
-    role: "Frontend‑leaning Full Stack",
-    timeframe: "2024",
+    role: "Architect & Full Stack Engineer",
+    timeframe: "2023-2025",
     stack: [
       "Next.js",
       "React",
@@ -31,12 +32,12 @@ export const projects: Project[] = [
     ],
     links: {
       live: "https://BlogSocializer.com",
-      repo: "https://github.com/yourhandle/saas-mvp",
+      repo: "https://github.com/trevorbehnke/blogsocializer",
     },
-    cover: "/images/projects/saas-mvp/bsr_cover.png",
+    cover: "/images/projects/blogsocializer/bsr_cover.png",
     images: [
-      "/images/projects/saas-mvp/screen-1.svg",
-      "/images/projects/saas-mvp/screen-2.svg",
+      "/images/projects/blogsocializer/screen-1.svg",
+      "/images/projects/blogsocializer/screen-2.svg",
     ],
     metrics: [
       { label: "Signups", value: "300+" },
@@ -44,40 +45,49 @@ export const projects: Project[] = [
     ],
     featured: true,
   },
+  // Project 2
   {
-    title: "Design System & Component Library",
-    slug: "design-system",
+    title: "U.S. EPA National Rivers & Streams Assessment 2018-19 Dashboard",
+    slug: "nrsa",
     summary:
       "Built a reusable React/Tailwind component library, reducing UI build time by ~40%.",
-    role: "Frontend Engineer",
-    timeframe: "2024",
+    role: "Software Engineer",
+    timeframe: "2022",
     stack: ["React", "TypeScript", "Tailwind", "Storybook", "Radix"],
-    links: { repo: "https://github.com/yourhandle/design-system" },
-    cover: "/images/projects/design-system/cover.svg",
-    images: ["/images/projects/design-system/screen-1.svg"],
+    links: { 
+      live: "https://riverstreamassessment.epa.gov/dashboard",
+      repo: "https://github.com/yourhandle/design-system" },
+    cover: "/images/projects/nrsa/nrsa-cover.png",
+    images: ["/images/projects/nrsa/screen-1.svg"],
   },
+  // Project 3
   {
-    title: "Performance Optimization Initiative",
-    slug: "perf-initiative",
+    title: "Image State Comparison Bot",
+    slug: "image-comparison-bot",
     summary:
       "Improved Core Web Vitals to 90+ by optimizing images, code-splitting, and caching.",
-    role: "Frontend‑leaning Full Stack",
-    timeframe: "2023",
+    role: "Software Engineer",
+    timeframe: "2022",
     stack: ["Next.js", "React", "Vercel", "Lighthouse"],
-    links: { repo: "https://github.com/yourhandle/perf-initiative" },
-    cover: "/images/projects/perf-initiative/cover.svg",
-    images: ["/images/projects/perf-initiative/screen-1.svg"],
+    links: { 
+      live: "https://riverstreamassessment.epa.gov/dashboard",
+      repo: "https://github.com/yourhandle/design-system" },
+    cover: "/images/projects/image-bot/bot-cover.png",
+    images: ["/images/projects/image-bot/screen-1.svg"],
   },
+  // Project 4
   {
-    title: "Pixel Comparison Bot",
-    slug: "pixel-bot",
+    title: "DayChart - Full Stack Productivity Web App",
+    slug: "daychart",
     summary:
       "Automated visual regression testing using Puppeteer and image diffing to catch UI bugs before release.",
     role: "Frontend‑leaning Full Stack",
-    timeframe: "2022",
+    timeframe: "2023",
     stack: ["Playwright", "Puppeter", "Node.js", "Heroku"],
-    links: { repo: "https://github.com/yourhandle/pixel-bot" },
-    cover: "/images/projects/perf-initiative/cover.svg",
-    images: ["/images/projects/perf-initiative/screen-1.svg"],
+    links: { 
+      live: "https://vercel.daychart.app",
+      repo: "https://github.com/yourhandle/design-system" },
+    cover: "/images/projects/daychart/daychart-cover.png",
+    images: ["/images/projects/daychart/screen-1.svg"],
   },
 ]

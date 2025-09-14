@@ -49,15 +49,15 @@ export function TechStack({ techs = DEFAULT_TECHS }: Props) {
               }}
             >
               <div
-                className="grid size-9 place-items-center rounded-md border bg-[#0D9488]/10 overflow-hidden"
+                className="grid size-12 place-items-center rounded-md border bg-[#0D9488]/10 overflow-hidden"
                 style={{}}
                 aria-hidden
               >
                 {hasImage ? (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img src={t.image!} alt="" width={24} height={24} className="block" />
+                  <img src={t.image!} alt="" width={30} height={30} className="block" />
                 ) : t.icon ? (
-                  <FontAwesomeIcon icon={t.icon} className="text-[24px]" style={{ color: t.brand }} />
+                  <FontAwesomeIcon icon={t.icon} className="text-[30px]" style={{ color: t.brand }} />
                 ) : (
                   <span
                     className="text-[11px] font-semibold leading-none px-1 rounded"
