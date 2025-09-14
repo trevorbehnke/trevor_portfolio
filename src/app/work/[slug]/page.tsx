@@ -43,9 +43,12 @@ export default async function ProjectPage({ params }: Props) {
       </header>
 
       <section>
-        <div className="relative aspect-[16/9] rounded-lg overflow-hidden border shadow-card">
-          <Image src={project.cover} alt="" fill className="object-cover" />
-        </div>
+        <figure className="space-y-1">
+          <div className="relative aspect-[16/9] rounded-lg overflow-hidden border shadow-card">
+            <Image src={project.cover} alt="" fill className="object-cover" />
+          </div>
+          <figcaption className="text-xs text-muted-foreground">{project.coverCaption}</figcaption>
+        </figure>
       </section>
 
       {/* <section>
@@ -62,12 +65,12 @@ export default async function ProjectPage({ params }: Props) {
       <section>
         <h2 className="text-2xl font-semibold mb-2">Gallery</h2>
         <div className="grid sm:grid-cols-2 gap-4">
-          {project.images.map((src) => (
-            <figure key={src} className="space-y-1">
+          {project.images.map((img) => (
+            <figure key={img.src} className="space-y-1">
               <div className="relative aspect-[16/9] rounded-md overflow-hidden border">
-                <Image src={src} alt="Screenshot" fill className="object-cover" />
+                <Image src={img.src} alt="Screenshot" fill className="object-cover" />
               </div>
-              <figcaption className="text-xs text-muted-foreground">Caption</figcaption>
+              <figcaption className="text-xs text-muted-foreground">{img.caption}</figcaption>
             </figure>
           ))}
         </div>

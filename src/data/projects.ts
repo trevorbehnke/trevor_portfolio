@@ -7,7 +7,8 @@ export type Project = {
   stack: string[]
   links: { live?: string; repo?: string }
   cover: string
-  images: string[]
+  coverCaption: string
+  images: { src: string; caption: string }[]
   metrics?: { label: string; value: string }[]
   featured?: boolean
 }
@@ -35,9 +36,10 @@ export const projects: Project[] = [
       repo: "https://github.com/trevorbehnke/blogsocializer",
     },
     cover: "/images/projects/blogsocializer/bsr_cover.png",
+    coverCaption: "Landing Page",
     images: [
-      "/images/projects/blogsocializer/screen-1.png",
-      "/images/projects/blogsocializer/screen-2.png",
+      { src: "/images/projects/blogsocializer/screen-1.png", caption: "User content dashboard" },
+      { src: "/images/projects/blogsocializer/screen-2.png", caption: "Admin metrics panel" },
     ],
     // metrics: [
     //   { label: "Signups", value: "300+" },
@@ -58,7 +60,11 @@ export const projects: Project[] = [
       live: "https://riverstreamassessment.epa.gov/dashboard",
       repo: "https://github.com/yourhandle/design-system" },
     cover: "/images/projects/nrsa/nrsa-cover.png",
-    images: ["/images/projects/nrsa/screen-1.svg"],
+    coverCaption: "NRSA—national rivers dashboard overview",
+    images: [
+      { src: "/images/projects/nrsa/screen-1.svg", caption: "Indicators panel with filters applied" },
+      { src: "/images/projects/nrsa/screen-1.svg", caption: "Map detail: station-level metrics" },
+    ],
   },
   // Project 3
   {
@@ -73,7 +79,11 @@ export const projects: Project[] = [
       live: "https://riverstreamassessment.epa.gov/dashboard",
       repo: "https://github.com/yourhandle/design-system" },
     cover: "/images/projects/image-bot/bot-cover.png",
-    images: ["/images/projects/image-bot/screen-1.svg"],
+    coverCaption: "Image comparison bot—overview of results",
+    images: [
+      { src: "/images/projects/image-bot/screen-1.svg", caption: "State diffs with thresholds" },
+      { src: "/images/projects/image-bot/screen-1.svg", caption: "Run history and artifacts" },
+    ],
   },
   // Project 4
   {
@@ -88,6 +98,10 @@ export const projects: Project[] = [
       live: "https://vercel.daychart.app",
       repo: "https://github.com/yourhandle/design-system" },
     cover: "/images/projects/daychart/daychart-cover.png",
-    images: ["/images/projects/daychart/screen-1.svg"],
+    coverCaption: "DayChart—timeline and focus tracking overview",
+    images: [
+      { src: "/images/projects/daychart/screen-1.svg", caption: "Daily plan vs. actuals" },
+      { src: "/images/projects/daychart/screen-1.svg", caption: "Weekly trends and categories" },
+    ],
   },
 ]
