@@ -17,12 +17,10 @@ export function Footer() {
         <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Trevor Behnke</p>
         <div className="flex items-center gap-3 text-[1.5rem]">
           <Link href={site.socials.github} target="_blank" aria-label="GitHub">
-            <FontAwesomeIcon icon={faGithub} className="footer-icon
-            " />
+            <FontAwesomeIcon icon={faGithub} className="footer-icon transition-transform hover:scale-110" />
           </Link>
           <Link href={site.socials.linkedin} target="_blank" aria-label="LinkedIn">
-            <FontAwesomeIcon icon={faLinkedin} className="footer-icon
-            " />
+            <FontAwesomeIcon icon={faLinkedin} className="footer-icon transition-transform hover:scale-110" />
           </Link>
           <button
             type="button"
@@ -30,12 +28,10 @@ export function Footer() {
             onClick={copyEmail}
             className="hover:cursor-pointer"
           >
-            <FontAwesomeIcon icon={faEnvelope} className="footer-icon
-            " />
+            <FontAwesomeIcon icon={faEnvelope} className="footer-icon transition-transform hover:scale-110" />
           </button>
           <Link href="/resume/Trevor_Behnke_Resume.pdf" aria-label="Resume">
-            <FontAwesomeIcon icon={faFileLines} className="footer-icon
-            " />
+            <FontAwesomeIcon icon={faFileLines} className="footer-icon transition-transform hover:scale-110" />
           </Link>
         </div>
       </div>

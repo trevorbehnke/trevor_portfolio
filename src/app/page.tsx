@@ -112,7 +112,7 @@ export default function Home() {
         <SectionHeader title="Get in touch" />
         <p className="text-muted-foreground">Let’s talk about your project or team.</p>
         <div id="contact-buttons" className="flex gap-3">
-          <Button asChild>
+          <Button asChild variant="default" className="hover:ring-1 hover:ring-ring/40 hover:ring-offset-1 transition-transform hover:scale-103">
             <a href={`mailto:${site.email}`}>Email</a>
           </Button>
           <Link

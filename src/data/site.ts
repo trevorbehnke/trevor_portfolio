@@ -4,7 +4,7 @@ export const site = {
   description:
     "I design and build performant web apps with React/Next.js, and ship production-ready APIs when needed.",
   email: "trevorbehnke@gmail.com",
-  location: "U.S.A., Earth (remote)",
+  location: "U.S.A.",
   primaryDomain: "https://trevorab.com",
   heroImage: "/images/hero/IMG_1024.jpeg",
   heroImageAlt: "Selected work preview",
