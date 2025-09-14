@@ -8,6 +8,7 @@ import { site } from "@/data/site"
 import { TechStack } from "@/components/tech-stack"
 import { DEFAULT_TECHS } from "@/data/techs"
 import { Approach } from "@/components/approach-card"
+import { Button, buttonVariants } from "@/components/ui/button"
 import { faCode, faServer, faTruckFast } from "@fortawesome/free-solid-svg-icons"
 
 export default function Home() {
@@ -78,7 +79,7 @@ export default function Home() {
 
       {/* About section */}
       <section id="about" className="max-w-[1100px] mx-auto px-4 md:px-6 py-8 space-y-4">
-        <SectionHeader title="About" />
+        <SectionHeader title="About Me" />
         <div className="grid gap-6 md:grid-cols-3 md:items-start">
           <div className="space-y-3 md:col-span-2">
             <p>
@@ -110,14 +111,18 @@ export default function Home() {
       <section id="contact" className="max-w-[1100px] mx-auto px-4 md:px-6 py-8 space-y-3">
         <SectionHeader title="Get in touch" />
         <p className="text-muted-foreground">Let’s talk about your project or team.</p>
-        <div className="flex gap-3">
-          <a
-            className="inline-flex items-center justify-center rounded-md border px-4 py-2 bg-primary text-primary-foreground focus-ring"
-            href={`mailto:${site.email}`}
+        <div id="contact-buttons" className="flex gap-3">
+          <Button asChild>
+            <a href={`mailto:${site.email}`}>Email</a>
+          </Button>
+          <Link
+            className={
+              `${buttonVariants({ variant: 'link' })} self-center inline-flex items-center transition-colors hover:opacity-80`
+            }
+            href="/resume/Trevor_Behnke_Resume.pdf"
           >
-            Email me
-          </a>
-          <Link className="underline underline-offset-4" href="/resume/resume.pdf">Download Resume</Link>
+            Download Resume
+          </Link>
         </div>
         <div className="text-sm text-muted-foreground">Location: {site.location} — Availability: Open to opportunities</div>
       </section>

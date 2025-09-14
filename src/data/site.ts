@@ -3,8 +3,8 @@ export const site = {
   title: "Frontend‑leaning Full Stack Engineer",
   description:
     "I design and build performant web apps with React/Next.js, and ship production-ready APIs when needed.",
-  email: "trevor@trevorab.com",
-  location: "City, State (TZ)",
+  email: "trevorbehnke@gmail.com",
+  location: "U.S.A., Earth (remote)",
   primaryDomain: "https://trevorab.com",
   heroImage: "/images/hero/IMG_1024.jpeg",
   heroImageAlt: "Selected work preview",
