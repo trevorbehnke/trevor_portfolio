@@ -195,6 +195,41 @@ a:hover > .footer-icon, button:hover > .footer-icon { color: var(--brand-600); }
 }
 .dark .gradient-underline::after { opacity: 0.5; }
 
+/* Subtle reveal animation for gradient underline */
+.underline-animate::after {
+  transform-origin: left;
+  transform: scaleX(0.4);
+  transition: transform 220ms ease;
+}
+.underline-animate:hover::after,
+.underline-animate:focus-visible::after {
+  transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .underline-animate::after { transition: none; }
+}
+
+/* Brand underline using background gradient (reliable across contexts) */
+.brand-underline {
+  background-image: linear-gradient(90deg, var(--brand-400), var(--brand-200));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 0.28em; /* hidden by default */
+  transition: background-size 220ms ease;
+}
+.dark .brand-underline {
+  background-image: linear-gradient(90deg, var(--brand-600), var(--brand-200));
+}
+.brand-underline:hover,
+.brand-underline:focus-visible {
+  background-size: 100% 0.28em; /* reveal underline */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-underline { transition: none; }
+}
+
 /* Cursor spotlight effect for hero */
 /* Site-wide cursor spotlight */
 :root { --site-spot-x: -200px; --site-spot-y: -200px; }

@@ -1,4 +1,6 @@
 import Link from "next/link"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import type { Project } from "@/data/projects"
@@ -23,8 +25,16 @@ export function ProjectCard({ project }: { project: Project }) {
           ))}
         </div>
         <div className="mt-4">
-          <Link href={`/work/${project.slug}`} className="text-brand-700 dark:text-brand-400 underline underline-offset-4">
-            Case study →
+          <Link
+            href={`/work/${project.slug}`}
+            className="group inline-flex items-center pb-1 font-medium text-brand-700 hover:text-brand-600 dark:text-brand-400 dark:hover:text-brand-200 brand-underline focus-ring rounded-sm transition-colors"
+          >
+            Case Study
+            <FontAwesomeIcon
+              icon={faArrowRight}
+              className="ml-1 transition-transform duration-200 ease-out group-hover:translate-x-0.5 motion-reduce:transform-none"
+              aria-hidden
+            />
           </Link>
         </div>
       </div>

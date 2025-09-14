@@ -47,7 +47,7 @@ export const projects: Project[] = [
   },
   // Project 2
   {
-    title: "U.S. EPA National Rivers & Streams Assessment 2018-19 Dashboard",
+    title: "U.S. EPA NRSA Dashboard",
     slug: "nrsa",
     summary:
       "Built a reusable React/Tailwind component library, reducing UI build time by ~40%.",
