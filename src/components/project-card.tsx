@@ -8,7 +8,7 @@ import { BrowserFrame } from "@/components/browser-frame"
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <Card className="overflow-hidden rounded-lg border shadow-card pt-0">
+    <Card className="overflow-hidden rounded-lg border shadow-none shadow-[0_2px_10px_rgba(0,0,0,0.08)] hover:shadow-[0_6px_20px_rgba(0,0,0,0.12)] pt-0 transition-shadow">
       <BrowserFrame
         src={project.cover}
         alt={`${project.title} preview`}
@@ -21,10 +21,10 @@ export function ProjectCard({ project }: { project: Project }) {
         <p className="text-sm text-muted-foreground mt-1">{project.summary}</p>
         <div className="flex flex-wrap gap-2 mt-3">
           {project.stack.slice(0, 4).map((s) => (
-            <Badge key={s} variant="secondary">{s}</Badge>
+            <Badge key={s} variant="primary">{s}</Badge>
           ))}
         </div>
-        <div className="mt-4">
+        <div className="mt-4 text-right">
           <Link
             href={`/work/${project.slug}`}
             className="group inline-flex items-center pb-1 font-medium text-brand-700 hover:text-brand-600 dark:text-brand-400 dark:hover:text-brand-200 brand-underline focus-ring rounded-sm transition-colors"
