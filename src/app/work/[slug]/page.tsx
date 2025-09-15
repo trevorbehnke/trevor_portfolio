@@ -25,9 +25,10 @@ export default async function ProjectPage({ params }: Props) {
         <h1 className="text-3xl font-bold tracking-tight">{project.title}</h1>
         <p className="text-muted-foreground mt-1">{project.summary}</p>
         <div className="mt-3 flex flex-wrap gap-2 items-center text-sm">
-          <span className="text-foreground/70">{project.role}</span>
+          <span className="text-foreground/70 italic">{project.role}</span>
           <span className="text-muted-foreground">•</span>
           <span className="text-foreground/70">{project.timeframe}</span>
+            <span className="text-muted-foreground">•</span>
           <div className="flex flex-wrap gap-2 ml-2">
             {project.stack.map((s) => (
               <Badge key={s} variant="secondary">{s}</Badge>

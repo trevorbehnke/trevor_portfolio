@@ -46,7 +46,7 @@ export function ProjectMedia({
 
       {/* Gallery */}
       <section>
-        <h2 className="text-2xl font-semibold mb-2">Gallery</h2>
+        {/* <h2 className="text-2xl font-semibold mb-2">Gallery</h2> */}
         <div className="grid sm:grid-cols-2 gap-4">
           {images.map((img, idx) => (
             <figure key={img.src} className="space-y-1">
