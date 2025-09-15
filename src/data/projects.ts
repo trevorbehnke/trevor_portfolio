@@ -62,10 +62,10 @@ export const projects: Project[] = [
       live: "https://riverstreamassessment.epa.gov/dashboard",
       repo: "https://github.com/yourhandle/design-system" },
     cover: "/images/projects/nrsa/nrsa-cover.png",
-    coverCaption: "NRSA—national rivers dashboard overview",
+    coverCaption: "NRSA Dashboard Overview",
     images: [
-      { src: "/images/projects/nrsa/screen-1.svg", caption: "Indicators panel with filters applied" },
-      { src: "/images/projects/nrsa/screen-1.svg", caption: "Map detail: station-level metrics" },
+      { src: "/images/projects/nrsa/screen-1.png", caption: "NRSA Web Report Preview" },
+      { src: "/images/projects/nrsa/screen-2.png", caption: "NRSA Indicator Modal Example" },
     ],
     private: true,
   },
