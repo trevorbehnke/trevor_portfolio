@@ -8,6 +8,8 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons"
 
 export type LightboxItem = {
   src: string
@@ -97,17 +99,23 @@ export function LightboxGallery({
 
       <Dialog open={hasOpen} onOpenChange={(v) => setOpenIndex(v ? openIndex : null)}>
         {current && (
-          <DialogContent className="bg-transparent border-0 shadow-none p-0 sm:max-w-[80rem] max-w-[95vw]" showCloseButton={false}>
+          <DialogContent className="bg-transparent border-0 shadow-none p-0 sm:max-w-[100rem] max-w-[95vw]" showCloseButton={false}>
             <DialogTitle className="sr-only">{current.alt || current.caption}</DialogTitle>
             <div className={`relative ${aspectClassName} w-full`}>
               <Image src={current.src} alt={current.alt || "Screenshot"} fill className="object-contain" />
             </div>
-            <div className="flex items-center justify-between mt-2 gap-3">
-              <div className="text-sm text-muted-foreground">{current.caption}</div>
-              <div className="flex gap-2">
-                <Button size="sm" variant="secondary" onClick={prev} aria-label="Previous image">Prev</Button>
-                <Button size="sm" variant="secondary" onClick={next} aria-label="Next image">Next</Button>
-              </div>
+            <div className=" flex justify-center">
+              <span className="grid grid-cols-[auto_1fr_auto] items-center rounded-md bg-background/80 backdrop-blur-sm text-foreground text-sm px-2 py-1 shadow-xs w-[40ch]">
+                <Button size="sm" variant="ghost" className="cursor-pointer" onClick={prev} aria-label="Previous image">
+                  <FontAwesomeIcon icon={faChevronLeft} aria-hidden />
+                  <span className="sr-only">Prev</span>
+                </Button>
+                <span className="text-foreground text-center truncate px-2">{current.caption}</span>
+                <Button size="sm" variant="ghost" className="cursor-pointer" onClick={next} aria-label="Next image">
+                  <FontAwesomeIcon icon={faChevronRight} aria-hidden />
+                  <span className="sr-only">Next</span>
+                </Button>
+              </span>
             </div>
           </DialogContent>
         )}
