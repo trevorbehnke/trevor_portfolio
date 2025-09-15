@@ -71,10 +71,10 @@ export default async function ProjectPage({ params }: Props) {
           {project.analysis?.background && (
             <Reveal delayMs={0}>
               <div className="grid md:grid-cols-[200px_1fr] gap-3 md:gap-4 items-center py-3 md:py-4">
-                <div className="flex items-center gap-2 text-sm md:text-base tracking-wide text-brand-700 dark:text-brand-400 font-medium">
-                  <FontAwesomeIcon icon={faCircleInfo} className="size-5 opacity-80" aria-hidden />
-                  Background
-                </div>
+              <div className="flex items-center gap-2 text-base tracking-wide text-primary font-medium">
+                <FontAwesomeIcon icon={faCircleInfo} className="size-6 text-primary" aria-hidden />
+                Background
+              </div>
                 <div className="text-muted-foreground leading-relaxed max-w-prose">{project.analysis.background}</div>
               </div>
             </Reveal>
@@ -83,10 +83,10 @@ export default async function ProjectPage({ params }: Props) {
           {project.analysis?.contribution && (
             <Reveal delayMs={120}>
               <div className="grid md:grid-cols-[200px_1fr] gap-3 md:gap-4 items-center py-3 md:py-4">
-                <div className="flex items-center gap-2 text-sm md:text-base tracking-wide text-brand-700 dark:text-brand-400 font-medium">
-                  <FontAwesomeIcon icon={faUserGear} className="size-5 opacity-80" aria-hidden />
-                  Contribution
-                </div>
+              <div className="flex items-center gap-2 text-base tracking-wide text-primary font-medium">
+                <FontAwesomeIcon icon={faUserGear} className="size-6 text-primary" aria-hidden />
+                Contribution
+              </div>
                 <div className="text-muted-foreground leading-relaxed max-w-prose">{project.analysis.contribution}</div>
               </div>
             </Reveal>
@@ -95,10 +95,10 @@ export default async function ProjectPage({ params }: Props) {
           {project.analysis?.learned && (
             <Reveal delayMs={240}>
               <div className="grid md:grid-cols-[200px_1fr] gap-3 md:gap-4 items-center py-3 md:py-4">
-                <div className="flex items-center gap-2 text-sm md:text-base tracking-wide text-brand-700 dark:text-brand-400 font-medium">
-                  <FontAwesomeIcon icon={faLightbulb} className="size-5 opacity-80" aria-hidden />
-                  Learned
-                </div>
+              <div className="flex items-center gap-2 text-base tracking-wide text-primary font-medium">
+                <FontAwesomeIcon icon={faLightbulb} className="size-6 text-primary" aria-hidden />
+                Learned
+              </div>
                 <div className="text-muted-foreground leading-relaxed max-w-prose">{project.analysis.learned}</div>
               </div>
             </Reveal>
