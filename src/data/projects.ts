@@ -12,6 +12,11 @@ export type Project = {
   metrics?: { label: string; value: string }[]
   featured?: boolean
   private: boolean
+  analysis?: {
+    decisions?: string
+    callout?: string
+    learnings?: string
+  }
 }
 
 export const projects: Project[] = [
@@ -48,10 +53,23 @@ export const projects: Project[] = [
     // ],
     featured: true,
     private: true,
+    analysis: {
+      decisions:
+        'Chose a monorepo with shared UI and type packages to accelerate feature delivery. Considered microfrontends, but team size and release cadence favored a simpler deployment model.'+
+        'Chose a monorepo with shared UI and type packages to accelerate feature delivery. Considered microfrontends, but team size and release cadence favored a simpler deployment model.'+
+        'Chose a monorepo with shared UI and type packages to accelerate feature delivery. Considered microfrontends, but team size and release cadence favored a simpler deployment model.',
+      callout:
+        'Led architecture, CI/CD, and billing integration. Collaborated with a designer for UI polish. AI assisted in generating test data and some boilerplate.'+
+        'Led architecture, CI/CD, and billing integration. Collaborated with a designer for UI polish. AI assisted in generating test data and some boilerplate.',
+      learnings:
+        'Chose a monorepo with shared UI and type packages to accelerate feature delivery. Considered microfrontends, but team size and release cadence favored a simpler deployment model.'+
+        'Chose a monorepo with shared UI and type packages to accelerate feature delivery. Considered microfrontends, but team size and release cadence favored a simpler deployment model.'+
+        'Chose a monorepo with shared UI and type packages to accelerate feature delivery. Considered microfrontends, but team size and release cadence favored a simpler deployment model.',
+    },
   },
   // Project 2
   {
-    title: "U.S. EPA NRSA Dashboard",
+    title: "U.S. EPA National Rivers & Streams Assessment",
     slug: "nrsa",
     summary:
       "Built a reusable React/Tailwind component library, reducing UI build time by ~40%.",
@@ -68,6 +86,14 @@ export const projects: Project[] = [
       { src: "/images/projects/nrsa/screen-2.png", caption: "NRSA Indicator Modal Example" },
     ],
     private: true,
+    analysis: {
+      decisions:
+        'Abstracted common UI patterns into a reusable component library. Weighed CSS-in-JS but picked Tailwind tokens for performance and team familiarity.',
+      callout:
+        'Built the component library and docs, paired with the team to roll it out across views. Coordinated accessibility sweeps with QA.',
+      learnings:
+        'Design tokens simplified theming and reduced regressions. Next: expand story coverage and add visual regression to CI.',
+    },
   },
   // Project 3
   {
@@ -88,6 +114,14 @@ export const projects: Project[] = [
       { src: "/images/projects/image-bot/screen-1.svg", caption: "Run history and artifacts" },
     ],
     private: true,
+    analysis: {
+      decisions:
+        'Used Playwright for capture and pixel-diff thresholds to reduce flaky alerts. Considered Percy, but custom flow was more flexible for our stack.',
+      callout:
+        'Implemented diffing pipeline and Slack notifications. Partnered with QA to tune thresholds and suppress noise.',
+      learnings:
+        'Automated diffs caught regressions early; the key was curating stable test states. Next: parallelize captures and cache baselines per branch.',
+    },
   },
   // Project 4
   {
@@ -108,5 +142,13 @@ export const projects: Project[] = [
       { src: "/images/projects/daychart/screen-1.svg", caption: "Weekly trends and categories" },
     ],
     private: true,
+    analysis: {
+      decisions:
+        'Modeled tasks as immutable events to enable analytics without complex joins. Considered Kanban-first UX but prioritized speed and calendaring.',
+      callout:
+        'Wore multiple hats: data model, UI flows, and deployment. AI assisted in initial schema sketches and copy suggestions.',
+      learnings:
+        'Simple primitives scaled better than expected. Next: offline sync and mobile-friendly drag interactions.',
+    },
   },
 ]

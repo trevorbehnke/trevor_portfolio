@@ -65,20 +65,27 @@ export default async function ProjectPage({ params }: Props) {
       </section> */}
 
       
-
+      {/* Start Analysis section */}
       <section>
-        <h2 className="text-2xl font-semibold mb-2">Decisions & tradeoffs</h2>
-        <p className="text-muted-foreground">Brief discussion of alternatives considered and why.</p>
+        <h2 className="text-2xl font-semibold mb-2">Decisions Process</h2>
+        {project.analysis?.decisions && (
+          <p className="text-muted-foreground">{project.analysis.decisions}</p>
+        )}
       </section>
 
-      <Callout>
-        Clarify specific contributions, use of AI assistance, and ownership areas.
-      </Callout>
+      {project.analysis?.callout && (
+        <Callout>
+          {project.analysis.callout}
+        </Callout>
+      )}
 
       <section>
-        <h2 className="text-2xl font-semibold mb-2">Learnings & next steps</h2>
-        <p className="text-muted-foreground">What worked, what didn’t, and what to try next.</p>
+        <h2 className="text-2xl font-semibold mb-2">What I Learned</h2>
+        {project.analysis?.learnings && (
+          <p className="text-muted-foreground">{project.analysis.learnings}</p>
+        )}
       </section>
+      {/* End Analysis section */}
 
       <section className="pt-2 flex gap-3">
         {project.links.live && (
