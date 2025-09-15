@@ -4,7 +4,6 @@ import { ProjectCard } from "@/components/project-card"
 import { SectionHeader } from "@/components/section-header"
 import Link from "next/link"
 import Image from "next/image"
-import headshot from "../../public/images/me.jpg"
 import { site } from "@/data/site"
 import { TechStack } from "@/components/tech-stack"
 import { DEFAULT_TECHS } from "@/data/techs"
@@ -97,8 +96,8 @@ export default function Home() {
           </div>
           <div className="rounded-full border overflow-hidden md:col-span-1 w-full max-w-[200px] md:max-w-[200px] place-self-center">
             <Image
-              src={headshot}
-              alt="Trevor Behnek Professional Headshot"
+              src="/images/me.jpg"
+              alt="Headshot"
               width={200}
               height={200}
               className="object-cover object-center rounded-full"
