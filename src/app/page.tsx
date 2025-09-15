@@ -94,13 +94,13 @@ export default function Home() {
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum laborum nemo assumenda minus adipisci molestiae. Culpa ab molestiae nesciunt architecto beatae necessitatibus, qui illo eos, animi aspernatur optio, explicabo sunt.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum laborum nemo assumenda minus adipisci molestiae. Culpa ab molestiae nesciunt architecto beatae necessitatibus, qui illo eos, animi aspernatur optio, explicabo sunt.</p>
           </div>
-          <div className="relative rounded-full border overflow-hidden aspect-square md:col-span-1 w-full max-w-[200px] md:max-w-[200] place-self-center">
+          <div className="relative rounded-full border overflow-hidden aspect-square md:col-span-1 w-full max-w-[200px] md:max-w-[200px] place-self-center">
             <Image
               src="/images/me.jpg"
               alt="Headshot"
               fill
               className="object-cover object-center"
-              sizes="(min-width: 768px) 200, 200px"
+              sizes="(min-width: 768px) 200px, 200px"
               priority
             />
           </div>
