@@ -3,7 +3,7 @@ import { projects } from "@/data/projects"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
+import { faArrowUpRightFromSquare, faCircleInfo, faUserGear, faLightbulb } from "@fortawesome/free-solid-svg-icons"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { ProjectMedia } from "@/components/project-media"
 
@@ -64,28 +64,40 @@ export default async function ProjectPage({ params }: Props) {
       </section> */}
 
       
-      {/* Start Analysis section */}
-      <section>
-        <h2 className="text-2xl font-semibold mb-2">Background</h2>
-        {project.analysis?.background && (
-          <p className="text-muted-foreground">{project.analysis.background}</p>
-        )}
-      </section>
+      {/* Analysis: Two-column spec grid */}
+      {(project.analysis?.background || project.analysis?.contribution || project.analysis?.learned) && (
+        <section className="w-full">
+          {project.analysis?.background && (
+            <div className="grid md:grid-cols-[200px_1fr] gap-3 md:gap-4 items-start border-t first:border-t-0 pt-3 md:pt-4 first:pt-0">
+              <div className="flex items-center gap-2 text-xs uppercase tracking-wide text-brand-700 dark:text-brand-400">
+                <FontAwesomeIcon icon={faCircleInfo} className="size-4 opacity-80" aria-hidden />
+                Background
+              </div>
+              <div className="text-muted-foreground leading-relaxed max-w-prose">{project.analysis.background}</div>
+            </div>
+          )}
 
-      <section>
-        <h2 className="text-2xl font-semibold mb-2">Contribution</h2>
-        {project.analysis?.contribution && (
-          <p className="text-muted-foreground">{project.analysis.contribution}</p>
-        )}
-      </section>
+          {project.analysis?.contribution && (
+            <div className="grid md:grid-cols-[200px_1fr] gap-3 md:gap-4 items-start border-t first:border-t-0 pt-3 md:pt-4 first:pt-0">
+              <div className="flex items-center gap-2 text-xs uppercase tracking-wide text-brand-700 dark:text-brand-400">
+                <FontAwesomeIcon icon={faUserGear} className="size-4 opacity-80" aria-hidden />
+                Contribution
+              </div>
+              <div className="text-muted-foreground leading-relaxed max-w-prose">{project.analysis.contribution}</div>
+            </div>
+          )}
 
-      <section>
-        <h2 className="text-2xl font-semibold mb-2">Learned</h2>
-        {project.analysis?.learned && (
-          <p className="text-muted-foreground">{project.analysis.learned}</p>
-        )}
-      </section>
-      {/* End Analysis section */}
+          {project.analysis?.learned && (
+            <div className="grid md:grid-cols-[200px_1fr] gap-3 md:gap-4 items-start border-t first:border-t-0 pt-3 md:pt-4 first:pt-0">
+              <div className="flex items-center gap-2 text-xs uppercase tracking-wide text-brand-700 dark:text-brand-400">
+                <FontAwesomeIcon icon={faLightbulb} className="size-4 opacity-80" aria-hidden />
+                Learned
+              </div>
+              <div className="text-muted-foreground leading-relaxed max-w-prose">{project.analysis.learned}</div>
+            </div>
+          )}
+        </section>
+      )}
 
       <section className="pt-2 flex gap-3">
         {project.links.live && (
