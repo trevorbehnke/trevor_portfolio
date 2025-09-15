@@ -97,7 +97,7 @@ export function LightboxGallery({
 
       <Dialog open={hasOpen} onOpenChange={(v) => setOpenIndex(v ? openIndex : null)}>
         {current && (
-          <DialogContent className="bg-transparent border-0 shadow-none p-0 sm:max-w-[80rem] max-w-[95vw]" showCloseButton>
+          <DialogContent className="bg-transparent border-0 shadow-none p-0 sm:max-w-[80rem] max-w-[95vw]" showCloseButton={false}>
             <DialogTitle className="sr-only">{current.alt || current.caption}</DialogTitle>
             <div className={`relative ${aspectClassName} w-full`}>
               <Image src={current.src} alt={current.alt || "Screenshot"} fill className="object-contain" />
