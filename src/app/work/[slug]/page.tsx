@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation"
 import { projects } from "@/data/projects"
 import { Badge } from "@/components/ui/badge"
-import { Callout } from "@/components/callout"
 import { Button } from "@/components/ui/button"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons"
@@ -67,22 +66,23 @@ export default async function ProjectPage({ params }: Props) {
       
       {/* Start Analysis section */}
       <section>
-        <h2 className="text-2xl font-semibold mb-2">Decisions Process</h2>
-        {project.analysis?.decisions && (
-          <p className="text-muted-foreground">{project.analysis.decisions}</p>
+        <h2 className="text-2xl font-semibold mb-2">Background</h2>
+        {project.analysis?.background && (
+          <p className="text-muted-foreground">{project.analysis.background}</p>
         )}
       </section>
 
-      {project.analysis?.callout && (
-        <Callout>
-          {project.analysis.callout}
-        </Callout>
-      )}
+      <section>
+        <h2 className="text-2xl font-semibold mb-2">Contribution</h2>
+        {project.analysis?.contribution && (
+          <p className="text-muted-foreground">{project.analysis.contribution}</p>
+        )}
+      </section>
 
       <section>
-        <h2 className="text-2xl font-semibold mb-2">What I Learned</h2>
-        {project.analysis?.learnings && (
-          <p className="text-muted-foreground">{project.analysis.learnings}</p>
+        <h2 className="text-2xl font-semibold mb-2">Learned</h2>
+        {project.analysis?.learned && (
+          <p className="text-muted-foreground">{project.analysis.learned}</p>
         )}
       </section>
       {/* End Analysis section */}

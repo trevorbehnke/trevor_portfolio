@@ -13,9 +13,9 @@ export type Project = {
   featured?: boolean
   private: boolean
   analysis?: {
-    decisions?: string
-    callout?: string
-    learnings?: string
+    background?: string
+    contribution?: string
+    learned?: string
   }
 }
 
@@ -54,17 +54,12 @@ export const projects: Project[] = [
     featured: true,
     private: true,
     analysis: {
-      decisions:
-        'Chose a monorepo with shared UI and type packages to accelerate feature delivery. Considered microfrontends, but team size and release cadence favored a simpler deployment model.'+
-        'Chose a monorepo with shared UI and type packages to accelerate feature delivery. Considered microfrontends, but team size and release cadence favored a simpler deployment model.'+
+      background:
         'Chose a monorepo with shared UI and type packages to accelerate feature delivery. Considered microfrontends, but team size and release cadence favored a simpler deployment model.',
-      callout:
-        'Led architecture, CI/CD, and billing integration. Collaborated with a designer for UI polish. AI assisted in generating test data and some boilerplate.'+
+      contribution:
         'Led architecture, CI/CD, and billing integration. Collaborated with a designer for UI polish. AI assisted in generating test data and some boilerplate.',
-      learnings:
-        'Chose a monorepo with shared UI and type packages to accelerate feature delivery. Considered microfrontends, but team size and release cadence favored a simpler deployment model.'+
-        'Chose a monorepo with shared UI and type packages to accelerate feature delivery. Considered microfrontends, but team size and release cadence favored a simpler deployment model.'+
-        'Chose a monorepo with shared UI and type packages to accelerate feature delivery. Considered microfrontends, but team size and release cadence favored a simpler deployment model.',
+      learned:
+        'Investing early in typed APIs and background jobs paid off. Next: tenant analytics funnels and a migration to queue-backed webhooks.',
     },
   },
   // Project 2
@@ -87,11 +82,11 @@ export const projects: Project[] = [
     ],
     private: true,
     analysis: {
-      decisions:
+      background:
         'Abstracted common UI patterns into a reusable component library. Weighed CSS-in-JS but picked Tailwind tokens for performance and team familiarity.',
-      callout:
+      contribution:
         'Built the component library and docs, paired with the team to roll it out across views. Coordinated accessibility sweeps with QA.',
-      learnings:
+      learned:
         'Design tokens simplified theming and reduced regressions. Next: expand story coverage and add visual regression to CI.',
     },
   },
@@ -115,11 +110,11 @@ export const projects: Project[] = [
     ],
     private: true,
     analysis: {
-      decisions:
+      background:
         'Used Playwright for capture and pixel-diff thresholds to reduce flaky alerts. Considered Percy, but custom flow was more flexible for our stack.',
-      callout:
+      contribution:
         'Implemented diffing pipeline and Slack notifications. Partnered with QA to tune thresholds and suppress noise.',
-      learnings:
+      learned:
         'Automated diffs caught regressions early; the key was curating stable test states. Next: parallelize captures and cache baselines per branch.',
     },
   },
@@ -143,11 +138,11 @@ export const projects: Project[] = [
     ],
     private: true,
     analysis: {
-      decisions:
+      background:
         'Modeled tasks as immutable events to enable analytics without complex joins. Considered Kanban-first UX but prioritized speed and calendaring.',
-      callout:
+      contribution:
         'Wore multiple hats: data model, UI flows, and deployment. AI assisted in initial schema sketches and copy suggestions.',
-      learnings:
+      learned:
         'Simple primitives scaled better than expected. Next: offline sync and mobile-friendly drag interactions.',
     },
   },
