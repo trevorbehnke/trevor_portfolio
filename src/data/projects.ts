@@ -55,10 +55,13 @@ export const projects: Project[] = [
     private: true,
     analysis: {
       background:
+        'Chose a monorepo with shared UI and type packages to accelerate feature delivery. Considered microfrontends, but team size and release cadence favored a simpler deployment model.'+
         'Chose a monorepo with shared UI and type packages to accelerate feature delivery. Considered microfrontends, but team size and release cadence favored a simpler deployment model.',
       contribution:
+        'Led architecture, CI/CD, and billing integration. Collaborated with a designer for UI polish. AI assisted in generating test data and some boilerplate.'+
         'Led architecture, CI/CD, and billing integration. Collaborated with a designer for UI polish. AI assisted in generating test data and some boilerplate.',
       learned:
+        'Investing early in typed APIs and background jobs paid off. Next: tenant analytics funnels and a migration to queue-backed webhooks.'+
         'Investing early in typed APIs and background jobs paid off. Next: tenant analytics funnels and a migration to queue-backed webhooks.',
     },
   },
