@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowUpRightFromSquare, faCircleInfo, faUserGear, faLightbulb } from "@fortawesome/free-solid-svg-icons"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { ProjectMedia } from "@/components/project-media"
+import { Reveal } from "@/components/reveal"
 
 type Props = { params: Promise<{ slug: string }> }
 
@@ -66,35 +67,41 @@ export default async function ProjectPage({ params }: Props) {
       
       {/* Analysis: Two-column spec grid */}
       {(project.analysis?.background || project.analysis?.contribution || project.analysis?.learned) && (
-        <section className="w-full">
+        <section className="w-full divide-y">
           {project.analysis?.background && (
-            <div className="grid md:grid-cols-[200px_1fr] gap-3 md:gap-4 items-center border-t first:border-t-0 pt-3 md:pt-4 first:pt-0 pb-3 md:pb-4">
-              <div className="flex items-center gap-2 text-sm md:text-base tracking-wide text-brand-700 dark:text-brand-400 font-medium">
-                <FontAwesomeIcon icon={faCircleInfo} className="size-5 opacity-80" aria-hidden />
-                Background
+            <Reveal delayMs={0}>
+              <div className="grid md:grid-cols-[200px_1fr] gap-3 md:gap-4 items-center py-3 md:py-4">
+                <div className="flex items-center gap-2 text-sm md:text-base tracking-wide text-brand-700 dark:text-brand-400 font-medium">
+                  <FontAwesomeIcon icon={faCircleInfo} className="size-5 opacity-80" aria-hidden />
+                  Background
+                </div>
+                <div className="text-muted-foreground leading-relaxed max-w-prose">{project.analysis.background}</div>
               </div>
-              <div className="text-muted-foreground leading-relaxed max-w-prose">{project.analysis.background}</div>
-            </div>
+            </Reveal>
           )}
 
           {project.analysis?.contribution && (
-            <div className="grid md:grid-cols-[200px_1fr] gap-3 md:gap-4 items-center border-t first:border-t-0 pt-3 md:pt-4 first:pt-0 pb-3 md:pb-4">
-              <div className="flex items-center gap-2 text-sm md:text-base tracking-wide text-brand-700 dark:text-brand-400 font-medium">
-                <FontAwesomeIcon icon={faUserGear} className="size-5 opacity-80" aria-hidden />
-                Contribution
+            <Reveal delayMs={120}>
+              <div className="grid md:grid-cols-[200px_1fr] gap-3 md:gap-4 items-center py-3 md:py-4">
+                <div className="flex items-center gap-2 text-sm md:text-base tracking-wide text-brand-700 dark:text-brand-400 font-medium">
+                  <FontAwesomeIcon icon={faUserGear} className="size-5 opacity-80" aria-hidden />
+                  Contribution
+                </div>
+                <div className="text-muted-foreground leading-relaxed max-w-prose">{project.analysis.contribution}</div>
               </div>
-              <div className="text-muted-foreground leading-relaxed max-w-prose">{project.analysis.contribution}</div>
-            </div>
+            </Reveal>
           )}
 
           {project.analysis?.learned && (
-            <div className="grid md:grid-cols-[200px_1fr] gap-3 md:gap-4 items-center border-t first:border-t-0 pt-3 md:pt-4 first:pt-0 pb-3 md:pb-4">
-              <div className="flex items-center gap-2 text-sm md:text-base tracking-wide text-brand-700 dark:text-brand-400 font-medium">
-                <FontAwesomeIcon icon={faLightbulb} className="size-5 opacity-80" aria-hidden />
-                Learned
+            <Reveal delayMs={240}>
+              <div className="grid md:grid-cols-[200px_1fr] gap-3 md:gap-4 items-center py-3 md:py-4">
+                <div className="flex items-center gap-2 text-sm md:text-base tracking-wide text-brand-700 dark:text-brand-400 font-medium">
+                  <FontAwesomeIcon icon={faLightbulb} className="size-5 opacity-80" aria-hidden />
+                  Learned
+                </div>
+                <div className="text-muted-foreground leading-relaxed max-w-prose">{project.analysis.learned}</div>
               </div>
-              <div className="text-muted-foreground leading-relaxed max-w-prose">{project.analysis.learned}</div>
-            </div>
+            </Reveal>
           )}
         </section>
       )}
