@@ -1,15 +1,15 @@
 "use client"
 
-import * as Dialog from "@radix-ui/react-dialog"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons"
+import { Dialog, DialogContent, DialogTitle, DialogTrigger, DialogClose } from "@/components/ui/dialog"
 
 export function MobileNav() {
   return (
-    <Dialog.Root>
-      <Dialog.Trigger asChild>
+    <Dialog>
+      <DialogTrigger asChild>
         <Button
           variant="outline"
           size="icon"
@@ -18,23 +18,22 @@ export function MobileNav() {
         >
           <FontAwesomeIcon icon={faBars} aria-hidden />
         </Button>
-      </Dialog.Trigger>
-      <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
-        <Dialog.Content
-          className="fixed right-0 top-0 z-50 h-full w-[82vw] max-w-[320px] bg-background border-l p-5 outline-none data-[state=open]:translate-x-0 data-[state=closed]:translate-x-full transition-transform duration-200 ease-out"
-        >
-          <Dialog.Title className="sr-only">Site navigation</Dialog.Title>
-          <div className="flex items-center justify-between mb-4">
-            <span className="font-semibold"></span>
-            <Dialog.Close asChild>
+      </DialogTrigger>
+      <DialogContent
+        showCloseButton={false}
+        className="fixed right-0 top-0 left-auto translate-x-0 translate-y-0 h-dvh w-[82vw] max-w-[320px] overflow-y-auto border-l bg-background pt-3 pb-4 px-4 outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:slide-in-from-right data-[state=closed]:slide-out-to-right duration-200 ease-out"
+      >
+        <DialogTitle className="sr-only">Site navigation</DialogTitle>
+        <div className="flex flex-col gap-2">
+          <div className="flex items-center justify-end">
+            <DialogClose asChild>
               <Button variant="outline" size="icon" aria-label="Close menu">
                 <FontAwesomeIcon icon={faXmark} aria-hidden />
               </Button>
-            </Dialog.Close>
+            </DialogClose>
           </div>
 
-          <nav className="grid gap-2 text-base">
+          <nav className="grid gap-1 text-base text-right">
             {[
               { href: "/#work", label: "Featured Work" },
               { href: "/#tools", label: "Tools of the Trade" },
@@ -42,18 +41,18 @@ export function MobileNav() {
               { href: "/#about", label: "About Me" },
               { href: "/#contact", label: "Get in Touch" },
             ].map((item) => (
-              <Dialog.Close asChild key={item.href}>
+              <DialogClose asChild key={item.href}>
                 <Link
                   href={item.href}
-                  className="px-2 py-2 rounded-md hover:bg-accent hover:text-accent-foreground transition-colors focus-ring"
+                  className="px-2 py-1.5 min-h-[44px] rounded-md hover:bg-accent hover:text-accent-foreground transition-colors focus-ring"
                 >
                   {item.label}
                 </Link>
-              </Dialog.Close>
+              </DialogClose>
             ))}
           </nav>
-        </Dialog.Content>
-      </Dialog.Portal>
-    </Dialog.Root>
+        </div>
+      </DialogContent>
+    </Dialog>
   )
 }
