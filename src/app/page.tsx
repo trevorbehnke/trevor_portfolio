@@ -17,7 +17,7 @@ export default function Home() {
   const others = projects.filter((p) => !p.featured)
   const grid = [...featured, ...others].slice(0, 4)
   return (
-    <div className="space-y-24">
+    <div className="space-y-30">
       {/* Hero section */}
       <Hero />
 
@@ -90,7 +90,7 @@ export default function Home() {
               I gravitate toward complex challenges because they push me to grow. Leveraging modern tooling allows me to simplify the complicated, turning big problems into elegant solutions. Whether I’m designing a system, building an interface, or tuning performance, I aim for results that feel modern, clean, and refined — experiences that get out of the way and just work.
             </Callout>
             <Callout>
-              Beyond code, I try to bring the same spirit of curiosity and exploration into my personal life. I’ve been a musician since childhodd and find joy in playing guitar, experimenting with sound, and creating something from nothing. I ride my motorcycle for the freedom of the open road, and I love spending time outdoors, where nature has a way of grounding and inspiring me. These parts of my life keep me balanced and remind me why I love building things in the first place.
+              Beyond code, I try to bring the same spirit of curiosity and exploration into my personal life. I’ve been a musician since childhood and find joy in playing guitar, experimenting with sound, and creating something from nothing. I ride my motorcycle for the freedom of the open road, and I love spending time outdoors, where nature has a way of grounding and inspiring me. These parts of my life keep me balanced and remind me why I love building things in the first place.
             </Callout>
           </div>
           <div className="rounded-full border overflow-hidden md:col-span-1 w-full max-w-[200px] md:max-w-[200px] place-self-center">
