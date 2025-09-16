@@ -46,12 +46,12 @@ export default function Home() {
         <div className="grid gap-6 md:grid-cols-3 mt-4">
           <Approach
             title="Frontend"
-            blurb="Component‑driven, accessible, fast interfaces."
+            blurb="Component‑driven, fast interfaces."
             icon={faCode}
             points={[
-              "- Build with modern design systems",
-              "- Prioritize a11y: keyboard, focus, semantics",
-              "- Optimize performance and UX",
+              "Build with modern design systems",
+              "Prioritize a11y: keyboard, focus, semantics",
+              "Optimize performance and UX",
             ]}
           />
           <Approach
@@ -59,9 +59,9 @@ export default function Home() {
             blurb="Simple, reliable APIs and data models."
             icon={faServer}
             points={[
-              "Type‑safe endpoints, auth/session",
-              "Postgres first, caching when needed",
-              "Queues, webhooks, background jobs",
+              "Secure session handling and endpoints",
+              "PostgreSQL with caching where it counts",
+              "Support workflows, queues & webhooks",
             ]}
           />
           <Approach
@@ -69,9 +69,9 @@ export default function Home() {
             blurb="Confidence in every deployment."
             icon={faTruckFast}
             points={[
-              "Vercel + edge where it fits",
-              "CI/CD, preview envs, feature flags",
-              "Observability: metrics, tracing, alerts",
+              "Fit infra to the problem, not vice versa",
+              "Automate with CI/CD preview environments",
+              "Monitor health with observability tools",
             ]}
           />
         </div>
