@@ -23,7 +23,7 @@ export default function Home() {
       {/* Work section*/}
       <section id="work" className="space-y-4">
         <div className="max-w-[1100px] mx-auto px-4 md:px-6">
-          <SectionHeader title="Featured Work" subtitle="Selected projects across frontend, full stack, and performance" />
+          <SectionHeader title="Featured Work" subtitle="These projects represent the breadth of my work — shipping user-friendly interfaces, building reliable full-stack systems, and even creating proprietary tools like a custom quality-control platform used to automate visual regression testing." />
         </div>
         <div className="max-w-[1100px] mx-auto px-4 md:px-6 grid gap-6 sm:grid-cols-2">
           {grid.map((p) => (
@@ -34,7 +34,7 @@ export default function Home() {
       
       {/* Tech stack section */}
       <section className="max-w-[1100px] mx-auto px-4 md:px-6">
-        <SectionHeader title="Tech I Work With" subtitle="A snapshot of tools I use regularly across the stack" />
+        <SectionHeader title="Tools of the Trade" subtitle="My go-to toolkit balances modern frameworks with battle-tested practices, helping me build fast, secure, and maintainable software." />
         <div className="mt-4">
           <TechStack techs={DEFAULT_TECHS} />
         </div>
@@ -42,21 +42,21 @@ export default function Home() {
 
       {/* Approach section*/}
       <section className="max-w-[1100px] mx-auto px-4 md:px-6">
-        <SectionHeader title="My Approach" />
+        <SectionHeader title="My Approach" subtitle="How I think about building software — from the first pixel to the last deployment."/>
         <div className="grid gap-6 md:grid-cols-3 mt-4">
           <Approach
             title="Frontend"
             blurb="Component‑driven, accessible, fast interfaces."
             icon={faCode}
             points={[
-              "Design systems (shadcn, tokens, theming)",
-              "A11y: keyboard, focus, semantics",
-              "Performance: image/asset budgets, CLS/INP",
+              "- Build with modern design systems",
+              "- Prioritize a11y: keyboard, focus, semantics",
+              "- Optimize performance and UX",
             ]}
           />
           <Approach
             title="Backend"
-            blurb="Simple, robust APIs and data models."
+            blurb="Simple, reliable APIs and data models."
             icon={faServer}
             points={[
               "Type‑safe endpoints, auth/session",
@@ -66,7 +66,7 @@ export default function Home() {
           />
           <Approach
             title="Delivery & Infra"
-            blurb="Ship confidently with modern tooling."
+            blurb="Confidence in every deployment."
             icon={faTruckFast}
             points={[
               "Vercel + edge where it fits",

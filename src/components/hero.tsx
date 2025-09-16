@@ -23,7 +23,7 @@ export function Hero() {
             Trevor Behnke — <span className="gradient-underline">Frontend‑leaning</span> Full Stack Engineer
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">
-            I design and build performant web apps with React/Next.js, and ship production-ready APIs when needed.
+            From intuitive UIs to secure, scalable APIs, I design and ship production-grade web apps that perform at scale.
           </p>
           <div className="mt-4 flex gap-3 text-[1.5rem]">
             <Link href={site.socials.github} target="_blank" aria-label="GitHub">
