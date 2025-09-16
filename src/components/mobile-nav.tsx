@@ -26,9 +26,9 @@ export function MobileNav() {
         >
           <Dialog.Title className="sr-only">Site navigation</Dialog.Title>
           <div className="flex items-center justify-between mb-4">
-            <span className="font-semibold">Menu</span>
+            <span className="font-semibold"></span>
             <Dialog.Close asChild>
-              <Button variant="ghost" size="icon" aria-label="Close menu">
+              <Button variant="outline" size="icon" aria-label="Close menu">
                 <FontAwesomeIcon icon={faXmark} aria-hidden />
               </Button>
             </Dialog.Close>
@@ -36,11 +36,11 @@ export function MobileNav() {
 
           <nav className="grid gap-2 text-base">
             {[
-              { href: "/#work", label: "Work" },
-              { href: "/#tools", label: "Tools" },
-              { href: "/#approach", label: "Approach" },
-              { href: "/#about", label: "About" },
-              { href: "/#contact", label: "Contact" },
+              { href: "/#work", label: "Featured Work" },
+              { href: "/#tools", label: "Tools of the Trade" },
+              { href: "/#approach", label: "My Approach" },
+              { href: "/#about", label: "About Me" },
+              { href: "/#contact", label: "Get in Touch" },
             ].map((item) => (
               <Dialog.Close asChild key={item.href}>
                 <Link
