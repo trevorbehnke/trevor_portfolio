@@ -10,13 +10,14 @@ import { DEFAULT_TECHS } from "@/data/techs"
 import { Approach } from "@/components/approach-card"
 import { Button, buttonVariants } from "@/components/ui/button"
 import { faCode, faServer, faTruckFast } from "@fortawesome/free-solid-svg-icons"
+import { Callout } from "@/components/callout"
 
 export default function Home() {
   const featured = projects.filter((p) => p.featured)
   const others = projects.filter((p) => !p.featured)
   const grid = [...featured, ...others].slice(0, 4)
   return (
-    <div className="space-y-12">
+    <div className="space-y-24">
       {/* Hero section */}
       <Hero />
 
@@ -78,21 +79,19 @@ export default function Home() {
       </section>
 
       {/* About section */}
-      <section id="about" className="max-w-[1100px] mx-auto px-4 md:px-6 py-8 space-y-4">
-        <SectionHeader title="About Me" />
+      <section id="about" className="max-w-[1100px] mx-auto px-4 md:px-6 space-y-4">
+        <SectionHeader title="About Me" subtitle="Driven by Curiosity, Grounded in Craft"/>
         <div className="grid gap-6 md:grid-cols-3 md:items-start">
           <div className="space-y-3 md:col-span-2">
-            <p>
-              I’m Trevor Behnke, a frontend‑leaning full stack engineer focused on
-              building fast, accessible web apps. I enjoy shaping product UX,
-              performance, and developer experience.
-            </p>
-            <p>
-              Tools I reach for: React/Next.js, TypeScript, Tailwind, Node,
-              Postgres, Vercel, and modern observability.
-            </p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum laborum nemo assumenda minus adipisci molestiae. Culpa ab molestiae nesciunt architecto beatae necessitatibus, qui illo eos, animi aspernatur optio, explicabo sunt.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum laborum nemo assumenda minus adipisci molestiae. Culpa ab molestiae nesciunt architecto beatae necessitatibus, qui illo eos, animi aspernatur optio, explicabo sunt.</p>
+            <Callout>
+              I approach engineering the same way I approach life — with curiosity, creativity, and a drive to understand how things work at a deeper level. I like to take things apart, study them from the inside out, and then rebuild them in a way that’s better than before. That process of deconstructing and refining is what fuels both my problem-solving and my love of continuous learning.
+            </Callout>
+            <Callout>
+              I gravitate toward complex challenges because they push me to grow. Leveraging modern tooling allows me to simplify the complicated, turning big problems into elegant solutions. Whether I’m designing a system, building an interface, or tuning performance, I aim for results that feel modern, clean, and refined — experiences that get out of the way and just work.
+            </Callout>
+            <Callout>
+              Beyond code, I try to bring the same spirit of curiosity and exploration into my personal life. I’ve been a musician since childhodd and find joy in playing guitar, experimenting with sound, and creating something from nothing. I ride my motorcycle for the freedom of the open road, and I love spending time outdoors, where nature has a way of grounding and inspiring me. These parts of my life keep me balanced and remind me why I love building things in the first place.
+            </Callout>
           </div>
           <div className="rounded-full border overflow-hidden md:col-span-1 w-full max-w-[200px] md:max-w-[200px] place-self-center">
             <Image
@@ -107,9 +106,9 @@ export default function Home() {
       </section>
 
       {/* Contact/Resume section (moved from /contact) */}
-      <section id="contact" className="max-w-[1100px] mx-auto px-4 md:px-6 py-8 space-y-3">
-        <SectionHeader title="Get in touch" />
-        <p className="text-muted-foreground">Let’s talk about your project or team.</p>
+      <section id="contact" className="max-w-[1100px] mx-auto px-4 md:px-6 space-y-3">
+        <SectionHeader title="Get in Touch" subtitle="Let’s connect about your project, your team, or just to swap ideas."/>
+        {/* <p className="text-muted-foreground">Let’s talk about your project or team.</p> */}
         <div id="contact-buttons" className="flex gap-3">
           <Button asChild variant="default" className="hover:ring-1 hover:ring-ring/40 hover:ring-offset-1 transition-transform hover:scale-103">
             <a href={`mailto:${site.email}`}>Email</a>

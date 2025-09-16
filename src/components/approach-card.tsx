@@ -25,7 +25,7 @@ export function Approach({ title, blurb, points = [], icon, className }: Approac
       }
     >
       <div className="inline-flex items-center justify-center rounded-md size-9 bg-brand-50 text-brand-700 ring-1 ring-black/5 shadow-sm dark:bg-brand-400/15 dark:text-brand-300">
-        <FontAwesomeIcon icon={icon} className="text-[18px]" />
+        <FontAwesomeIcon icon={icon} className="text-[22px] text-primary" />
       </div>
       <h3 className="mt-3 text-base font-semibold">
         <span className="gradient-underline">{title}</span>
