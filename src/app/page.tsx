@@ -22,7 +22,7 @@ export default function Home() {
       <Hero />
 
       {/* Work section*/}
-      <section id="work" className="space-y-4">
+      <section id="work" className="space-y-4 scroll-mt-[var(--header-h)]">
         <div className="max-w-[1100px] mx-auto px-4 md:px-6">
           <SectionHeader title="Featured Work" subtitle="These projects represent the breadth of my work — shipping user-friendly interfaces, building reliable full-stack systems, and even creating proprietary tools like a custom quality-control platform used to automate visual regression testing." />
         </div>
@@ -34,7 +34,7 @@ export default function Home() {
       </section>
       
       {/* Tech stack section */}
-      <section id="tools" className="max-w-[1100px] mx-auto px-4 md:px-6">
+      <section id="tools" className="max-w-[1100px] mx-auto px-4 md:px-6 scroll-mt-[var(--header-h)]">
         <SectionHeader title="Tools of the Trade" subtitle="My go-to toolkit balances modern frameworks with battle-tested practices, helping me build fast, secure, and maintainable software." />
         <div className="mt-4">
           <TechStack techs={DEFAULT_TECHS} />
@@ -42,7 +42,7 @@ export default function Home() {
       </section>
 
       {/* Approach section*/}
-      <section id="approach" className="max-w-[1100px] mx-auto px-4 md:px-6">
+      <section id="approach" className="max-w-[1100px] mx-auto px-4 md:px-6 scroll-mt-[var(--header-h)]">
         <SectionHeader title="My Approach" subtitle="How I think about building software — from the first pixel to the last deployment."/>
         <div className="grid gap-6 md:grid-cols-3 mt-4">
           <Approach
@@ -79,7 +79,7 @@ export default function Home() {
       </section>
 
       {/* About section */}
-      <section id="about" className="max-w-[1100px] mx-auto px-4 md:px-6 space-y-4">
+      <section id="about" className="max-w-[1100px] mx-auto px-4 md:px-6 space-y-4 scroll-mt-[var(--header-h)]">
         <SectionHeader title="About Me" subtitle="Driven by Curiosity, Grounded in Craft"/>
         <div className="grid gap-6 md:grid-cols-3 md:items-start">
           <div className="space-y-3 md:col-span-2">
@@ -106,7 +106,7 @@ export default function Home() {
       </section>
 
       {/* Contact/Resume section (moved from /contact) */}
-      <section id="contact" className="max-w-[1100px] mx-auto px-4 md:px-6 space-y-3">
+      <section id="contact" className="max-w-[1100px] mx-auto px-4 md:px-6 space-y-3 scroll-mt-[var(--header-h)]">
         <SectionHeader title="Get in Touch" subtitle="Let’s connect about your project, your team, or just to swap ideas."/>
         {/* <p className="text-muted-foreground">Let’s talk about your project or team.</p> */}
         <div id="contact-buttons" className="flex gap-3">

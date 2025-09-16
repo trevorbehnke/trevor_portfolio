@@ -45,6 +45,7 @@
 }
 
 :root {
+  --header-h: 36px; /* sticky header height (h-14) */
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
@@ -134,7 +135,7 @@
 }
 
 @layer base {
-  html { scroll-behavior: smooth; }
+  html, body { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
   * {
     @apply border-border outline-ring/50;
   }

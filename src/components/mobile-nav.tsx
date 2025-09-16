@@ -40,6 +40,8 @@ export function MobileNav() {
       <DialogContent
         showCloseButton={false}
         className="fixed right-0 top-0 left-auto translate-x-0 translate-y-0 h-dvh w-[66vw] max-w-[320px] overflow-y-auto border-l bg-background pt-3 pb-4 px-4 outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:slide-in-from-right data-[state=closed]:slide-out-to-right duration-200 ease-out"
+        onOpenAutoFocus={(e) => e.preventDefault()}
+        onCloseAutoFocus={(e) => e.preventDefault()}
       >
         <DialogTitle className="sr-only">Site navigation</DialogTitle>
         <div className="flex flex-col gap-2">
