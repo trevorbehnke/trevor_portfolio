@@ -81,26 +81,34 @@ export default async function ProjectPage({ params }: Props) {
             </Reveal>
           )}
 
-          {project.analysis?.contribution && (
+          {project.analysis?.contribution && project.analysis.contribution.length > 0 && (
             <Reveal delayMs={120}>
               <div className="grid md:grid-cols-[200px_1fr] gap-3 md:gap-4 items-center py-3 md:py-4">
               <div className="flex items-center gap-2 text-base tracking-wide text-primary font-medium">
                 <FontAwesomeIcon icon={faUserGear} className="size-6 text-primary" aria-hidden />
                 Contribution
               </div>
-                <div className="text-muted-foreground leading-relaxed max-w-prose">{project.analysis.contribution}</div>
+                <ul className="text-muted-foreground leading-relaxed max-w-prose list-disc pl-5 space-y-1">
+                  {project.analysis.contribution.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
+                </ul>
               </div>
             </Reveal>
           )}
 
-          {project.analysis?.learned && (
+          {project.analysis?.learned && project.analysis.learned.length > 0 && (
             <Reveal delayMs={240}>
               <div className="grid md:grid-cols-[200px_1fr] gap-3 md:gap-4 items-center py-3 md:py-4">
               <div className="flex items-center gap-2 text-base tracking-wide text-primary font-medium">
                 <FontAwesomeIcon icon={faLightbulb} className="size-6 text-primary" aria-hidden />
                 Learned
               </div>
-                <div className="text-muted-foreground leading-relaxed max-w-prose">{project.analysis.learned}</div>
+                <ul className="text-muted-foreground leading-relaxed max-w-prose list-disc pl-5 space-y-1">
+                  {project.analysis.learned.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
+                </ul>
               </div>
             </Reveal>
           )}

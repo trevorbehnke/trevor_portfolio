@@ -14,26 +14,27 @@ export type Project = {
   private: boolean
   analysis?: {
     background?: string
-    contribution?: string
-    learned?: string
+    contribution?: string[]
+    learned?: string[]
   }
 }
 
 export const projects: Project[] = [
   // Project 1
   {
-    title: "BlogSocializer — Multi-tenant microservices",
+    title: "BlogSocializer — Full-Stack AI SaaS MVP",
     slug: "blogsocializer",
     summary:
-      "Launched in 6 weeks with Stripe billing and CI/CD. Next.js app with Node services, Postgres, and background jobs.",
-    role: "Architect & Full Stack Engineer",
+      "Transforming single blog posts into multiple platform-perfect threads, posts & newsletters in seconds.",
+    role: "Sole Architect & Engineer",
     timeframe: "2023-2025",
     stack: [
       "Next.js",
       "React",
       "TypeScript",
       "Node",
-      "Postgres",
+      "PostgreSQL",
+      "OpenAI API",
       "Stripe",
       "Vercel",
     ],
@@ -55,14 +56,21 @@ export const projects: Project[] = [
     private: true,
     analysis: {
       background:
-        'Chose a monorepo with shared UI and type packages to accelerate feature delivery. Considered microfrontends, but team size and release cadence favored a simpler deployment model.'+
-        'Chose a monorepo with shared UI and type packages to accelerate feature delivery. Considered microfrontends, but team size and release cadence favored a simpler deployment model.',
-      contribution:
-        'Led architecture, CI/CD, and billing integration. Collaborated with a designer for UI polish. AI assisted in generating test data and some boilerplate.'+
-        'Led architecture, CI/CD, and billing integration. Collaborated with a designer for UI polish. AI assisted in generating test data and some boilerplate.',
-      learned:
-        'Investing early in typed APIs and background jobs paid off. Next: tenant analytics funnels and a migration to queue-backed webhooks.'+
-        'Investing early in typed APIs and background jobs paid off. Next: tenant analytics funnels and a migration to queue-backed webhooks.',
+        "BlogSocializer was born out of a pain point I observed: writing blog content is time-intensive, and yet most of that content never reaches people active on other channels. So the idea was to build a tool that turns one long form post into multiple pieces of content automatically — whether it's a Twitter/X thread, a LinkedIn post, or a newsletter — optimized for each channel. The product aims to reduce friction, amplify reach, and let creators get more out of every post.",
+      contribution: [
+        'Designed and built the frontend UX & editor flows for quickly inputting content, selecting templates, and previewing output',
+        'Architected the backend services to process content transformations (prompt engineering, platform-specific restructuring)',
+        'Setup multi-tenant billing via Stripe, subscription tiers, and access controls',
+        'Built background jobs / queues to handle generation, formatting, and delivering output reliably',
+        'Implemented observability & monitoring to track usage metrics, failure rates, and system health',
+      ],
+      learned: [
+        'The value of prompt engineering: small changes in how content is phrased or structured make big differences in output quality across platforms.',
+        'Importance of scalable design patterns: anticipating load, failing gracefully, and maintaining performance when many users submit large content.',
+        'UI/UX trade-offs: balancing feature richness (many options) with simplicity and speed (minimal friction).',
+        'On billing & pricing: building flexible subscription models that both attract early users and sustain growth.',
+        'Continuous feedback loops matter: user engagement data drives improvements in how content feels “native” on each platform.',
+      ],
     },
   },
   // Project 2
@@ -87,10 +95,15 @@ export const projects: Project[] = [
     analysis: {
       background:
         'Abstracted common UI patterns into a reusable component library. Weighed CSS-in-JS but picked Tailwind tokens for performance and team familiarity.',
-      contribution:
-        'Built the component library and docs, paired with the team to roll it out across views. Coordinated accessibility sweeps with QA.',
-      learned:
-        'Design tokens simplified theming and reduced regressions. Next: expand story coverage and add visual regression to CI.',
+      contribution: [
+        'Built reusable components and internal docs',
+        'Paired with teams to migrate screens',
+        'Coordinated accessibility sweeps with QA',
+      ],
+      learned: [
+        'Design tokens reduced regressions and improved consistency',
+        'Next: expand stories and add visual regression to CI',
+      ],
     },
   },
   // Project 3
@@ -115,10 +128,14 @@ export const projects: Project[] = [
     analysis: {
       background:
         'Used Playwright for capture and pixel-diff thresholds to reduce flaky alerts. Considered Percy, but custom flow was more flexible for our stack.',
-      contribution:
-        'Implemented diffing pipeline and Slack notifications. Partnered with QA to tune thresholds and suppress noise.',
-      learned:
-        'Automated diffs caught regressions early; the key was curating stable test states. Next: parallelize captures and cache baselines per branch.',
+      contribution: [
+        'Implemented image diff pipeline and Slack alerts',
+        'Tuned thresholds with QA to minimize noise',
+      ],
+      learned: [
+        'Stable test states are key for reliable diffs',
+        'Next: parallelize captures and cache baselines per branch',
+      ],
     },
   },
   // Project 4
@@ -143,10 +160,15 @@ export const projects: Project[] = [
     analysis: {
       background:
         'Modeled tasks as immutable events to enable analytics without complex joins. Considered Kanban-first UX but prioritized speed and calendaring.',
-      contribution:
-        'Wore multiple hats: data model, UI flows, and deployment. AI assisted in initial schema sketches and copy suggestions.',
-      learned:
-        'Simple primitives scaled better than expected. Next: offline sync and mobile-friendly drag interactions.',
+      contribution: [
+        'Designed the data model and core UI flows',
+        'Managed deployment and environment setup',
+        'Used AI for initial schema drafts and copy',
+      ],
+      learned: [
+        'Simple primitives scaled well under real usage',
+        'Next: offline sync and mobile-friendly drag interactions',
+      ],
     },
   },
 ]
