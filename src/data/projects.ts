@@ -75,16 +75,16 @@ export const projects: Project[] = [
   },
   // Project 2
   {
-    title: "U.S. EPA National Rivers & Streams Assessment",
+    title: "U.S. EPA National Rivers & Streams Assessment - Dashboard & Data Visualization",
     slug: "nrsa",
     summary:
-      "Built a reusable React/Tailwind component library, reducing UI build time by ~40%.",
+      "Frontend & Data Visualization Engineering with D3.js and Core Web Fundamentals.",
     role: "Software Engineer",
     timeframe: "2022",
-    stack: ["React", "TypeScript", "Tailwind", "Storybook", "Radix"],
+    stack: ["HTML5", "CSS3", "JavaScript", "Python", "D3.js", "Grunt"],
     links: { 
       live: "https://riverstreamassessment.epa.gov/dashboard",
-      repo: "https://github.com/yourhandle/design-system" },
+      repo: "https://github.com/trevorbehnke/private" },
     cover: "/images/projects/nrsa/nrsa-cover.png",
     coverCaption: "NRSA Dashboard Overview",
     images: [
@@ -94,15 +94,22 @@ export const projects: Project[] = [
     private: true,
     analysis: {
       background:
-        'Abstracted common UI patterns into a reusable component library. Weighed CSS-in-JS but picked Tailwind tokens for performance and team familiarity.',
+        'The U.S. Environmental Protection Agency needed a way to make complex environmental data accessible to the public. The National Rivers & Streams Assessment dashboard and associated web report present condition and indicator data from multiple sources in a clear, interactive format. This project was client-facing, with regular stakeholder meetings to ensure the dashboard aligned with EPA goals and could communicate technical findings to everyday users.',
       contribution: [
-        'Built reusable components and internal docs',
-        'Paired with teams to migrate screens',
-        'Coordinated accessibility sweeps with QA',
+        'Built interactive visualizations using HTML, CSS, vanilla JavaScript, and D3.js without reliance on frontend frameworks',
+        'Worked within and adapted legacy code, learning to navigate multiple development styles and iterations',
+        'Helped compile, clean, and integrate datasets into usable, accurate dashboards',
+        'Participated in client-facing sessions to understand requirements and translate them into features',
+        'Collaborated with a small team in daily QA/QC cycles, iterating quickly on ideas and implementation',
+        'Deployed to government servers, applying security best practices and addressing vulnerabilities with extra care',
       ],
       learned: [
-        'Design tokens reduced regressions and improved consistency',
-        'Next: expand stories and add visual regression to CI',
+        'The value of mastering core web technologies: HTML, CSS, and vanilla JS provided a solid foundation for flexible, framework-independent work',
+        'Deepened expertise in D3.js for creating custom, data-driven visualizations from scratch',
+        'Gained adaptability by maintaining and extending legacy code written in diverse styles over many years',
+        'Developed strong collaboration skills through close teamwork and iterative QA/QC processes',
+        'Learned how to communicate technical details clearly with non-technical stakeholders, bridging the gap between complex data and accessible presentation',
+        'Built awareness of government-level security requirements, and how to engineer software with compliance and reliability in mind',
       ],
     },
   },
