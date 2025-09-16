@@ -17,7 +17,7 @@ export default function Home() {
   const others = projects.filter((p) => !p.featured)
   const grid = [...featured, ...others].slice(0, 4)
   return (
-    <div className="space-y-30">
+    <div id="hero" className="space-y-30">
       {/* Hero section */}
       <Hero />
 
@@ -34,7 +34,7 @@ export default function Home() {
       </section>
       
       {/* Tech stack section */}
-      <section className="max-w-[1100px] mx-auto px-4 md:px-6">
+      <section id="tools" className="max-w-[1100px] mx-auto px-4 md:px-6">
         <SectionHeader title="Tools of the Trade" subtitle="My go-to toolkit balances modern frameworks with battle-tested practices, helping me build fast, secure, and maintainable software." />
         <div className="mt-4">
           <TechStack techs={DEFAULT_TECHS} />
@@ -42,7 +42,7 @@ export default function Home() {
       </section>
 
       {/* Approach section*/}
-      <section className="max-w-[1100px] mx-auto px-4 md:px-6">
+      <section id="approach" className="max-w-[1100px] mx-auto px-4 md:px-6">
         <SectionHeader title="My Approach" subtitle="How I think about building software — from the first pixel to the last deployment."/>
         <div className="grid gap-6 md:grid-cols-3 mt-4">
           <Approach

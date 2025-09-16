@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "@/components/ui/navigation-menu"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { MobileNav } from "@/components/mobile-nav"
 
 export function Header() {
   return (
@@ -10,11 +11,21 @@ export function Header() {
           Trevor Behnke
         </Link>
         <nav className="flex items-center gap-2">
-          <NavigationMenu viewport={false}>
+          <NavigationMenu viewport={false} className="hidden md:block">
             <NavigationMenuList>
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
                   <Link href="/#work">Work</Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <Link href="/#tools">Tools</Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <Link href="/#approach">Approach</Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
@@ -30,6 +41,7 @@ export function Header() {
             </NavigationMenuList>
           </NavigationMenu>
           <ThemeToggle />
+          <MobileNav />
         </nav>
       </div>
     </header>
