@@ -12,6 +12,7 @@ export type Project = {
   metrics?: { label: string; value: string }[]
   featured?: boolean
   private: boolean
+  deployed?: boolean
   analysis?: {
     background?: string
     contribution?: string[]
@@ -54,6 +55,7 @@ export const projects: Project[] = [
     // ],
     featured: true,
     private: true,
+    deployed: true,
     analysis: {
       background:
         "BlogSocializer was born out of a pain point I observed: writing blog content is time-intensive, and yet most of that content never reaches people active on other channels. So the idea was to build a tool that turns one long form post into multiple pieces of content automatically — whether it's a Twitter/X thread, a LinkedIn post, or a newsletter — optimized for each channel. The product aims to reduce friction, amplify reach, and let creators get more out of every post.",
@@ -92,6 +94,7 @@ export const projects: Project[] = [
       { src: "/images/projects/nrsa/screen-2.png", caption: "NRSA Indicator Modal Example" },
     ],
     private: true,
+    deployed: true,
     analysis: {
       background:
         'The U.S. Environmental Protection Agency needed a way to make complex environmental data accessible to the public. The National Rivers & Streams Assessment dashboard and associated web report present condition and indicator data from multiple sources in a clear, interactive format. This project was client-facing, with regular stakeholder meetings to ensure the dashboard aligned with EPA goals and could communicate technical findings to everyday users.',
@@ -115,33 +118,41 @@ export const projects: Project[] = [
   },
   // Project 3
   {
-    title: "Image State Comparison Bot",
+    title: "Image Comparison Bot - Automated QA Visual Regression Testing",
     slug: "image-comparison-bot",
     summary:
-      "Improved Core Web Vitals to 90+ by optimizing images, code-splitting, and caching.",
-    role: "Software Engineer",
+      "Proprietary, Headless Browser QA Automation for Dashboard State Validation",
+    role: "Lead Designer, Architect & Engineer",
     timeframe: "2022",
-    stack: ["Next.js", "React", "Vercel", "Lighthouse"],
+    stack: ["JavaScript", "Python", "Puppeteer", "Pixelmatch", "Google Cloud Platform"],
     links: { 
-      live: "https://riverstreamassessment.epa.gov/dashboard",
-      repo: "https://github.com/yourhandle/design-system" },
+      live: "n/a",
+      repo: "https://github.com/trevorbehnke/Image-Comparison-Bot" },
     cover: "/images/projects/image-bot/bot-cover.png",
     coverCaption: "Image comparison bot—overview of results",
     images: [
       { src: "/images/projects/image-bot/screen-1.svg", caption: "State diffs with thresholds" },
-      { src: "/images/projects/image-bot/screen-1.svg", caption: "Run history and artifacts" },
+      { src: "/images/projects/image-bot/screen-2.svg", caption: "Run history and artifacts" },
     ],
     private: true,
+    deployed: false,
     analysis: {
       background:
-        'Used Playwright for capture and pixel-diff thresholds to reduce flaky alerts. Considered Percy, but custom flow was more flexible for our stack.',
+        'Crow Insight needed a way to ensure quality across complex data dashboards with tens of thousands of possible state combinations. Manual QA was infeasible, so a proprietary automation tool was required to reliably test every state. The Image Comparison Bot was designed to capture screenshots from two different interaction paths (URL ingestion vs. click-based navigation) and compare them pixel by pixel, flagging any differences above a set threshold. Results were compiled into detailed reports that identified errors and the exact state sequences that caused them.',
       contribution: [
-        'Implemented image diff pipeline and Slack alerts',
-        'Tuned thresholds with QA to minimize noise',
+        'Refactored and redesigned the project from scratch, replacing a half-built Python implementation with a more suitable JavaScript architecture',
+        'Solely responsible for designing, architecting, and engineering the solution, with feedback from colleagues along the way',
+        'Implemented automated state exploration (randomized and exhaustive) to capture and compare tens of thousands of dashboard views',
+        'Built reporting functionality to flag pixel differences, identify error thresholds, and log reproducible sequences for manual verification',
+        'Deployed the system to a GCP VM, enabling automated test runs around the clock as needed for comprehensive QA coverage',
+        'Delivered a proprietary tool that significantly reduced QA overhead, improved precision, and flagged issues before production release',
       ],
       learned: [
-        'Stable test states are key for reliable diffs',
-        'Next: parallelize captures and cache baselines per branch',
+        'How to design a custom QA automation system tailored to unique client needs',
+        'The importance of choosing the right language and tools for the job — JavaScript and Puppeteer proved more effective than the original Python approach',
+        'Deepened understanding of pixel-diff algorithms and how to balance sensitivity thresholds to reduce false positives',
+        'Gained experience building reproducible, report-driven workflows that make complex errors easier to confirm and resolve',
+        'Learned how automation can multiply QA impact — replacing an impossible manual task with a scalable, reliable, and precise solution',
       ],
     },
   },
@@ -164,6 +175,7 @@ export const projects: Project[] = [
       { src: "/images/projects/daychart/screen-1.svg", caption: "Weekly trends and categories" },
     ],
     private: true,
+    deployed: true,
     analysis: {
       background:
         'Modeled tasks as immutable events to enable analytics without complex joins. Considered Kanban-first UX but prioritized speed and calendaring.',

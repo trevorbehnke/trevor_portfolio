@@ -116,7 +116,7 @@ export default async function ProjectPage({ params }: Props) {
       )}
 
       <section className="pt-2 flex gap-3">
-        {project.links.live && (
+        {(project.deployed && project.links.live) ? (
           <Button
             asChild
             variant="default"
@@ -126,6 +126,11 @@ export default async function ProjectPage({ params }: Props) {
               <FontAwesomeIcon icon={faArrowUpRightFromSquare} aria-hidden />
               <span>Live</span>
             </a>
+          </Button>
+        ) : (
+          <Button variant="default" disabled className="inline-flex items-center gap-2">
+            <FontAwesomeIcon icon={faArrowUpRightFromSquare} aria-hidden />
+            <span>Live</span>
           </Button>
         )}
         {(project.private || project.links.repo) && (
