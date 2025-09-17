@@ -135,7 +135,7 @@
 }
 
 @layer base {
-  html, body { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
+  html, body { scroll-behavior: smooth; scroll-padding-top: var(--header-h); overscroll-behavior-x: none; }
   * {
     @apply border-border outline-ring/50;
   }
@@ -161,14 +161,24 @@ a:hover > .footer-icon, button:hover > .footer-icon { color: var(--brand-600); }
   z-index: -1;
   pointer-events: none;
   /* Centered radial gradient blob using brand colors */
+  /* Fallback for browsers without color-mix (notably iOS WebKit) */
   background:
-    radial-gradient(closest-side at 50% 35%, color-mix(in srgb, var(--brand-600), transparent 72%), transparent 65%),
-    radial-gradient(closest-side at 70% 60%, color-mix(in srgb, var(--brand-400), transparent 82%), transparent 60%);
+    radial-gradient(closest-side at 50% 35%, rgba(13, 148, 136, 0.28), transparent 65%),
+    radial-gradient(closest-side at 70% 60%, rgba(45, 212, 191, 0.18), transparent 60%);
   filter: blur(24px);
   opacity: 0.9;
   mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
   -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
   animation: hero-blob-float 18s ease-in-out infinite alternate;
+}
+
+/* Upgrade to precise brand blending when color-mix is supported */
+@supports (color: color-mix(in srgb, black, white)) {
+  .hero-blob {
+    background:
+      radial-gradient(closest-side at 50% 35%, color-mix(in srgb, var(--brand-600), transparent 72%), transparent 65%),
+      radial-gradient(closest-side at 70% 60%, color-mix(in srgb, var(--brand-400), transparent 82%), transparent 60%);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

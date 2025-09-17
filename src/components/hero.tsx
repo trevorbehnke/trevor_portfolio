@@ -14,7 +14,7 @@ export function Hero() {
     toast.success("Email copied to clipboard")
   }
   return (
-    <section className="relative min-h-[calc(100vh-56px)] isolate flex items-center mb-0">
+    <section className="relative min-h-[calc(100vh-56px)] isolate flex items-center mb-0 overflow-hidden">
       {/* Background brand blob */}
       <div aria-hidden className="hero-blob" />
       <div className="max-w-[1100px] mx-auto px-4 md:px-6 w-full">

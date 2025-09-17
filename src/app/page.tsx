@@ -9,6 +9,7 @@ import { TechStack } from "@/components/tech-stack"
 import { DEFAULT_TECHS } from "@/data/techs"
 import { Approach } from "@/components/approach-card"
 import { Button, buttonVariants } from "@/components/ui/button"
+import { CopyEmailButton } from "@/components/copy-email-button"
 import { faCode, faServer, faTruckFast } from "@fortawesome/free-solid-svg-icons"
 import { Callout } from "@/components/callout"
 
@@ -110,9 +111,7 @@ export default function Home() {
         <SectionHeader title="Get in Touch" subtitle="Let’s connect about your project, your team, or just to swap ideas."/>
         {/* <p className="text-muted-foreground">Let’s talk about your project or team.</p> */}
         <div id="contact-buttons" className="flex gap-3">
-          <Button asChild variant="default" className="hover:ring-1 hover:ring-ring/40 hover:ring-offset-1 transition-transform hover:scale-103">
-            <a href={`mailto:${site.email}`}>Email</a>
-          </Button>
+          <CopyEmailButton />
           <Link
             className={
               `${buttonVariants({ variant: 'link' })} self-center inline-flex items-center transition-colors hover:opacity-80`
