@@ -20,7 +20,7 @@ export function ProjectCard({ project }: { project: Project }) {
         <h3 className="text-lg font-semibold">{project.title}</h3>
         <p className="text-sm text-muted-foreground mt-1">{project.summary}</p>
         <div className="flex flex-wrap gap-2 mt-3">
-          {project.stack.slice(0, 4).map((s) => (
+          {project.stack.slice(0, 6).map((s) => (
             <Badge key={s} variant="primary">{s}</Badge>
           ))}
         </div>

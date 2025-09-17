@@ -126,7 +126,7 @@ export const projects: Project[] = [
     timeframe: "2022",
     stack: ["JavaScript", "Python", "Puppeteer", "Pixelmatch", "Google Cloud Platform"],
     links: { 
-      live: "n/a",
+      live: "ImageComparisonBot",
       repo: "https://github.com/trevorbehnke/Image-Comparison-Bot" },
     cover: "/images/projects/image-bot/bot-cover.png",
     coverCaption: "Image comparison bot—overview of results",
@@ -161,10 +161,10 @@ export const projects: Project[] = [
     title: "DayChart — Full-Stack SaaS MVP",
     slug: "daychart",
     summary:
-      "24-Hour Scheduling Visualization with Metrics & AI Suggestions",
+      "24-Hour Scheduling Visualization Web Application with Metrics & AI Suggestions",
     role: "Sole Architect & Engineer",
     timeframe: "2023",
-    stack: ["Next.js", "TypeScript", "Clerk", "Prisma", "PostgreSQL", "Radix", "MUI", "Tailwind", "Zustand", "D3.js", "Axios", "Stripe", "Vercel", "OpenAI API"],
+    stack: ["Next.js", "TypeScript", "Prisma", "Zustand", "Stripe", "Clerk", "PostgreSQL", "Radix", "MUI", "Tailwind", "D3.js", "Axios", "Vercel", "OpenAI API"],
     links: { 
       live: "https://vercel.daychart.app",
       repo: "https://github.com/trevorbehnke/daychart" },
