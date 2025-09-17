@@ -131,8 +131,8 @@ export const projects: Project[] = [
     cover: "/images/projects/image-bot/bot-cover.png",
     coverCaption: "Image comparison bot—overview of results",
     images: [
-      { src: "/images/projects/image-bot/screen-1.svg", caption: "State diffs with thresholds" },
-      { src: "/images/projects/image-bot/screen-2.svg", caption: "Run history and artifacts" },
+      { src: "/images/projects/image-bot/screen-1.png", caption: "Example Dashboard Error Diff" },
+      { src: "/images/projects/image-bot/screen-2.png", caption: "Raw Error States Output" },
     ],
     private: true,
     deployed: false,
