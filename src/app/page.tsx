@@ -95,7 +95,7 @@ export default function Home() {
           </div>
           <div className="rounded-full border overflow-hidden md:col-span-1 w-full max-w-[200px] md:max-w-[200px] place-self-center">
             <Image
-              src="/images/me.jpg"
+              src="/images/me.webp"
               alt="Headshot"
               width={200}
               height={200}
