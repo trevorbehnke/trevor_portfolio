@@ -1,9 +1,10 @@
+import Link from "next/link"
 import { notFound } from "next/navigation"
 import { projects } from "@/data/projects"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowUpRightFromSquare, faCircleInfo, faUserGear, faLightbulb } from "@fortawesome/free-solid-svg-icons"
+import { faArrowUpRightFromSquare, faCircleInfo, faUserGear, faLightbulb, faArrowRight } from "@fortawesome/free-solid-svg-icons"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 import { ProjectMedia } from "@/components/project-media"
 import { Reveal } from "@/components/reveal"
@@ -18,6 +19,10 @@ export default async function ProjectPage({ params }: Props) {
   const { slug } = await params
   const project = projects.find((p) => p.slug === slug)
   if (!project) return notFound()
+
+  const currentIndex = projects.findIndex((p) => p.slug === slug)
+  const hasMultiple = projects.length > 1
+  const nextProject = hasMultiple ? projects[(currentIndex + 1) % projects.length] : null
 
   return (
     <article className="max-w-[1100px] mx-auto px-4 md:px-6 py-6 space-y-8">
@@ -115,46 +120,62 @@ export default async function ProjectPage({ params }: Props) {
         </section>
       )}
 
-      <section className="pt-2 flex gap-3">
-        {(project.deployed && project.links.live) ? (
-          <Button
-            asChild
-            variant="default"
-            className="inline-flex items-center gap-2 hover:ring-1 hover:ring-ring/40 hover:ring-offset-1 transition-transform hover:scale-103"
-          >
-            <a href={project.links.live} target="_blank">
-              <FontAwesomeIcon icon={faArrowUpRightFromSquare} aria-hidden />
-              <span>Live</span>
-            </a>
-          </Button>
-        ) : (
-          <Button variant="default" disabled className="inline-flex items-center gap-2">
-            <FontAwesomeIcon icon={faArrowUpRightFromSquare} aria-hidden />
-            <span>Live</span>
-          </Button>
-        )}
-        {(project.private || project.links.repo) && (
-          project.private ? (
-            <Button
-              variant="default"
-              disabled
-              className="inline-flex items-center gap-2"
-            >
-              <FontAwesomeIcon icon={faGithub} target="_blank" aria-hidden />
-              <span>Private</span>
-            </Button>
-          ) : (
+      <section className="pt-2 flex items-center justify-between gap-3 flex-wrap">
+        <div className="flex gap-3">
+          {(project.deployed && project.links.live) ? (
             <Button
               asChild
               variant="default"
               className="inline-flex items-center gap-2 hover:ring-1 hover:ring-ring/40 hover:ring-offset-1 transition-transform hover:scale-103"
             >
-              <a href={project.links.repo!} target="_blank">
-                <FontAwesomeIcon icon={faGithub} aria-hidden />
-                <span>Repo</span>
+              <a href={project.links.live} target="_blank">
+                <FontAwesomeIcon icon={faArrowUpRightFromSquare} aria-hidden />
+                <span>Live</span>
               </a>
             </Button>
-          )
+          ) : (
+            <Button variant="default" disabled className="inline-flex items-center gap-2">
+              <FontAwesomeIcon icon={faArrowUpRightFromSquare} aria-hidden />
+              <span>Live</span>
+            </Button>
+          )}
+          {(project.private || project.links.repo) && (
+            project.private ? (
+              <Button
+                variant="default"
+                disabled
+                className="inline-flex items-center gap-2"
+              >
+                <FontAwesomeIcon icon={faGithub} target="_blank" aria-hidden />
+                <span>Private</span>
+              </Button>
+            ) : (
+              <Button
+                asChild
+                variant="default"
+                className="inline-flex items-center gap-2 hover:ring-1 hover:ring-ring/40 hover:ring-offset-1 transition-transform hover:scale-103"
+              >
+                <a href={project.links.repo!} target="_blank">
+                  <FontAwesomeIcon icon={faGithub} aria-hidden />
+                  <span>Repo</span>
+                </a>
+              </Button>
+            )
+          )}
+        </div>
+
+        {nextProject && (
+          <Button
+            asChild
+            variant="outline"
+            className="inline-flex items-center gap-2 hover:ring-1 hover:ring-ring/40 hover:ring-offset-1 transition-transform hover:scale-103"
+            aria-label={`Next case study: ${nextProject.title}`}
+          >
+            <Link href={`/work/${nextProject.slug}`} rel="next">
+              <span>Next Case Study</span>
+              <FontAwesomeIcon icon={faArrowRight} aria-hidden />
+            </Link>
+          </Button>
         )}
       </section>
     </article>

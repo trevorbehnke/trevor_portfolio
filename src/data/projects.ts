@@ -164,7 +164,7 @@ export const projects: Project[] = [
       "24-Hour Scheduling Visualization Web Application with Metrics & AI Suggestions",
     role: "Sole Architect & Engineer",
     timeframe: "2023",
-    stack: ["Next.js", "TypeScript", "Prisma", "Zustand", "Stripe", "Clerk", "PostgreSQL", "Radix", "MUI", "Tailwind", "D3.js", "Axios", "Vercel", "OpenAI API"],
+    stack: ["Next.js", "TypeScript", "Prisma", "Zustand", "Stripe", "Clerk", "PostgreSQL", "MUI", "Tailwind", "D3.js", "OpenAI API"],
     links: { 
       live: "https://vercel.daychart.app",
       repo: "https://github.com/trevorbehnke/daychart" },
