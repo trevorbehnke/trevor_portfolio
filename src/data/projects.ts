@@ -26,7 +26,7 @@ export const projects: Project[] = [
     title: "BlogSocializer — Full-Stack AI SaaS MVP",
     slug: "blogsocializer",
     summary:
-      "Transforming single blog posts into multiple platform-perfect threads, posts & newsletters in seconds.",
+      "End-to-End SaaS with Auth, Billing, Tiered Subscriptions, and AI-Powered Content Repurposing.",
     role: "Sole Architect & Engineer",
     timeframe: "2023-2025",
     stack: [
@@ -83,7 +83,7 @@ export const projects: Project[] = [
       "Frontend & Data Visualization Engineering with D3.js and Core Web Fundamentals.",
     role: "Software Engineer",
     timeframe: "2022",
-    stack: ["HTML5", "CSS3", "JavaScript", "Python", "D3.js", "Grunt"],
+    stack: ["HTML5", "CSS3", "JavaScript", "Python", "D3.js", "Node", 'Grunt'],
     links: { 
       live: "https://riverstreamassessment.epa.gov/dashboard",
       repo: "https://github.com/trevorbehnke/private" },
