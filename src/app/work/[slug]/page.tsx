@@ -33,7 +33,7 @@ export default async function ProjectPage({ params }: Props) {
           <span className="text-foreground/70 italic">{project.role}</span>
           <span className="text-muted-foreground">•</span>
           <span className="text-foreground/70">{project.timeframe}</span>
-            <span className="text-muted-foreground">•</span>
+          <span className="text-muted-foreground hidden lg:inline">•</span>
           <div className="flex flex-wrap gap-2 ml-2">
             {project.stack.map((s) => (
               <Badge key={s} variant="secondary">{s}</Badge>
@@ -76,7 +76,7 @@ export default async function ProjectPage({ params }: Props) {
         <section className="w-full divide-y">
           {project.analysis?.background && (
             <Reveal delayMs={0}>
-              <div className="grid md:grid-cols-[200px_1fr] gap-3 md:gap-4 items-center py-3 md:py-4">
+              <div className="grid md:grid-cols-[200px_1fr] gap-3 md:gap-4 items-center py-3 py-6">
               <div className="flex items-center gap-2 text-base tracking-wide text-primary font-medium">
                 <FontAwesomeIcon icon={faCircleInfo} className="size-6 text-primary" aria-hidden />
                 Background
@@ -88,7 +88,7 @@ export default async function ProjectPage({ params }: Props) {
 
           {project.analysis?.contribution && project.analysis.contribution.length > 0 && (
             <Reveal delayMs={120}>
-              <div className="grid md:grid-cols-[200px_1fr] gap-3 md:gap-4 items-center py-3 md:py-4">
+              <div className="grid md:grid-cols-[200px_1fr] gap-3 md:gap-4 items-center py-3 py-6">
               <div className="flex items-center gap-2 text-base tracking-wide text-primary font-medium">
                 <FontAwesomeIcon icon={faUserGear} className="size-6 text-primary" aria-hidden />
                 Contribution
@@ -104,7 +104,7 @@ export default async function ProjectPage({ params }: Props) {
 
           {project.analysis?.learned && project.analysis.learned.length > 0 && (
             <Reveal delayMs={240}>
-              <div className="grid md:grid-cols-[200px_1fr] gap-3 md:gap-4 items-center py-3 md:py-4">
+              <div className="grid md:grid-cols-[200px_1fr] gap-3 md:gap-4 items-center py-3 py-6">
               <div className="flex items-center gap-2 text-base tracking-wide text-primary font-medium">
                 <FontAwesomeIcon icon={faLightbulb} className="size-6 text-primary" aria-hidden />
                 Learned

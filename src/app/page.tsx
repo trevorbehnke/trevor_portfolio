@@ -67,7 +67,7 @@ export default function Home() {
             ]}
           />
           <Approach
-            title="Delivery & Infra"
+            title="Delivery & Infrastructure"
             blurb="Confidence in every deployment."
             icon={faTruckFast}
             points={[

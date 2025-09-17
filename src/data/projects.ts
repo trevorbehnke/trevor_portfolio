@@ -28,7 +28,7 @@ export const projects: Project[] = [
     summary:
       "End-to-End SaaS with Auth, Billing, Tiered Subscriptions, and AI-Powered Content Repurposing.",
     role: "Sole Architect & Engineer",
-    timeframe: "2023-2025",
+    timeframe: "2024-2025",
     stack: [
       "Next.js",
       "React",
@@ -77,7 +77,7 @@ export const projects: Project[] = [
   },
   // Project 2
   {
-    title: "U.S. EPA National Rivers & Streams Assessment - Dashboard & Data Visualization",
+    title: "U.S. EPA National Rivers & Streams Assessment — Dashboard & Data Visualization",
     slug: "nrsa",
     summary:
       "Frontend & Data Visualization Engineering with D3.js and Core Web Fundamentals.",
@@ -118,7 +118,7 @@ export const projects: Project[] = [
   },
   // Project 3
   {
-    title: "Image Comparison Bot - Automated QA Visual Regression Testing",
+    title: "Image Comparison Bot — Automated QA Visual Regression Testing",
     slug: "image-comparison-bot",
     summary:
       "Proprietary, Headless Browser QA Automation for Dashboard State Validation",
