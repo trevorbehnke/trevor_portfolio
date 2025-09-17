@@ -13,7 +13,7 @@ export function ThemeToggle() {
 
   if (!mounted) return null
 
-  const isDark = (theme ?? resolvedTheme) === "dark"
+  const isDark = (theme === "system" ? resolvedTheme : theme) === "dark"
 
   return (
     <Button
