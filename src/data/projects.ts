@@ -158,7 +158,7 @@ export const projects: Project[] = [
   },
   // Project 4
   {
-    title: "DayChart — Full-Stack SaaS Productivity App",
+    title: "DayChart — Full-Stack SaaS MVP",
     slug: "daychart",
     summary:
       "24-Hour Scheduling Visualization with Metrics & AI Suggestions",
@@ -171,8 +171,8 @@ export const projects: Project[] = [
     cover: "/images/projects/daychart/daychart-cover.png",
     coverCaption: "DayChart Homepage",
     images: [
-      { src: "/images/projects/daychart/screen-1.svg", caption: "Daily plan vs. actuals" },
-      { src: "/images/projects/daychart/screen-1.svg", caption: "Weekly trends and categories" },
+      { src: "/images/projects/daychart/screen-1.png", caption: "Functionality Overview" },
+      { src: "/images/projects/daychart/screen-2.webp", caption: "Example Chart View" },
     ],
     private: false,
     deployed: true,
