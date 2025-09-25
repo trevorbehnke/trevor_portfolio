@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "@/components/ui/navigation-menu"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { MobileNav } from "@/components/mobile-nav"
@@ -7,7 +8,15 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 w-full bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="max-w-[1100px] mx-auto px-4 md:px-6 h-14 flex items-center justify-between">
-        <Link href="/" className="font-semibold">
+        <Link href="/" className="font-semibold flex items-center gap-2">
+          <Image
+            src="/images/logo.webp"
+            alt="Trevor Behnke logo"
+            width={20}
+            height={20}
+            className="inline-block"
+            priority
+          />
           Trevor Behnke
         </Link>
         <nav className="flex items-center gap-2">
