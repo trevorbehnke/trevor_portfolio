@@ -9,6 +9,7 @@ import { Analytics } from "@vercel/analytics/react"
 import { site } from "@/data/site"
 import { SkipToContent } from "@/components/skip-link"
 import { SiteSpotlight } from "@/components/site-spotlight"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -51,6 +52,7 @@ export default function RootLayout({
           <Header />
           <main id="content" className="min-h-[70vh]">
             {children}
+            <SpeedInsights />
           </main>
           <Footer />
           <Toaster position="bottom-right" />
