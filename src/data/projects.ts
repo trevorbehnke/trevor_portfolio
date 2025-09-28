@@ -166,7 +166,7 @@ export const projects: Project[] = [
     timeframe: "2023",
     stack: ["Next.js", "TypeScript", "Prisma", "Zustand", "Stripe", "Clerk", "PostgreSQL", "MUI", "Tailwind", "D3.js", "OpenAI API"],
     links: { 
-      live: "https://vercel.daychart.app",
+      live: "https://daychart.vercel.app",
       repo: "https://github.com/trevorbehnke/daychart" },
     cover: "/images/projects/daychart/daychart-cover.png",
     coverCaption: "DayChart Homepage",
