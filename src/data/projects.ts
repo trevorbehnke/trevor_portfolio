@@ -54,7 +54,7 @@ export const projects: Project[] = [
     //   { label: "Build time", value: "6 weeks" },
     // ],
     featured: true,
-    private: true,
+    private: false,
     deployed: true,
     analysis: {
       background:
