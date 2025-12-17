@@ -26,7 +26,7 @@ export const projects: Project[] = [
     title: "SpillHub — Anonymous Daily Confession Wall",
     slug: "spillhub",
     summary:
-      "Unique “share-to-unlock” mechanic, paid upgrades, and a social-style note grid built for viral prompts and shareable secrets.",
+      "SpillHub is a full-stack, anonymous daily confession platform I designed and built end-to-end, combining a carefully gated social experience with real-world concerns like abuse prevention, payments, and scalability.",
     role: "Sole Architect & Engineer",
     timeframe: "2025 - Present",
     stack: [
@@ -44,11 +44,11 @@ export const projects: Project[] = [
       live: "https://spillhub.com",
       repo: "https://github.com/trevorbehnke/spillhub",
     },
-    cover: "/images/projects/spillhub/spillhub-cover.png",
-    coverCaption: "Landing Page",
+    cover: "/images/projects/spillhub/spillhub-home-dark.png",
+    coverCaption: "Landing page",
     images: [
-      { src: "/images/projects/blogsocializer/screen-1.png", caption: "Anonymous notes wall" },
-      { src: "/images/projects/blogsocializer/screen-2.png", caption: "Admin metrics panel" },
+      { src: "/images/projects/spillhub/spillhub-wall-dark.png", caption: "Anonymous notes wall with Stripe upgrades" },
+      { src: "/images/projects/spillhub/spillhub-archive-dark.png", caption: "Archived notes wall with datepicker & pagination" },
     ],
     // metrics: [
     //   { label: "Signups", value: "300+" },
@@ -59,20 +59,20 @@ export const projects: Project[] = [
     deployed: true,
     analysis: {
       background:
-        "SpillHub explores the idea of ritualized anonymity: once per day, everyone gets the same provocative question, and you have to share one anonymous confession to unlock the wall and read everyone else’s. The core mechanic is simple - share first, then snoop - but it needed to feel safe, fast, and addictive while staying completely account-free. The product is designed to be both a standalone web experience and a source of short-form content for TikTok and other social channels.",
+        "SpillHub presents users with a single daily prompt and a grid of anonymous responses that remain blurred until a user submits their own, encouraging authentic participation over passive consumption. The product was designed to feel lightweight and playful on the surface while quietly handling complex concerns around moderation, anonymity, and monetization. I built the application solo using Next.js 16 (App Router), React 19, Tailwind CSS, Supabase, Stripe, and OpenAI moderation APIs.",
       contribution: [
-        "Designed and implemented the full spill-to-unlock flow: daily prompt system, blurred note wall, and the rule that your anonymous confession unlocks everyone else’s.",
-        "Built the wall UI with hearts, emotion tags, colors, and (local) saved notes to make short text posts feel more like a social feed without adding user accounts or profiles.",
-        "Implemented a paid pinning feature where users can pay to feature a note at the top of the wall, while still supporting sorting/filtering (recent, top hearts, tags, saved) in a way that preserves pin value.",
-        "Set up backend APIs and database schema for daily archives, pinned vs unpinned notes, and future-proofed pagination/sorting so the wall can scale as volume grows.",
-        "Iterated on SEO, metadata, and open graph previews so the app can rank for anonymous confession–style queries and generate clean, clickable link previews for social sharing.",
+        "I architected and implemented the entire system, including the frontend UI, backend API routes, database schema, and deployment pipeline.",
+        "On the frontend, I built a responsive, themeable UI using Tailwind v4, shadcn/ui, and Radix primitives, with a focus on clarity, performance, and accessibility.",
+        "On the backend, I designed API routes for daily prompts, note submission, archives, entitlements, and admin tooling using Next.js server routes and Supabase with Row Level Security.",
+        "I implemented a robust moderation pipeline combining heuristic checks with OpenAI’s moderation API to allow emotional expression while blocking genuinely harmful content.",
+        "I also integrated Stripe with manual-capture PaymentIntents to safely support paid features (colored notes, pinned notes, archives, and Pro access) without risking charges when writes fail.",
       ],
       learned: [
-        "How much small UX details matter in anonymous products: things like blur strength, copy tone, and micro-affordances dramatically affect whether people feel safe enough to confess.",
-        "Designing monetization around placement (paid pins) requires thinking carefully about sorting, filtering, and pagination so revenue features stay valuable as the product evolves.",
-        "The importance of low-friction architecture: no-auth apps still need a clear mental model for state like hearts, saves, and replies, especially when most of it lives on the client.",
-        "Balancing expression with safety: even without accounts, you need guardrails for content, rate limiting, and future moderation while keeping the experience fast and fun.",
-        "Prompt quality is product quality: the engagement curve depends heavily on how provocative, specific, and psychologically resonant each daily question is.",
+        "Building SpillHub reinforced how much hidden complexity exists beneath seemingly simple social products.",
+        "I gained hands-on experience designing systems that balance anonymity with abuse prevention using cookies, IP fallbacks, and signed tokens instead of traditional authentication.",
+        "I learned how to structure payment flows defensively, using manual capture and idempotent unlock logic to ensure financial correctness under failure scenarios.",
+        "The project deepened my understanding of server-client boundaries in the Next.js App Router and how to leverage Supabase service roles safely for cron jobs and privileged operations.",
+        "Most importantly, it sharpened my ability to make pragmatic engineering decisions that prioritize user trust, product integrity, and long-term maintainability over shortcuts.",
       ],
     },
   },
