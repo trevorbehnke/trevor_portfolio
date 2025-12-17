@@ -63,10 +63,9 @@ export function MobileNav() {
                     className={[
                       "group relative flex items-center px-2 py-1.5 min-h-[44px] rounded-md transition-colors focus-ring",
                       "hover:bg-accent hover:text-accent-foreground",
-                      // isActive ? "text-primary font-medium bg-accent/40 rounded-l-md" : "",
-                      // isActive ? "before:content-[''] before:absolute before:left-0 before:top-0 before:bottom-0 before:w-1 before:bg-primary/70" : "",
-                      // isActive ? "after:content-[''] after:ml-2 after:size-1.5 after:rounded-full after:bg-primary/80" : "",
+                      isActive ? "text-primary font-medium bg-accent/40 rounded-l-md" : "",
                     ].join(' ')}
+                    aria-current={isActive ? "page" : undefined}
                   >
                     <FontAwesomeIcon icon={item.icon} className="size-4 mr-2 text-primary/80" aria-hidden />
                     <span className="transition-transform duration-150 group-hover:translate-x-0.5">{item.label}</span>

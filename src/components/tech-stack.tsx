@@ -11,11 +11,6 @@ function hexToRgb(hex: string) {
   return { r, g, b }
 }
 
-function rgba(hex: string, alpha: number) {
-  const { r, g, b } = hexToRgb(hex)
-  return `rgba(${r}, ${g}, ${b}, ${alpha})`
-}
-
 function isLight(hex: string) {
   const { r, g, b } = hexToRgb(hex)
   // perceived luminance

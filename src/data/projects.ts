@@ -23,6 +23,61 @@ export type Project = {
 export const projects: Project[] = [
   // Project 1
   {
+    title: "SpillHub — Anonymous Daily Confession Wall",
+    slug: "spillhub",
+    summary:
+      "Unique “share-to-unlock” mechanic, paid upgrades, and a social-style note grid built for viral prompts and shareable secrets.",
+    role: "Sole Architect & Engineer",
+    timeframe: "2025 - Present",
+    stack: [
+      "Next.js",
+      "React",
+      "JavaScript",
+      "Node",
+      "Supabase",
+      "PostgreSQL",
+      "OpenAI API",
+      "Stripe",
+      "Vercel",
+    ],
+    links: {
+      live: "https://spillhub.com",
+      repo: "https://github.com/trevorbehnke/spillhub",
+    },
+    cover: "/images/projects/spillhub/spillhub-cover.png",
+    coverCaption: "Landing Page",
+    images: [
+      { src: "/images/projects/blogsocializer/screen-1.png", caption: "Anonymous notes wall" },
+      { src: "/images/projects/blogsocializer/screen-2.png", caption: "Admin metrics panel" },
+    ],
+    // metrics: [
+    //   { label: "Signups", value: "300+" },
+    //   { label: "Build time", value: "6 weeks" },
+    // ],
+    featured: true,
+    private: true,
+    deployed: true,
+    analysis: {
+      background:
+        "SpillHub explores the idea of ritualized anonymity: once per day, everyone gets the same provocative question, and you have to share one anonymous confession to unlock the wall and read everyone else’s. The core mechanic is simple - share first, then snoop - but it needed to feel safe, fast, and addictive while staying completely account-free. The product is designed to be both a standalone web experience and a source of short-form content for TikTok and other social channels.",
+      contribution: [
+        "Designed and implemented the full spill-to-unlock flow: daily prompt system, blurred note wall, and the rule that your anonymous confession unlocks everyone else’s.",
+        "Built the wall UI with hearts, emotion tags, colors, and (local) saved notes to make short text posts feel more like a social feed without adding user accounts or profiles.",
+        "Implemented a paid pinning feature where users can pay to feature a note at the top of the wall, while still supporting sorting/filtering (recent, top hearts, tags, saved) in a way that preserves pin value.",
+        "Set up backend APIs and database schema for daily archives, pinned vs unpinned notes, and future-proofed pagination/sorting so the wall can scale as volume grows.",
+        "Iterated on SEO, metadata, and open graph previews so the app can rank for anonymous confession–style queries and generate clean, clickable link previews for social sharing.",
+      ],
+      learned: [
+        "How much small UX details matter in anonymous products: things like blur strength, copy tone, and micro-affordances dramatically affect whether people feel safe enough to confess.",
+        "Designing monetization around placement (paid pins) requires thinking carefully about sorting, filtering, and pagination so revenue features stay valuable as the product evolves.",
+        "The importance of low-friction architecture: no-auth apps still need a clear mental model for state like hearts, saves, and replies, especially when most of it lives on the client.",
+        "Balancing expression with safety: even without accounts, you need guardrails for content, rate limiting, and future moderation while keeping the experience fast and fun.",
+        "Prompt quality is product quality: the engagement curve depends heavily on how provocative, specific, and psychologically resonant each daily question is.",
+      ],
+    },
+  },
+  // Project 2
+  {
     title: "BlogSocializer — Full-Stack AI SaaS MVP",
     slug: "blogsocializer",
     summary:
@@ -53,7 +108,7 @@ export const projects: Project[] = [
     //   { label: "Signups", value: "300+" },
     //   { label: "Build time", value: "6 weeks" },
     // ],
-    featured: true,
+    featured: false,
     private: false,
     deployed: true,
     analysis: {
@@ -75,7 +130,7 @@ export const projects: Project[] = [
       ],
     },
   },
-  // Project 2
+  // Project 3
   {
     title: "U.S. EPA National Rivers & Streams Assessment — Dashboard & Data Visualization",
     slug: "nrsa",
@@ -84,9 +139,10 @@ export const projects: Project[] = [
     role: "Software Engineer",
     timeframe: "2022",
     stack: ["HTML5", "CSS3", "JavaScript", "Python", "D3.js", "Node", 'Grunt'],
-    links: { 
+    links: {
       live: "https://riverstreamassessment.epa.gov/dashboard",
-      repo: "https://github.com/trevorbehnke/private" },
+      repo: "https://github.com/trevorbehnke/private"
+    },
     cover: "/images/projects/nrsa/nrsa-cover.png",
     coverCaption: "NRSA Dashboard Overview",
     images: [
@@ -116,7 +172,7 @@ export const projects: Project[] = [
       ],
     },
   },
-  // Project 3
+  // Project 4
   {
     title: "Image Comparison Bot — Automated QA Visual Regression Testing",
     slug: "image-comparison-bot",
@@ -125,9 +181,10 @@ export const projects: Project[] = [
     role: "Lead Designer, Architect & Engineer",
     timeframe: "2022",
     stack: ["JavaScript", "Python", "Puppeteer", "Pixelmatch", "Google Cloud Platform"],
-    links: { 
+    links: {
       live: "ImageComparisonBot",
-      repo: "https://github.com/trevorbehnke/Image-Comparison-Bot" },
+      repo: "https://github.com/trevorbehnke/Image-Comparison-Bot"
+    },
     cover: "/images/projects/image-bot/bot-cover.png",
     coverCaption: "Image comparison bot—overview of results",
     images: [
@@ -156,7 +213,7 @@ export const projects: Project[] = [
       ],
     },
   },
-  // Project 4
+  // Project 5
   {
     title: "DayChart — Full-Stack SaaS MVP",
     slug: "daychart",
@@ -165,9 +222,10 @@ export const projects: Project[] = [
     role: "Sole Architect & Engineer",
     timeframe: "2023",
     stack: ["Next.js", "TypeScript", "Prisma", "Zustand", "Stripe", "Clerk", "PostgreSQL", "MUI", "Tailwind", "D3.js", "OpenAI API"],
-    links: { 
+    links: {
       live: "https://daychart.vercel.app",
-      repo: "https://github.com/trevorbehnke/daychart" },
+      repo: "https://github.com/trevorbehnke/daychart"
+    },
     cover: "/images/projects/daychart/daychart-cover.png",
     coverCaption: "DayChart Homepage",
     images: [
