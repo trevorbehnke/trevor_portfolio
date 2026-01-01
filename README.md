@@ -28,6 +28,3 @@ Deploy on Vercel. Canonical is non‑www (`trevorab.com`); `src/middleware.ts` r
 
 ## Sitemap & SEO
 - Configured via `next-sitemap.config.js`. Generate in CI or locally as desired. Metadata and canonical are set in `layout.tsx`.
-
-## v2 Ideas
-- Switch projects to MDX (Contentlayer), add contact API (Resend), dynamic OG per project, add sitemap to CI, testimonials section.
