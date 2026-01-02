@@ -18,12 +18,12 @@ export function Footer() {
           <p className="text-sm text-foreground">Website by&nbsp;
             <span className="font-bold gradient-underline"> Trevor Behnke</span>
           </p>
-          <p className="text-sm text-muted-foreground italic"> Built using 
-            <span className="font-bold"> Next.js </span> w/ 
-            <span className="font-bold"> TypeScript</span>, 
-            <span className="font-bold"> Tailwind </span> & 
-            <span className="font-bold"> Radix</span>. Deployed on 
-            <span className="font-bold"> Vercel</span>. Programmed in 
+          <p className="text-sm text-muted-foreground italic"> Built using
+            <span className="font-bold"> Next.js </span> w/
+            <span className="font-bold"> TypeScript</span>,
+            <span className="font-bold"> Tailwind </span> &
+            <span className="font-bold"> Radix</span>. Deployed on
+            <span className="font-bold"> Vercel</span>. Programmed in
             <span className="font-bold"> VS Code</span>.
           </p>
           {/* <p className="text-sm text-foreground">Repo available&nbsp;
@@ -46,7 +46,7 @@ export function Footer() {
           >
             <FontAwesomeIcon icon={faEnvelope} className="footer-icon transition-transform hover:scale-110" />
           </button>
-          <Link href="/resume/Trevor_Behnke_Resume.pdf" aria-label="Resume">
+          <Link href="/resume/Trevor_Behnke_Senior_Full-Stack_Engineer_Resume.pdf" aria-label="Resume">
             <FontAwesomeIcon icon={faFileLines} className="footer-icon transition-transform hover:scale-110" />
           </Link>
         </div>

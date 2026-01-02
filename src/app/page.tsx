@@ -33,7 +33,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      
+
       {/* Tech stack section */}
       <section id="tools" className="max-w-[1100px] mx-auto px-4 md:px-6 scroll-mt-[var(--header-h)]">
         <SectionHeader title="Tools of the Trade" subtitle="My go-to toolkit balances modern frameworks with battle-tested practices, helping me build fast, secure, and maintainable software." />
@@ -44,7 +44,7 @@ export default function Home() {
 
       {/* Approach section*/}
       <section id="approach" className="max-w-[1100px] mx-auto px-4 md:px-6 scroll-mt-[var(--header-h)]">
-        <SectionHeader title="My Approach" subtitle="How I think about building software — from the first pixel to the last deployment."/>
+        <SectionHeader title="My Approach" subtitle="How I think about building software — from the first pixel to the last deployment." />
         <div className="grid gap-6 md:grid-cols-3 mt-4">
           <Approach
             title="Frontend"
@@ -81,7 +81,7 @@ export default function Home() {
 
       {/* About section */}
       <section id="about" className="max-w-[1100px] mx-auto px-4 md:px-6 space-y-4 scroll-mt-[var(--header-h)]">
-        <SectionHeader title="About Me" subtitle="Driven by Curiosity, Grounded in Craft"/>
+        <SectionHeader title="About Me" subtitle="Driven by Curiosity, Grounded in Craft" />
         <div className="grid gap-6 md:grid-cols-3 md:items-start">
           <div className="space-y-3 md:col-span-2">
             <Callout>
@@ -108,7 +108,7 @@ export default function Home() {
 
       {/* Contact/Resume section (moved from /contact) */}
       <section id="contact" className="max-w-[1100px] mx-auto px-4 md:px-6 space-y-3 scroll-mt-[var(--header-h)]">
-        <SectionHeader title="Get in Touch" subtitle="Let’s connect about your project, your team, or just to swap ideas."/>
+        <SectionHeader title="Get in Touch" subtitle="Let’s connect about your project, your team, or just to swap ideas." />
         {/* <p className="text-muted-foreground">Let’s talk about your project or team.</p> */}
         <div id="contact-buttons" className="flex gap-3">
           <CopyEmailButton />
@@ -116,7 +116,7 @@ export default function Home() {
             className={
               `${buttonVariants({ variant: 'link' })} self-center inline-flex items-center transition-colors hover:opacity-80`
             }
-            href="/resume/Trevor_Behnke_Resume.pdf"
+            href="/resume/Trevor_Behnke_Senior_Full-Stack_Engineer_Resume.pdf"
           >
             Download Resume
           </Link>

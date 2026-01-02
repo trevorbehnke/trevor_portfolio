@@ -7,7 +7,7 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 import { faEnvelope, faFileLines } from "@fortawesome/free-solid-svg-icons"
 
 export function Hero() {
-    function copyEmail() {
+  function copyEmail() {
     navigator.clipboard.writeText(site.email)
     toast.success("Email copied to clipboard")
   }
@@ -38,7 +38,7 @@ export function Hero() {
             >
               <FontAwesomeIcon icon={faEnvelope} className="footer-icon transition-transform hover:scale-110" />
             </button>
-            <Link href="/resume/Trevor_Behnke_Resume.pdf" aria-label="Resume">
+            <Link href="/resume/Trevor_Behnke_Senior_Full-Stack_Engineer_Resume.pdf" aria-label="Resume">
               <FontAwesomeIcon icon={faFileLines} className="footer-icon transition-transform hover:scale-110" />
             </Link>
           </div>
