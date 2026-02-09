@@ -5,50 +5,68 @@ import { toast } from "sonner"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
 import { faEnvelope, faFileLines } from "@fortawesome/free-solid-svg-icons"
+import { Button } from "@/components/ui/button"
 
 export function Footer() {
   function copyEmail() {
     navigator.clipboard.writeText(site.email)
     toast.success("Email copied to clipboard")
   }
+
+  const socialLinks = [
+    { href: site.socials.github, icon: faGithub, label: "GitHub" },
+    { href: site.socials.linkedin, icon: faLinkedin, label: "LinkedIn" },
+  ]
+
   return (
-    <footer className="border-t mt-12">
-      <div className="max-w-[1100px] mx-auto px-4 md:px-6 py-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-        <div className="space-y-1">
-          <p className="text-sm text-foreground">Website by&nbsp;
-            <span className="font-bold gradient-underline"> Trevor Behnke</span>
+    <footer className="mt-20 border-t border-border/40 bg-background/50 backdrop-blur-sm">
+      <div className="container mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 px-4 py-12 md:flex-row md:px-6">
+        <div className="flex flex-col gap-2 text-center md:text-left">
+          <p className="text-sm font-medium text-foreground">
+            © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
-          <p className="text-sm text-muted-foreground italic"> Built using
-            <span className="font-bold"> Next.js </span> w/
-            <span className="font-bold"> TypeScript</span>,
-            <span className="font-bold"> Tailwind </span> &
-            <span className="font-bold"> Radix</span>. Deployed on
-            <span className="font-bold"> Vercel</span>. Programmed in
-            <span className="font-bold"> VS Code</span>.
+          <p className="text-xs text-muted-foreground">
+            Built with Next.js 15, Tailwind CSS v4, and Radix UI.
           </p>
-          {/* <p className="text-sm text-foreground">Repo available&nbsp;
-            <a className="gradient-underline" href="https://github.com/trevorbehnke/trevor_portfolio" target="_blank">here</a>.
-          </p> */}
         </div>
 
-        <div className="flex items-center gap-3 text-[1.5rem] justify-end md:justify-start">
-          <Link href={site.socials.github} target="_blank" aria-label="GitHub">
-            <FontAwesomeIcon icon={faGithub} className="footer-icon transition-transform hover:scale-110" />
-          </Link>
-          <Link href={site.socials.linkedin} target="_blank" aria-label="LinkedIn">
-            <FontAwesomeIcon icon={faLinkedin} className="footer-icon transition-transform hover:scale-110" />
-          </Link>
-          <button
-            type="button"
-            aria-label="Email"
+        <div className="flex items-center gap-4">
+          {socialLinks.map((link) => (
+            <Button
+              key={link.label}
+              variant="ghost"
+              size="icon"
+              asChild
+              className="h-9 w-9 rounded-full text-muted-foreground transition-colors hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-brand-900/20 dark:hover:text-brand-400"
+            >
+              <Link href={link.href} target="_blank" aria-label={link.label}>
+                <FontAwesomeIcon icon={link.icon} className="h-4 w-4" />
+              </Link>
+            </Button>
+          ))}
+
+          <div className="mx-2 h-4 w-px bg-border/60" aria-hidden="true" />
+
+          <Button
+            variant="ghost"
+            size="icon"
             onClick={copyEmail}
-            className="hover:cursor-pointer"
+            className="h-9 w-9 rounded-full text-muted-foreground transition-colors hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-brand-900/20 dark:hover:text-brand-400"
+            aria-label="Copy Email"
           >
-            <FontAwesomeIcon icon={faEnvelope} className="footer-icon transition-transform hover:scale-110" />
-          </button>
-          <Link href="/resume/Trevor_Behnke_Senior_Full-Stack_Engineer_Resume.pdf" aria-label="Resume">
-            <FontAwesomeIcon icon={faFileLines} className="footer-icon transition-transform hover:scale-110" />
-          </Link>
+            <FontAwesomeIcon icon={faEnvelope} className="h-4 w-4" />
+          </Button>
+
+          <Button
+            variant="ghost"
+            size="icon"
+            asChild
+            className="h-9 w-9 rounded-full text-muted-foreground transition-colors hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-brand-900/20 dark:hover:text-brand-400"
+          >
+            <Link href="/resume/Trevor_Behnke_Senior_Full-Stack_Engineer_Resume.pdf" aria-label="Resume" target="_blank">
+              <FontAwesomeIcon icon={faFileLines} className="h-4 w-4" />
+            </Link>
+          </Button>
         </div>
       </div>
     </footer>

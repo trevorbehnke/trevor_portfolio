@@ -1,92 +1,64 @@
 'use client'
+
 import { DEFAULT_TECHS, type Tech } from '@/data/techs'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-function hexToRgb(hex: string) {
-  const cleaned = hex.replace('#', '')
-  const bigint = parseInt(cleaned, 16)
-  const r = (bigint >> 16) & 255
-  const g = (bigint >> 8) & 255
-  const b = bigint & 255
-  return { r, g, b }
-}
-
-function isLight(hex: string) {
-  const { r, g, b } = hexToRgb(hex)
-  // perceived luminance
-  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255
-  return luminance > 0.6
-}
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { cn } from '@/lib/utils'
 
 type Props = {
   techs?: Tech[]
 }
 
+const CATEGORIES = {
+  Frontend: ['javascript', 'typescript', 'next', 'react', 'html', 'css', 'tailwind', 'figma'],
+  Backend: ['python', 'node', 'express', 'sql', 'postgresql', 'supabase', 'neon', 'firebase', 'stripe'],
+  Tools: ['git', 'github', 'vscode', 'vercel', 'openai', 'gcp', 'jest'],
+}
+
 export function TechStack({ techs = DEFAULT_TECHS }: Props) {
+  // Helper to get techs for a category
+  const getTechs = (category: keyof typeof CATEGORIES) => {
+    return techs.filter((t) => CATEGORIES[category].includes(t.id))
+  }
+
   return (
-    <ul className="grid gap-3 sm:gap-4" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))' }}>
-      {techs.map((t) => {
-        const textOnBrand = isLight(t.brand) ? '#000000' : '#ffffff'
-        const hasImage = Boolean(t.image)
-        return (
-          <li
-            key={t.id}
-            className="group relative rounded-lg bg-card shadow-card transition-transform hover:-translate-y-[2px] focus-within:-translate-y-[2px]"
-            style={{}}
-          >
-            {/* optional hover glow removed to keep site-theme neutrals */}
+    <div className="w-full">
+      <Tabs defaultValue="Frontend" className="w-full space-y-6">
+        <div className="flex justify-center">
+          <TabsList className="grid w-full max-w-[400px] grid-cols-3 h-10 p-1 bg-muted/50 rounded-full">
+            {Object.keys(CATEGORIES).map((cat) => (
+              <TabsTrigger key={cat} value={cat} className="rounded-full data-[state=active]:bg-background data-[state=active]:shadow-sm transition-all duration-300">
+                {cat}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+        </div>
 
-            <div
-              className="flex items-center gap-3 p-3 focus-ring"
-              style={{
-                // brand-colored focus ring via inline shadow
-                boxShadow: '0 0 0 0px transparent',
-              }}
-            >
-              <div
-                className="grid size-12 place-items-center rounded-md border bg-[#0D9488]/10 overflow-hidden"
-                style={{}}
-                aria-hidden
-              >
-                {hasImage ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={t.image!} alt="" width={30} height={30} className="block" />
-                ) : t.icon ? (
-                  <FontAwesomeIcon icon={t.icon} className="text-[30px]" style={{ color: t.brand }} />
-                ) : (
-                  <span
-                    className="text-[11px] font-semibold leading-none px-1 rounded"
-                    style={{ backgroundColor: t.brand, color: textOnBrand }}
-                  >
-                    {t.textIcon}
-                  </span>
-                )}
-              </div>
-              <div className="flex min-w-0 flex-col">
-                <span className="truncate text-sm font-medium">{t.label}</span>
-                {/* <span className="mt-[2px] h-[3px] w-10 rounded-full bg-accent/60" /> */}
-              </div>
-            </div>
-
-            {/* brand ring on focus/hover using outline */}
-            <span
-              aria-hidden
-              className="pointer-events-none absolute inset-0 rounded-lg"
-              // style={{ outline: `1px solid transparent` }}
-            />
-            {/* <style jsx>{`
-              .group:focus-within {
-                outline: 1px solid var(--ring);
-                outline-offset: 2px;
-              }
-              .group:hover {
-                outline: 1px solid var(--ring);
-                outline-offset: 0px;
-              }
-            `}</style> */}
-          </li>
-        )
-      })}
-    </ul>
+        {Object.keys(CATEGORIES).map((cat) => (
+          <TabsContent key={cat} value={cat} className="space-y-4 animate-in fade-in slide-in-from-bottom-2 duration-500">
+            <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {getTechs(cat as keyof typeof CATEGORIES).map((t) => (
+                <li
+                  key={t.id}
+                  className="group relative flex items-center gap-3 rounded-xl border bg-card p-3 shadow-sm transition-all hover:-translate-y-1 hover:shadow-md hover:border-brand-200 dark:hover:border-brand-800"
+                >
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-muted/30 group-hover:bg-brand-50 dark:group-hover:bg-brand-900/20 transition-colors">
+                    {t.image ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={t.image} alt="" className="size-6 object-contain" />
+                    ) : t.icon ? (
+                      <FontAwesomeIcon icon={t.icon} className="size-6 text-muted-foreground group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors" />
+                    ) : (
+                      <span className="text-xs font-bold text-muted-foreground group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">{t.textIcon}</span>
+                    )}
+                  </div>
+                  <span className="font-medium text-sm text-foreground/80 group-hover:text-foreground">{t.label}</span>
+                </li>
+              ))}
+            </ul>
+          </TabsContent>
+        ))}
+      </Tabs>
+    </div>
   )
 }

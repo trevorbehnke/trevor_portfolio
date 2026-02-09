@@ -6,15 +6,17 @@ import { Button } from "@/components/ui/button"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faXmark, faTableCells, faWrench, faDiagramProject, faUser, faEnvelope } from "@fortawesome/free-solid-svg-icons"
 import { Dialog, DialogContent, DialogTitle, DialogTrigger, DialogClose } from "@/components/ui/dialog"
+import { cn } from "@/lib/utils"
 
 export function MobileNav() {
   const [activeHash, setActiveHash] = useState<string>("")
 
+  // Sync hash on mount and change
   useEffect(() => {
-    const setFromLocation = () => setActiveHash(typeof window !== 'undefined' ? window.location.hash : "")
-    setFromLocation()
-    window.addEventListener("hashchange", setFromLocation)
-    return () => window.removeEventListener("hashchange", setFromLocation)
+    const handleHashChange = () => setActiveHash(window.location.hash)
+    handleHashChange()
+    window.addEventListener("hashchange", handleHashChange)
+    return () => window.removeEventListener("hashchange", handleHashChange)
   }, [])
 
   const items = [
@@ -29,46 +31,48 @@ export function MobileNav() {
     <Dialog>
       <DialogTrigger asChild>
         <Button
-          variant="outline"
+          variant="ghost"
           size="icon"
           aria-label="Open menu"
-          className="md:hidden"
+          className="md:hidden hover:bg-transparent"
         >
-          <FontAwesomeIcon icon={faBars} aria-hidden />
+          <FontAwesomeIcon icon={faBars} className="h-5 w-5" />
         </Button>
       </DialogTrigger>
       <DialogContent
         showCloseButton={false}
-        className="fixed right-0 top-0 left-auto translate-x-0 translate-y-0 h-dvh w-[66vw] max-w-[320px] overflow-y-auto border-l bg-background pt-3 pb-4 px-4 outline-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:slide-in-from-right data-[state=closed]:slide-out-to-right duration-200 ease-out"
-        onOpenAutoFocus={(e) => e.preventDefault()}
-        onCloseAutoFocus={(e) => e.preventDefault()}
+        className="fixed inset-y-0 right-0 left-auto z-50 h-full w-3/4 max-w-sm gap-4 border-l bg-background p-6 shadow-xl transition-transform duration-300 data-[state=open]:translate-x-0 data-[state=closed]:translate-x-full sm:max-w-sm"
       >
-        <DialogTitle className="sr-only">Site navigation</DialogTitle>
-        <div className="flex flex-col gap-2">
-          <div className="flex items-center justify-end">
+        <DialogTitle className="sr-only">Main Menu</DialogTitle>
+        <div className="flex flex-col gap-6">
+          <div className="flex items-center justify-between">
+            <span className="text-lg font-bold tracking-tight">Menu</span>
             <DialogClose asChild>
-              <Button variant="outline" size="icon" aria-label="Close menu">
-                <FontAwesomeIcon icon={faXmark} aria-hidden />
+              <Button variant="ghost" size="icon" aria-label="Close menu">
+                <FontAwesomeIcon icon={faXmark} className="h-5 w-5" />
               </Button>
             </DialogClose>
           </div>
 
-          <nav className="grid gap-1 text-base justify-items-end">
+          <nav className="flex flex-col gap-2">
             {items.map((item) => {
               const isActive = activeHash === item.hash
               return (
                 <DialogClose asChild key={item.href}>
                   <Link
                     href={item.href}
-                    className={[
-                      "group relative flex items-center px-2 py-1.5 min-h-[44px] rounded-md transition-colors focus-ring",
-                      "hover:bg-accent hover:text-accent-foreground",
-                      isActive ? "text-primary font-medium bg-accent/40 rounded-l-md" : "",
-                    ].join(' ')}
-                    aria-current={isActive ? "page" : undefined}
+                    className={cn(
+                      "flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors hover:bg-muted/50",
+                      isActive ? "bg-brand-50 text-brand-700 dark:bg-brand-900/20 dark:text-brand-300" : "text-foreground/80"
+                    )}
                   >
-                    <FontAwesomeIcon icon={item.icon} className="size-4 mr-2 text-primary/80" aria-hidden />
-                    <span className="transition-transform duration-150 group-hover:translate-x-0.5">{item.label}</span>
+                    <div className={cn(
+                      "flex h-8 w-8 items-center justify-center rounded-md border text-muted-foreground transition-colors",
+                      isActive ? "border-brand-200 bg-brand-100 text-brand-600 dark:border-brand-800 dark:bg-brand-900 dark:text-brand-400" : "bg-muted/30"
+                    )}>
+                      <FontAwesomeIcon icon={item.icon} className="h-4 w-4" />
+                    </div>
+                    {item.label}
                   </Link>
                 </DialogClose>
               )
