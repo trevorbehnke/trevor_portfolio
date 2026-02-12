@@ -17,11 +17,11 @@ export function Hero() {
       <div aria-hidden className="hero-blob" />
       <div className="max-w-[1100px] mx-auto px-4 md:px-6 w-full">
         <div className="max-w-2xl text-foreground">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-            Trevor Behnke — <span className="gradient-underline">Frontend‑leaning</span> Full Stack Engineer
+          <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
+            Trevor Behnke <span className="gradient-underline text-4xl md:text-5xl">Frontend‑leaning</span> <span className="text-4xl md:text-5xl">Full Stack Developer</span>
           </h1>
           <p className="mt-4 text-lg text-muted-foreground">
-            From intuitive UIs to secure, scalable APIs, I design and ship production-grade web apps that perform at scale.
+            I build accessible, pixel-perfect web experiences with modern architecture. Focused on performance, scalability, and shipping products that matter.
           </p>
           <div className="mt-4 flex gap-3 text-[1.5rem]">
             <Link href={site.socials.github} target="_blank" aria-label="GitHub">

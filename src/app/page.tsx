@@ -25,7 +25,7 @@ export default function Home() {
       {/* Work section*/}
       <section id="work" className="space-y-4 scroll-mt-[var(--header-h)]">
         <div className="max-w-[1100px] mx-auto px-4 md:px-6">
-          <SectionHeader title="Featured Work" subtitle="These projects represent the breadth of my work — shipping user-friendly interfaces, building reliable full-stack systems, and even creating proprietary tools like a custom quality-control platform used to automate visual regression testing." />
+          <SectionHeader title="Featured Work" subtitle="These projects represent a cross-section of my work: shipping user-friendly interfaces, building reliable full-stack systems, and even creating proprietary tools like a custom quality-control platform used to automate visual regression testing." />
         </div>
         <div className="max-w-[1100px] mx-auto px-4 md:px-6 grid gap-6 sm:grid-cols-2">
           {grid.map((p) => (

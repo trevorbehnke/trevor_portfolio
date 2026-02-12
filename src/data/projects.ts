@@ -23,7 +23,7 @@ export type Project = {
 export const projects: Project[] = [
   // Project 1
   {
-    title: "SpillHub — Anonymous Daily Confession Wall",
+    title: "SpillHub | Anonymous Daily Confession Wall",
     slug: "spillhub",
     summary:
       "SpillHub is a full-stack, anonymous daily confession platform I designed and built end-to-end, combining a carefully gated social experience with real-world concerns like abuse prevention, payments, and scalability.",
@@ -32,13 +32,13 @@ export const projects: Project[] = [
     stack: [
       "Next.js",
       "React",
-      "JavaScript",
-      "Node",
-      "Supabase",
       "PostgreSQL",
+      "Supabase",
       "OpenAI API",
+      "Node",
       "Stripe",
       "Vercel",
+      "JavaScript",
     ],
     links: {
       live: "https://spillhub.com",
@@ -78,21 +78,22 @@ export const projects: Project[] = [
   },
   // Project 2
   {
-    title: "BlogSocializer — Full-Stack AI SaaS MVP",
+    title: "BlogSocializer | Full-Stack AI SaaS MVP",
     slug: "blogsocializer",
     summary:
-      "End-to-End SaaS with Auth, Billing, Tiered Subscriptions, and AI-Powered Content Repurposing.",
+      "BlogSocializer is a full-stack AI-powered content platform I designed and built end-to-end, transforming long-form blog posts into platform-optimized social content — balancing prompt engineering, multi-provider AI orchestration, and usage-based billing to keep generation quality high and costs predictable.",
     role: "Sole Architect & Engineer",
     timeframe: "2024-2025",
     stack: [
       "Next.js",
       "React",
-      "TypeScript",
-      "Node",
       "PostgreSQL",
+      "Neon DB",
       "OpenAI API",
       "Stripe",
       "Vercel",
+      "Node",
+      "JavaScript",
     ],
     links: {
       live: "https://BlogSocializer.com",
@@ -132,10 +133,10 @@ export const projects: Project[] = [
   },
   // Project 3
   {
-    title: "U.S. EPA National Rivers & Streams Assessment — Dashboard & Data Visualization",
+    title: "U.S. EPA National Rivers & Streams Assessment | Dashboard & Data Visualization",
     slug: "nrsa",
     summary:
-      "Frontend & Data Visualization Engineering with D3.js and Core Web Fundamentals.",
+      "The U.S. EPA National Rivers & Streams Assessment dashboard is a public-facing data visualization platform I built to make tens of thousands of ecological field survey data points accessible to the general public, combining D3.js-driven geospatial visualizations with complex multi-dimensional filtering under strict government accessibility and performance requirements.",
     role: "Software Engineer",
     timeframe: "2022",
     stack: ["HTML5", "CSS3", "JavaScript", "Python", "D3.js", "Node", 'Grunt'],
@@ -174,10 +175,10 @@ export const projects: Project[] = [
   },
   // Project 4
   {
-    title: "Image Comparison Bot — Automated QA Visual Regression Testing",
+    title: "Image Comparison Bot | Automated QA Visual Regression Testing",
     slug: "image-comparison-bot",
     summary:
-      "Proprietary, Headless Browser QA Automation for Dashboard State Validation",
+      "The Image Comparison Bot is a production-grade visual regression system I designed and built to automatically validate tens of thousands of data-heavy dashboard states using headless browser automation and pixel-level comparison, catching rendering defects before release and replacing manual QA cycles with structured visual-diff reporting.",
     role: "Lead Designer, Architect & Engineer",
     timeframe: "2022",
     stack: ["JavaScript", "Python", "Puppeteer", "Pixelmatch", "Google Cloud Platform"],
